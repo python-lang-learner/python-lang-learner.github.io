@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Python Learning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Python Learning</h1>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="intro.html">Intro</a>
+        <a href="variables.html">Variables</a>
+        <a href="functions.html">Functions</a>
+        <a href="projects.html" class="active">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Small Projects to Practice</h2>
+        <p class="lede">Build these small projects to solidify the concepts you've learned.</p>
+      </div>
+    </section>
+
+```
+<section class="content" style="margin-top:20px;">
+  <h3>1. Calculator (CLI)</h3>
+  <p>Build a command-line calculator supporting +, -, *, / and a loop to continue.</p>
+
+  <h3>2. To-Do List (file-based)</h3>
+  <p>Save tasks to a text file. Add, list, and delete tasks. Practice file I/O.</p>
+
+  <h3>3. Simple Web Scraper</h3>
+  <p>Use <code>requests</code> and <code>BeautifulSoup</code> to fetch and parse a webpage (read robots.txt first).</p>
+
+  <h3>4. Temperature Converter (GUI)</h3>
+  <p>Use <code>tkinter</code> to make a small GUI that converts between °C and °F.</p>
+
+  <h3>5. Mini Project: Quiz App</h3>
+  <p>Create a CLI quiz app that asks multiple-choice questions stored in a JSON file and scores the user.</p>
+</section>
+```
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Python Learning</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>

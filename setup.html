@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Setup — Python Learning</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Python Learning</h1>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="intro.html">Intro</a>
+        <a href="variables.html">Variables</a>
+        <a href="functions.html">Functions</a>
+        <a href="projects.html" class="active">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Setup — Install Python & Tools</h2>
+        <p class="lede">Follow these steps to set up Python and a comfortable development environment.</p>
+      </div>
+    </section>
+
+```
+<section class="card-grid" style="margin-top:24px;">
+  <article class="card">
+    <h3>1. Install Python</h3>
+    <ol>
+      <li>Go to <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">python.org/downloads</a>.</li>
+      <li>Download the latest Python 3 installer for your OS (Windows / macOS / Linux).</li>
+      <li>On Windows, run installer and check <strong>"Add Python to PATH"</strong> then click Install.</li>
+    </ol>
+    <p class="small">Verify in terminal:</p>
+    <pre><code>python --version
+```
+
+# or on some systems:
+
+python3 --version</code></pre> </article>
+
+```
+  <article class="card">
+    <h3>2. Install VS Code</h3>
+    <p>VS Code is a lightweight editor with excellent Python support.</p>
+    <ol>
+      <li>Download from <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">code.visualstudio.com</a>.</li>
+      <li>Install the Python extension (Microsoft) inside VS Code.</li>
+    </ol>
+  </article>
+
+  <article class="card">
+    <h3>3. Create & run your first script</h3>
+    <p>Open a terminal or VS Code terminal and run:</p>
+    <pre><code>echo print("Hello, world!") > hello.py
+```
+
+python hello.py</code></pre> <p>You should see <code>Hello, world!</code> printed.</p> </article> </section>
+
+```
+<section class="resources" id="resources" style="margin-top:28px;">
+  <h2>Helpful commands & tips</h2>
+  <ul>
+    <li>Use <code>python -m venv env</code> then <code>env\Scripts\activate</code> (Windows) or <code>source env/bin/activate</code> (macOS/Linux) to create and use virtual environments.</li>
+    <li>Install packages with <code>pip install package-name</code>.</li>
+    <li>Use <code>pip freeze &gt; requirements.txt</code> to save dependencies.</li>
+  </ul>
+</section>
+```
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Python Learning</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
