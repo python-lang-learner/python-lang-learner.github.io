@@ -3,15 +3,130 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Python Learning — Home</title>
+  <title>Intro to Python — Python Learning</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Welcome to Python Learning</h1>
-  <p>This is the first page for <strong>python-lang-learner</strong>.</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Python Learning</h1>
+      <nav class="main-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="intro.html" class="active">Intro</a>
+        <a href="variables.html">Variables</a>
+        <a href="functions.html">Functions</a>
+        <a href="projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
 
-  <h2>Start here</h2>
-  <ul>
-    <li><a href="intro.html">Python: Introduction</a></li>
-  </ul>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Learn Python — from first steps to real projects</h2>
+        <p class="lede">Python is a beginner-friendly, powerful language used for data science, web development, automation, and more. Follow this short roadmap to go from zero to building small projects.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#roadmap">Get started</a>
+          <a class="btn outline" href="#resources">Resources</a>
+        </div>
+      </div>
+      <div class="hero-code">
+        <pre><code>print("Hello, world!")</code></pre>
+      </div>
+    </section>
+
+    <section id="what" class="card-grid">
+      <article class="card">
+        <h3>What is Python?</h3>
+        <p>Python is a high-level, interpreted programming language emphasising readability and developer productivity. It's widely used for scripting, web apps, data analysis, automation, and scientific computing.</p>
+      </article>
+
+      <article class="card">
+        <h3>Why learn Python?</h3>
+        <ul>
+          <li>Simple, readable syntax — great for beginners</li>
+          <li>Large standard library and ecosystem (packages)</li>
+          <li>Strong community, many learning resources</li>
+          <li>Used by many industries — jobs & projects</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="roadmap" class="roadmap">
+      <h2>Beginner Roadmap — a 6-step path</h2>
+
+      <ol class="steps">
+        <li>
+          <strong>Setup</strong>
+          <p>Install Python (recommended: latest 3.x) and a code editor (VS Code). Learn how to run scripts.</p>
+          <p class="small">Files: <a href="setup.html">Setup guide</a></p>
+        </li>
+
+        <li>
+          <strong>Syntax & Variables</strong>
+          <p>Understand variables, basic types (int, float, str), input/output and basic operators.</p>
+          <p class="small">Files: <a href="variables.html">Variables lesson</a></p>
+        </li>
+
+        <li>
+          <strong>Control Flow</strong>
+          <p>Learn if/else, loops (for, while), and iteration patterns.</p>
+          <p class="small">Files: <a href="control-flow.html">Control Flow</a></p>
+        </li>
+
+        <li>
+          <strong>Functions & Modules</strong>
+          <p>Write reusable functions, learn scope, parameters, and import modules.</p>
+          <p class="small">Files: <a href="functions.html">Functions</a></p>
+        </li>
+
+        <li>
+          <strong>Collections & File I/O</strong>
+          <p>Lists, tuples, dictionaries, sets and reading/writing files.</p>
+          <p class="small">Files: <a href="collections.html">Collections</a></p>
+        </li>
+
+        <li>
+          <strong>Projects & Next Steps</strong>
+          <p>Build small projects: calculator, web scraper, simple web app. Explore frameworks like Flask or libraries like pandas for data work.</p>
+          <p class="small">Files: <a href="projects.html">Project ideas</a></p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="resources" class="resources">
+      <h2>Recommended free resources</h2>
+      <ul>
+        <li><a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">Official Python tutorial</a></li>
+        <li><a href="https://realpython.com/" target="_blank" rel="noopener">Real Python (tutorials & guides)</a></li>
+        <li><a href="https://www.learnpython.org/" target="_blank" rel="noopener">learnpython.org (interactive)</a></li>
+        <li><a href="https://www.codecademy.com/learn/learn-python-3" target="_blank" rel="noopener">Codecademy: Learn Python 3</a></li>
+        <li><a href="https://www.youtube.com/c/CoreySchafer" target="_blank" rel="noopener">Corey Schafer — YouTube (Python tutorials)</a></li>
+      </ul>
+    </section>
+
+    <section class="next-steps">
+      <h2>Quick Start Checklist</h2>
+      <ul>
+        <li>Install Python 3 (https://python.org)</li>
+        <li>Open a terminal, run <code>python --version</code></li>
+        <li>Create and run <code>hello.py</code> with: <code>print("Hello")</code></li>
+        <li>Follow <a href="variables.html">Variables</a> then <a href="functions.html">Functions</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Python Learning — Built by <strong>python-lang-learner</strong></p>
+      <p>Want to contribute? Edit these pages and open a pull request.</p>
+    </div>
+  </footer>
+
+  <script>
+    // small script for year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
