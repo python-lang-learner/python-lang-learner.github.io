@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Topics — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Python Learning</h1>
+      <nav class="main-nav" aria-label="Main">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html" class="active">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Topics — Browse by category</h2>
+      <p class="lede">Structured list of Python topics with short descriptions and example pages. Start with the Basics and follow the roadmap.</p>
+    </section>
+
+```
+<section class="topics-grid">
+  <article class="topic-group">
+    <h3>Basics</h3>
+    <ul>
+      <li><a href="syntax.html">Syntax</a> — language basics and first script</li>
+      <li><a href="output.html">Output</a> — print and formatting</li>
+      <li><a href="comments.html">Comments</a> — writing notes in code</li>
+      <li><a href="user-input.html">User input</a> — reading from keyboard</li>
+      <li><a href="string_formatting.html">String formatting</a> — f-strings & format()</li>
+    </ul>
+  </article>
+
+  <article class="topic-group">
+    <h3>Data types & collections</h3>
+    <ul>
+      <li><a href="variables.html">Variables</a></li>
+      <li><a href="datatypes.html">Data types</a></li>
+      <li><a href="numbers.html">Numbers & casting</a></li>
+      <li><a href="strings.html">Strings</a></li>
+      <li><a href="lists.html">Lists</a></li>
+      <li><a href="tuples.html">Tuples</a></li>
+      <li><a href="sets.html">Sets</a></li>
+      <li><a href="dictionaries.html">Dictionaries</a></li>
+    </ul>
+  </article>
+
+  <article class="topic-group">
+    <h3>Control flow</h3>
+    <ul>
+      <li><a href="if_else.html">if / else</a></li>
+      <li><a href="match.html">match (structural pattern)</a></li>
+      <li><a href="while_loops.html">while loops</a></li>
+      <li><a href="for_loops.html">for loops & range()</a></li>
+      <li><a href="iterators.html">Iterators & generators</a></li>
+    </ul>
+  </article>
+
+  <article class="topic-group">
+    <h3>Functions & modules</h3>
+    <ul>
+      <li><a href="functions.html">Functions</a></li>
+      <li><a href="modules.html">Modules</a></li>
+      <li><a href="pip.html">PIP & packaging</a></li>
+      <li><a href="virtualenv.html">Virtual environments</a></li>
+    </ul>
+  </article>
+
+  <article class="topic-group">
+    <h3>Files & Data</h3>
+    <ul>
+      <li><a href="filehandling.html">File handling</a></li>
+      <li><a href="json.html">JSON</a></li>
+      <li><a href="regex.html">Regular expressions</a></li>
+      <li><a href="dates.html">Dates & times</a></li>
+    </ul>
+  </article>
+
+  <article class="topic-group">
+    <h3>Errors, DB & Libraries</h3>
+    <ul>
+      <li><a href="try_except.html">Error handling (try / except)</a></li>
+      <li><a href="python_mysql.html">MySQL</a></li>
+      <li><a href="python_mongodb.html">MongoDB</a></li>
+      <li><a href="matplotlib.html">Matplotlib (visualization)</a></li>
+    </ul>
+  </article>
+
+  <article class="topic-group">
+    <h3>Advanced & Reference</h3>
+    <ul>
+      <li><a href="python_DSA.html">Python DSA (algorithms)</a></li>
+      <li><a href="python_reference.html">Reference</a></li>
+      <li><a href="python_examples.html">Examples & recipes</a></li>
+    </ul>
+  </article>
+</section>
+```
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Python Learning</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+</body>
+</html>
