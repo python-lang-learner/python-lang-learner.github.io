@@ -1,18 +1,71 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Intro to Python</title>
+  <title>Intro — Python Learning</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Intro to Python</h1>
-  <p>Python is a high-level programming language used for web development, data analysis, scripting and more.  
-  Start with variables, data types, control flow, functions, and then move to modules and projects.</p>
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="brand"><a href="index.html">Python Learning</a></h1>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="intro.html" class="active">Intro</a>
+      <a href="topics/index.html">Topics</a>
+      <a href="projects.html">Projects</a>
+    </nav>
+  </div>
+</header>
 
-  <h2>Quick example</h2>
-  <pre><code>print("Hello, world!")</code></pre>
+<main class="container intro-page">
+  <article class="lesson-intro">
+    <h2>Intro to Python — first steps</h2>
+    <p class="lede">
+      This lesson quickly introduces Python and shows how to run a simple program.
+      Follow the steps below — then head to <a href="topics/syntax.html">Syntax</a> for examples.
+    </p>
 
-  <p><a href="index.html">Back to home</a></p>
+```
+<section class="quick-setup">
+  <h3>1. Install Python</h3>
+  <p>Install Python (3.10+ recommended). On Windows download from python.org or use Chocolatey / on macOS use Homebrew.</p>
+</section>
+
+<section class="first-script">
+  <h3>2. Your first script</h3>
+  <p>Create a file named <code>hello.py</code> and paste:</p>
+  <pre class="code-block"><code>print("Hello, Python!")</code></pre>
+  <p>Run it with <code>python hello.py</code>.</p>
+</section>
+
+<section class="next-steps">
+  <h3>3. Next lessons</h3>
+  <ul>
+    <li><a href="topics/syntax.html">Syntax</a> — language basics and first script</li>
+    <li><a href="topics/output.html">Output</a> — printing & formatting</li>
+    <li><a href="topics/variables.html">Variables</a> — naming & storing values</li>
+  </ul>
+</section>
+
+<div class="lesson-actions">
+  <a class="btn btn-primary" href="topics/syntax.html">Start Syntax Lesson</a>
+  <a class="btn btn-outline" href="topics/index.html">View All Topics</a>
+</div>
+```
+
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Python Learning — Intro</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = (new Date()).getFullYear();</script>
+
 </body>
 </html>

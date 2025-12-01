@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -6,10 +7,9 @@
   <title>Python Learning — Home</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<header class="site-header">
+<header class="site-header hero-header">
   <div class="container header-inner">
     <h1 class="brand"><a href="index.html">Python Learning</a></h1>
     <nav class="main-nav">
@@ -21,56 +21,71 @@
   </div>
 </header>
 
-<main class="container home">
-
-  <section class="hero">
-    <div class="hero-left">
-      <h2>Learn Python — from basics to building real projects</h2>
+<main class="container home hero-landing">
+  <section class="hero-large">
+    <div class="hero-content">
+      <h2>From first script to real projects — learn Python the friendly way</h2>
       <p class="lede">
-        Python is a clean, beginner-friendly language used in web apps, data science, automation, and AI. 
-        Start learning step-by-step from syntax to projects.
+        A beginner-friendly, practical learning path: learn syntax, data types, control flow and then build small projects.
+        Follow guided lessons and example code along the way.
       </p>
-      <div class="cta-row">
-        <a class="btn" href="intro.html">Start Learning</a>
-        <a class="btn btn-outline" href="topics/index.html">Browse Topics</a>
-      </div>
-    </div>
 
-    <pre class="hero-code">
-print("Hello, world!")
-    </pre>
+```
+  <div class="cta-row">
+    <a class="btn btn-primary" href="intro.html">Get started — Intro</a>
+    <a class="btn btn-outline" href="topics/index.html">Browse Topics</a>
+  </div>
+
+  <ul class="hero-features">
+    <li><strong>Short lessons</strong> — bite-sized examples & exercises</li>
+    <li><strong>Hands-on</strong> — small projects you can finish in one sitting</li>
+    <li><strong>Searchable</strong> — find examples & reference quickly</li>
+  </ul>
+</div>
+
+<div class="hero-visual">
+  <div class="code-card">
+```
+
+<pre><code>def greet():
+    print("Welcome to Python Learning!")</code></pre>
+
+```
+  </div>
+</div>
+```
+
   </section>
 
-  <section class="highlight-boxes">
-    <div class="box">
+  <section class="featured row">
+    <article class="feature">
       <h3>What is Python?</h3>
-      <p>
-        Python is a high-level programming language focused on readability and simplicity. 
-        It is widely used in automation, websites, data analytics, ML, and more.
-      </p>
-    </div>
+      <p>Python is a versatile, readable language used for web apps, data science, automation and more. Start with the basics and grow to build projects.</p>
+    </article>
 
-    <div class="box">
-      <h3>Why learn Python?</h3>
-      <ul>
-        <li>Beginner-friendly and readable</li>
-        <li>Huge ecosystem of libraries</li>
-        <li>Used in jobs & real-world apps</li>
-        <li>Best for students & professionals</li>
-      </ul>
-    </div>
+```
+<article class="feature">
+  <h3>How to progress</h3>
+  <p>Start with syntax → variables → control flow → functions → data structures → small projects.</p>
+</article>
+
+<article class="feature">
+  <h3>Ready to practice?</h3>
+  <p>Check the Topics page for detailed examples, or jump to Projects to build something real.</p>
+</article>
+```
+
   </section>
 
   <section class="roadmap">
-    <h2>Beginner Roadmap</h2>
-
-    <ol class="steps">
-      <li><strong>Setup</strong> — Install Python and run your first program</li>
-      <li><strong>Basics</strong> — Syntax, variables, input, output</li>
-      <li><strong>Control Flow</strong> — if/else, loops</li>
-      <li><strong>Data Types</strong> — strings, lists, sets, dicts</li>
-      <li><strong>Functions</strong> — writing reusable code</li>
-      <li><strong>Projects</strong> — build simple applications</li>
+    <h3>Beginner roadmap</h3>
+    <ol>
+      <li>Install Python & run your first script</li>
+      <li>Learn syntax, variables and types</li>
+      <li>Control flow: if/else and loops</li>
+      <li>Collections: lists, dicts, sets, tuples</li>
+      <li>Functions & simple modules</li>
+      <li>Mini project: text-based game or data script</li>
     </ol>
   </section>
 
@@ -78,13 +93,11 @@ print("Hello, world!")
 
 <footer class="site-footer">
   <div class="container">
-    <p>© <span id="year"></span> Python Learning — beginner-friendly lessons</p>
+    <p>© <span id="year"></span> Python Learning</p>
   </div>
 </footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('year').textContent = (new Date()).getFullYear();</script>
 
 </body>
 </html>

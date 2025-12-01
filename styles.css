@@ -82,3 +82,39 @@ html,body{height:100%;margin:0;background:var(--bg);font-family:var(--font-sans)
   .hero-row { flex-direction:column; align-items:flex-start; }
   .hero-cta { margin-top:8px; }
 }
+/* ---------- Landing / Intro differences ---------- */
+
+/* Big hero for the homepage */
+.hero-header { background:#083b73; color:#fff; }
+.hero-landing .hero-large { display:flex; gap:28px; align-items:center; padding:48px 0; }
+.hero-landing .hero-content { flex:1; max-width:62%; }
+.hero-landing .hero-visual { width:34%; display:flex; justify-content:flex-end; }
+.hero-landing h2 { font-size:32px; margin:0 0 12px; color:#0b2b45; }
+.lede { color:#4f5b66; font-size:16px; line-height:1.6; }
+.btn { display:inline-block; padding:10px 16px; border-radius:8px; text-decoration:none; }
+.btn-primary { background:#0b66c3; color:#fff; }
+.btn-outline { background:transparent; border:1px solid #d7e9ff; color:#0b66c3; }
+.hero-features { margin-top:18px; list-style:none; padding:0; color:#4a5560; }
+.hero-features li { margin:8px 0; }
+
+/* code card visual */
+.code-card { background:#0b1220; color:#9fe3a5; padding:18px; border-radius:10px; font-family:monospace; box-shadow:0 10px 30px rgba(11,18,32,0.08); }
+
+/* feature row on homepage (three small cards) */
+.featured.row { display:flex; gap:18px; margin:26px 0; }
+.feature { flex:1; padding:18px; background:#fff; border-radius:8px; box-shadow:0 6px 18px rgba(20,40,60,0.03); }
+
+.roadmap { background:transparent; margin:28px 0 56px; }
+.roadmap ol { padding-left:18px; }
+
+/* Intro page smaller layout */
+.intro-page .lesson-intro { max-width:900px; margin:32px auto; padding:22px 12px; }
+.code-block { background:#0f1720; color:#cfeee1; padding:12px; border-radius:8px; font-family:monospace; }
+
+/* small responsive tweaks */
+@media (max-width:900px){
+  .hero-landing .hero-large { flex-direction:column; }
+  .hero-landing .hero-visual { width:100%; justify-content:flex-start; }
+  .featured.row { flex-direction:column; }
+  .hero-landing .hero-content { max-width:100%; }
+}
