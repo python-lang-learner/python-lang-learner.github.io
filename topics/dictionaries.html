@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dictionaries — Python Learning</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html">Python Learning</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../intro.html">Intro</a>
+      <a class="active" href="../topics/index.html">Topics</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap content">
+<h1>Dictionaries</h1>
+<p>Dictionaries store data in key–value pairs. They are unordered, mutable and optimized for fast lookups.</p>
+
+<section class="card">
+  <h2>Creating dictionaries</h2>
+<pre><code>student = {
+    "name": "Asha",
+    "age": 20,
+    "marks": 88
+}
+
+print(student["name"])   # Asha
+print(student.get("age"))</code></pre>
+</section>
+
+<section class="card">
+  <h2>Adding & updating</h2>
+<pre><code>student["city"] = "Pune"
+student["marks"] = 90   # update value</code></pre>
+</section>
+
+<section class="card">
+  <h2>Looping through dicts</h2>
+<pre><code>for key in student:
+    print(key, student[key])
+
+for key, value in student.items():
+    print(key, value)</code></pre>
+</section>
+
+<section class="card">
+  <h2>Exercises</h2>
+  <ol>
+    <li>Create a dictionary for 5 fruits → price, and print the cost of each.</li>
+    <li>Convert two lists (<code>keys</code>, <code>values</code>) into a dictionary.</li>
+  </ol>
+</section>
+
+<footer class="pager">
+  <a href="if_else.html" class="btn">Next → If–Else</a>
+  <a href="sets.html" class="btn btn-secondary">← Back</a>
+</footer>
+</main>
+</body>
+</html>

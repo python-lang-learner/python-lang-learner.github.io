@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Match Statement — Python Learning</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html">Python Learning</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../intro.html">Intro</a>
+      <a class="active" href="../topics/index.html">Topics</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap content">
+<h1>Match Statement</h1>
+<p><code>match</code> is Python’s version of switch-case (introduced in Python 3.10).</p>
+
+<section class="card">
+  <h2>Basic example</h2>
+<pre><code>day = 3
+
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case 3:
+        print("Wednesday")
+    case _:
+        print("Invalid")</code></pre>
+</section>
+
+<section class="card">
+  <h2>Multiple patterns</h2>
+<pre><code>match letter:
+    case 'a' | 'e' | 'i' | 'o' | 'u':
+        print("Vowel")
+    case _:
+        print("Consonant")</code></pre>
+</section>
+
+<section class="card">
+  <h2>Structured matching</h2>
+<pre><code>person = ("Asha", 20)
+
+match person:
+    case (name, age):
+        print(name, age)</code></pre>
+</section>
+
+<section class="card">
+  <h2>Exercises</h2>
+  <ol>
+    <li>Use match to print month name from number.</li>
+    <li>Match a tuple (<code>x, y</code>) and identify which quadrant point lies in.</li>
+  </ol>
+</section>
+
+<footer class="pager">
+  <a href="while_loops.html" class="btn">Next → While Loops</a>
+  <a href="if_else.html" class="btn btn-secondary">← Back</a>
+</footer>
+</main>
+</body>
+</html>

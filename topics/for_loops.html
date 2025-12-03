@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>For Loops — Python Learning</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html">Python Learning</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../intro.html">Intro</a>
+      <a class="active" href="../topics/index.html">Topics</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap content">
+<h1>For Loops</h1>
+<p><code>for</code> loops iterate over sequences like lists, strings, tuples, sets and dictionaries.</p>
+
+<section class="card">
+  <h2>Basic iteration</h2>
+<pre><code>for x in [1, 2, 3]:
+    print(x)</code></pre>
+</section>
+
+<section class="card">
+  <h2>Looping strings</h2>
+<pre><code>for ch in "python":
+    print(ch)</code></pre>
+</section>
+
+<section class="card">
+  <h2>Looping with range</h2>
+<pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+</section>
+
+<section class="card">
+  <h2>Looping dictionaries</h2>
+<pre><code>student = {"name": "Asha", "age": 20}
+
+for k, v in student.items():
+    print(k, v)</code></pre>
+</section>
+
+<section class="card">
+  <h2>Exercises</h2>
+  <ol>
+    <li>Print all squares from 1 to 20.</li>
+    <li>Loop through a list and count positive numbers.</li>
+  </ol>
+</section>
+
+<footer class="pager">
+  <a href="functions.html" class="btn btn-secondary">← Back</a>
+</footer>
+</main>
+</body>
+</html>

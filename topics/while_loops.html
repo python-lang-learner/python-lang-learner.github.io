@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>While Loops — Python Learning</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="../index.html">Python Learning</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../intro.html">Intro</a>
+      <a class="active" href="../topics/index.html">Topics</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap content">
+<h1>While Loops</h1>
+<p><code>while</code> repeats code as long as the condition is <strong>True</strong>.</p>
+
+<section class="card">
+  <h2>Basic example</h2>
+<pre><code>i = 1
+while i <= 5:
+    print(i)
+    i += 1</code></pre>
+</section>
+
+<section class="card">
+  <h2>Break & continue</h2>
+<pre><code>i = 1
+while i < 10:
+    if i == 5:
+        break
+    print(i)
+    i += 1</code></pre>
+</section>
+
+<section class="card">
+  <h2>Infinite loop (avoid!)</h2>
+<pre><code>while True:
+    print("Running")
+    break</code></pre>
+</section>
+
+<section class="card">
+  <h2>Exercises</h2>
+  <ol>
+    <li>Print all even numbers from 1 to 50.</li>
+    <li>Count digits in a number using a while loop.</li>
+  </ol>
+</section>
+
+<footer class="pager">
+  <a href="for_loops.html" class="btn">Next → For Loops</a>
+  <a href="match.html" class="btn btn-secondary">← Back</a>
+</footer>
+</main>
+</body>
+</html>
