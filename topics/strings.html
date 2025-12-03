@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Strings — Python Learning</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .lesson-intro{max-width:1000px;margin:36px auto;padding:18px;background:#fff;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+    .code-block pre{background:#0b1220;color:#dbeafe;padding:14px;border-radius:8px;overflow:auto;font-family:monospace}
+    .section{margin-top:18px}
+    table{border-collapse:collapse;width:100%;margin-top:12px}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner container">
+    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
+    <nav class="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../intro.html">Intro</a>
+      <a href="index.html" class="active">Topics</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article class="lesson-intro">
+    <h2>Strings</h2>
+    <p class="note">Strings are immutable sequences of Unicode characters. They offer rich methods for searching, slicing, formatting and manipulation.</p>
+
+    <section class="section">
+      <h3>Details</h3>
+      <p>Strings can be created with single, double, or triple quotes. They are indexed (0-based) and support slicing <code>s[start:stop]</code>. Because strings are immutable, most operations return new strings. Common methods: <code>.upper()</code>, <code>.lower()</code>, <code>.strip()</code>, <code>.split()</code>, <code>.join()</code>, <code>.replace()</code>.</p>
+    </section>
+
+    <section class="section">
+      <h3>Examples</h3>
+      <div class="code-block"><pre>s = " Hello, World!  "
+print(s.strip())
+print(s[1:6])
+parts = "a,b,c".split(",")
+print(parts)
+print(" - ".join(parts))
+name = "khushi"
+print(name.title())</pre></div>
+    </section>
+
+    <section class="section">
+      <h3>Useful methods (quick)</h3>
+      <table>
+        <thead><tr><th>Method</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>split()</td><td>Split string into list by separator</td></tr>
+          <tr><td>join()</td><td>Join iterable into a single string</td></tr>
+          <tr><td>replace()</td><td>Replace substring occurrences</td></tr>
+          <tr><td>strip()</td><td>Remove leading/trailing whitespace</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h3>Common mistakes</h3>
+      <ul>
+        <li>IndexError when accessing out-of-range indices.</li>
+        <li>Trying to mutate a string (e.g., <code>s[0] = 'A'</code> — raises <code>TypeError</code>).</li>
+        <li>Forgetting to strip newline when comparing user input.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h3>Exercises</h3>
+      <ol>
+        <li>Reverse a string using slicing.</li>
+        <li>Given a CSV string, split it and join it with semicolons.</li>
+        <li>Write a function that capitalizes each word in a sentence (title case).</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h3>Next steps</h3>
+      <p>Move to <a href="string-formatting.html">String Formatting</a> and <a href="regex.html">Regular Expressions</a> for text processing and pattern matching.</p>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer container center"><p>© Python Learning — Strings</p></footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tuples — Python Learning</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .lesson-intro{max-width:1000px;margin:36px auto;padding:18px;background:#fff;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
+    .code-block pre{background:#0b1220;color:#dbeafe;padding:14px;border-radius:8px;overflow:auto}
+    .section{margin-top:18px}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner container">
+    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
+    <nav class="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../intro.html">Intro</a>
+      <a href="index.html" class="active">Topics</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article class="lesson-intro">
+    <h2>Tuples</h2>
+    <p class="note">Tuples are ordered, immutable sequences. They are useful for fixed collections and for using as dict keys (when elements are hashable).</p>
+
+    <section class="section">
+      <h3>Details</h3>
+      <p>Create tuples with parentheses or by comma separation. Tuples support indexing and unpacking. Because they are immutable, operations that seem to modify create new tuples instead.</p>
+    </section>
+
+    <section class="section">
+      <h3>Examples</h3>
+      <div class="code-block"><pre>point = (3, 4)
+x, y = point
+single = (5,)   # single element tuple
+print(x, y)</pre></div>
+    </section>
+
+    <section class="section">
+      <h3>Common mistakes</h3>
+      <ul>
+        <li>Expecting methods like <code>append</code> (lists) to exist on tuples.</li>
+        <li>Forgetting trailing comma for single-element tuples.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h3>Exercises</h3>
+      <ol>
+        <li>Unpack a tuple of three elements into variables and print them.</li>
+        <li>Convert a list into a tuple and demonstrate immutability.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h3>Next steps</h3>
+      <p>Use tuples for fixed records. Explore <a href="lists.html">lists</a> when mutability is needed.</p>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer container center"><p>© Python Learning — Tuples</p></footer>
+</body>
+</html>
