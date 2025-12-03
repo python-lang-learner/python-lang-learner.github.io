@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Casting — Python Learning</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .lesson-intro { max-width:1000px; margin:36px auto; padding:18px; background:#fff; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.04);}
+    .code-block pre { background:#0b1220; color:#dbeafe; padding:14px; border-radius:8px; overflow:auto;}
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
+    <nav class="main-nav">
+      <a href="../index.html">Home</a>
+      <a href="../intro.html">Intro</a>
+      <a href="index.html" class="active">Topics</a>
+      <a href="../projects.html">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <article class="lesson-intro">
+
+    <h2>Casting (Type Conversion)</h2>
+    <p class="note">Casting means converting one data type into another using built-in functions.</p>
+
+    <section class="section">
+      <h3>Common Conversions</h3>
+      <div class="code-block"><pre>x = int("10")      # str → int
+y = float("3.14")  # str → float
+s = str(99)        # int → str</pre></div>
+    </section>
+
+    <section class="section">
+      <h3>Errors</h3>
+      <div class="code-block"><pre>int("hello")   # ValueError</pre></div>
+    </section>
+
+    <section class="section">
+      <h3>Exercises</h3>
+      <ol>
+        <li>Convert user input (string) into an integer.</li>
+        <li>Try converting “5.8” into <code>int</code>. What happens?</li>
+      </ol>
+    </section>
+
+  </article>
+</main>
+
+<footer class="site-footer container center"><p>© Python Learning — Casting</p></footer>
+
+</body>
+</html>

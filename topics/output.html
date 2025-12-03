@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Python Syntax — Python Learning</title>
+  <title>Python Output — Python Learning</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="../styles.css">
   <style>
     .lesson-intro { max-width:1000px; margin:36px auto; padding:18px; background:#fff; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.04);}
-    .code-block pre { background:#0b1220; color:#dbeafe; padding:14px; border-radius:8px; overflow:auto; font-family:monospace;}
+    .code-block pre { background:#0b1220; color:#dbeafe; padding:14px; border-radius:8px; overflow:auto; }
     .section { margin-top:18px; }
   </style>
 </head>
@@ -27,38 +27,40 @@
 
 <main class="container">
   <article class="lesson-intro">
-    <h2>Python Syntax</h2>
-    <p class="note">Python uses indentation, not braces, to define blocks of code. This makes syntax clean, readable and consistent.</p>
+
+    <h2>Output in Python</h2>
+    <p class="note">Python prints output using the built-in <code>print()</code> function.</p>
 
     <section class="section">
-      <h3>Indentation</h3>
-      <p>Python requires indentation to define code blocks (loops, functions, conditionals). Default is 4 spaces.</p>
-      <div class="code-block"><pre>if True:
-    print("Indented block")
-print("Outside block")</pre></div>
+      <h3>Basic printing</h3>
+      <div class="code-block"><pre>print("Hello World")
+print(10)
+print(3.14)</pre></div>
     </section>
 
     <section class="section">
-      <h3>Statements</h3>
-      <p>Python uses newlines to separate statements. Semicolons are allowed but discouraged.</p>
+      <h3>Multiple values</h3>
+      <div class="code-block"><pre>print("Name:", "Khushi", "Age:", 20)</pre></div>
     </section>
 
     <section class="section">
-      <h3>Comments</h3>
-      <p>Single-line comments: <code># comment</code><br>Docstrings: triple quotes <code>""" """</code>.</p>
+      <h3>End and Separator arguments</h3>
+      <div class="code-block"><pre>print("A", "B", "C", sep="-")     # A-B-C
+print("Hello", end="!!!")         # Hello!!!</pre></div>
     </section>
 
     <section class="section">
       <h3>Exercises</h3>
       <ol>
-        <li>Write an <code>if</code> block with proper indentation.</li>
-        <li>Rewrite a multi-line block incorrectly and observe the error.</li>
+        <li>Print 3 words separated by commas.</li>
+        <li>Print 5 numbers separated with <code> | </code>.</li>
       </ol>
     </section>
+
   </article>
 </main>
 
-<footer class="site-footer container center"><p>© Python Learning — Syntax</p></footer>
+<footer class="site-footer container center"><p>© Python Learning — Output</p></footer>
 
 </body>
 </html>
