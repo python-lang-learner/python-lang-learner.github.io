@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Regex — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Python Learning</a>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html" class="active">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Regular Expressions (regex)</h1>
+    <p>Use the <code>re</code> module for pattern matching in strings.</p>
+
+    <h2>Quick examples</h2>
+    <pre><code>import re
+
+# search
+m = re.search(r"\d{4}-\d{2}-\d{2}", "2025-12-31")
+if m:
+    print("Found date:", m.group())
+
+# find all
+emails = re.findall(r"[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)</code></pre>
+
+    <h2>Useful patterns</h2>
+    <ul>
+      <li><code>\d</code> digits, <code>\w</code> word char, <code>\s</code> whitespace</li>
+      <li>Quantifiers: <code>+</code>, <code>*</code>, <code>?</code>, <code>{n,m}</code></li>
+      <li>Groups and captures: <code>(...)</code>, non-capturing <code>(?:...)</code></li>
+    </ul>
+
+    <h2>Safety & performance</h2>
+    <p>Avoid catastrophic backtracking by using non-greedy tokens or simpler patterns. Always test complex regex on sample inputs.</p>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>

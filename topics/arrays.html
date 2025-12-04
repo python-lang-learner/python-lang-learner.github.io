@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arrays — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Python Learning</a>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html" class="active">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Arrays in Python (lists & array module)</h1>
+    <p>Python doesn't have a separate "array" type like some languages — the most commonly used sequence is <code>list</code>. For memory-efficient numeric arrays you can use the <code>array</code> module or NumPy (external library).</p>
+
+    <h2>1. Lists — the Python "array-like"</h2>
+    <p>Lists are dynamic, ordered, and can contain mixed types.</p>
+    <pre><code># create lists
+fruits = ["apple", "banana", "cherry"]
+numbers = [1, 2, 3, 4]
+
+# add, remove, index
+fruits.append("date")
+first = fruits[0]          # "apple"
+last = fruits[-1]          # "date"
+fruits.remove("banana")</code></pre>
+
+    <h3>Common operations</h3>
+    <ul>
+      <li><code>len(list)</code> — length</li>
+      <li><code>list.append(x)</code>, <code>list.insert(i,x)</code></li>
+      <li><code>list.pop()</code> — remove last or <code>pop(i)</code></li>
+      <li>slicing: <code>list[1:4]</code>, <code>list[::-1]</code></li>
+    </ul>
+
+    <h2>2. Numeric arrays (array module)</h2>
+    <p>The built-in <code>array</code> module is for compact numeric arrays of a single type.</p>
+    <pre><code>from array import array
+a = array('i', [1, 2, 3])   # 'i' = signed int
+a.append(4)
+a[0] = 10</code></pre>
+
+    <h2>3. When to use NumPy</h2>
+    <p>Use NumPy when you need fast vectorized operations, multi-dimensional arrays, or heavy numeric work (scientific computing).</p>
+
+    <h2>Exercises</h2>
+    <ol>
+      <li>Given a list of numbers, produce a new list with only even numbers.</li>
+      <li>Implement a function that rotates a list right by n steps.</li>
+    </ol>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>

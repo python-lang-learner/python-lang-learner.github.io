@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Modules — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Python Learning</a>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html" class="active">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Modules & Packages</h1>
+    <p>Modules are Python files providing functions, classes and variables. Packages are directories with an <code>__init__.py</code> (optional in modern Python) that group related modules.</p>
+
+    <h2>Importing</h2>
+    <pre><code>import math
+from math import sqrt
+import mymodule as mm</code></pre>
+
+    <h2>Creating a module</h2>
+    <p>Make a file <code>utils.py</code>:</p>
+    <pre><code># utils.py
+def greet(name):
+    return f"Hello, {name}"</code></pre>
+    <p>Then use it:</p>
+    <pre><code>from utils import greet
+print(greet("Anna"))</code></pre>
+
+    <h2>Packages</h2>
+    <pre><code>mypkg/
+  __init__.py
+  math_tools.py
+  io_tools.py</code></pre>
+
+    <h2>Installing & virtual environments</h2>
+    <p>Use <code>pip install package-name</code>. Always use a virtual environment: <code>python -m venv venv</code> then <code>venv\Scripts\activate</code> (Windows) or <code>source venv/bin/activate</code> (mac/linux).</p>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>

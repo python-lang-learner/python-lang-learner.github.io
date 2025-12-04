@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dates & Times — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Python Learning</a>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html" class="active">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Working with dates & times</h1>
+    <p>Python's built-in <code>datetime</code> module handles dates, times, timezones and formatting.</p>
+
+    <h2>Examples</h2>
+    <pre><code>from datetime import datetime, date, time, timedelta
+
+now = datetime.now()
+today = date.today()
+d = date(2025, 12, 31)
+tomorrow = today + timedelta(days=1)
+
+# format
+s = now.strftime("%Y-%m-%d %H:%M:%S")
+# parse
+dt = datetime.strptime("2025-12-31", "%Y-%m-%d")</code></pre>
+
+    <h2>Timezones</h2>
+    <p>Use <code>zoneinfo</code> (Python 3.9+) or third-party <code>pytz</code> for timezone-aware datetimes.</p>
+
+    <h2>Common tasks</h2>
+    <ul>
+      <li>Difference between datetimes: subtract to get <code>timedelta</code>.</li>
+      <li>Scheduling, formatting user-friendly dates, converting between zones.</li>
+    </ul>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>

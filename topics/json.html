@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JSON — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Python Learning</a>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html" class="active">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>JSON (JavaScript Object Notation)</h1>
+    <p>JSON is a lightweight text format for structured data. Python's <code>json</code> module converts between Python objects and JSON strings/files.</p>
+
+    <h2>Basic usage</h2>
+    <pre><code>import json
+
+data = {"name": "Alice", "age": 30, "skills": ["python", "sql"]}
+
+# to JSON string
+s = json.dumps(data)
+
+# to file
+with open("data.json","w") as f:
+    json.dump(data, f, indent=2)
+
+# read back
+with open("data.json") as f:
+    obj = json.load(f)</code></pre>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>JSON supports objects, arrays, strings, numbers, booleans, null.</li>
+      <li>Use <code>indent</code> for pretty output. For streaming large JSON, parse incrementally or use specialized libraries.</li>
+    </ul>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>
