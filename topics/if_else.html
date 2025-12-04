@@ -1,3 +1,4 @@
+<!--
 <!doctype html>
 <html lang="en">
 <head>
@@ -71,5 +72,93 @@ if x > 10:
   <a href="dictionaries.html" class="btn btn-secondary">← Back</a>
 </footer>
 </main>
+</body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>If / else — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-logo" href="/index.html">Python Learning</a>
+      <nav class="site-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a class="active" href="/topics/index.html">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <article>
+      <h1>Conditional statements — <code>if</code>, <code>elif</code>, <code>else</code></h1>
+
+      <section>
+        <h2>Basic pattern</h2>
+        <pre class="code">
+if condition1:
+    # do A
+elif condition2:
+    # do B
+else:
+    # default
+        </pre>
+      </section>
+
+      <section>
+        <h2>Examples</h2>
+        <pre class="code">
+x = 10
+if x < 0:
+    print("negative")
+elif x == 0:
+    print("zero")
+else:
+    print("positive")
+        </pre>
+      </section>
+
+      <section>
+        <h2>Boolean expressions</h2>
+        <p>You can combine conditions:</p>
+        <pre class="code">
+age = 20
+if 13 <= age <= 19:
+    print("teen")
+        </pre>
+        <p>Use <code>and</code>, <code>or</code>, <code>not</code> for complex logic.</p>
+      </section>
+
+      <section>
+        <h2>Ternary (one-line) conditional</h2>
+        <pre class="code">
+status = "even" if x % 2 == 0 else "odd"
+        </pre>
+      </section>
+
+      <section>
+        <h2>Exercises</h2>
+        <ol>
+          <li>Given a score 0..100, print grade A/B/C/D/F using if/elif/else.</li>
+          <li>Write a function that returns whether a year is leap (hint: divisible by 4 but not by 100 unless 400).</li>
+        </ol>
+      </section>
+
+      <footer class="lesson-footer">
+        <a class="btn" href="/topics/match.html">Next: Pattern matching →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Python Learning</div>
+  </footer>
 </body>
 </html>

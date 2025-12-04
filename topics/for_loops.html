@@ -1,3 +1,4 @@
+<!--
 <!doctype html>
 <html lang="en">
 <head>
@@ -62,5 +63,102 @@ for k, v in student.items():
   <a href="functions.html" class="btn btn-secondary">← Back</a>
 </footer>
 </main>
+</body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For loops — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-logo" href="/index.html">Python Learning</a>
+      <nav class="site-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a class="active" href="/topics/index.html">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <article>
+      <h1>For loops</h1>
+      <p class="lede">Use <code>for</code> to iterate over sequences (lists, tuples, strings, ranges, etc.). For loops are fundamental for repeating tasks in Python.</p>
+
+      <section>
+        <h2>Basic syntax</h2>
+        <pre class="code">
+for item in sequence:
+    # use item
+    print(item)
+        </pre>
+        <p>Example: iterate over a list</p>
+        <pre class="code">
+fruits = ["apple", "banana", "cherry"]
+for f in fruits:
+    print("I like", f)
+        </pre>
+      </section>
+
+      <section>
+        <h2>Using <code>range()</code></h2>
+        <p><code>range(n)</code> produces numbers from 0 to n-1. Useful when you need an index.</p>
+        <pre class="code">
+for i in range(5):
+    print(i)  # 0 1 2 3 4
+        </pre>
+      </section>
+
+      <section>
+        <h2>Loop with index (enumerate)</h2>
+        <pre class="code">
+names = ["Ana", "Ben", "Cleo"]
+for idx, name in enumerate(names, start=1):
+    print(idx, name)
+        </pre>
+      </section>
+
+      <section>
+        <h2>Common patterns</h2>
+        <ul>
+          <li>Loop and build new list: use list comprehensions when possible</li>
+          <li>Break out early: use <code>break</code></li>
+          <li>Skip an iteration: use <code>continue</code></li>
+        </ul>
+        <pre class="code">
+total = 0
+for n in range(1, 11):
+    if n == 7:
+        continue
+    total += n
+print(total)
+        </pre>
+      </section>
+
+      <section>
+        <h2>Exercises</h2>
+        <ol>
+          <li>Write a loop to print even numbers from 2 to 20.</li>
+          <li>Given a list of grades, compute the average using a for loop.</li>
+          <li>Use a loop to build a list of squared numbers from 1..10.</li>
+        </ol>
+      </section>
+
+      <footer class="lesson-footer">
+        <a class="btn" href="/topics/while_loops.html">Next: While loops →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Python Learning — basic tutorials</div>
+  </footer>
 </body>
 </html>

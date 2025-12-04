@@ -1,3 +1,4 @@
+<!--
 <!doctype html>
 <html lang="en">
 <head>
@@ -70,5 +71,98 @@ match person:
   <a href="if_else.html" class="btn btn-secondary">← Back</a>
 </footer>
 </main>
+</body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Match — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-logo" href="/index.html">Python Learning</a>
+      <nav class="site-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a class="active" href="/topics/index.html">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <article>
+      <h1>Structural pattern matching — <code>match</code> (Python 3.10+)</h1>
+      <p class="lede">Pattern matching lets you destructure values and handle cases clearly. It's similar to switch/case in other languages but more powerful.</p>
+
+      <section>
+        <h2>Basic example</h2>
+        <pre class="code">
+def http_status(status):
+    match status:
+        case 200:
+            return "OK"
+        case 404:
+            return "Not found"
+        case _:
+            return "Other"
+        </pre>
+      </section>
+
+      <section>
+        <h2>Matching sequences & capturing</h2>
+        <pre class="code">
+match point:
+    case (0, 0):
+        print("origin")
+    case (x, 0):
+        print("x on axis:", x)
+    case (x, y):
+        print("coords:", x, y)
+        </pre>
+      </section>
+
+      <section>
+        <h2>Matching dict-like objects</h2>
+        <pre class="code">
+data = {"type":"user", "id": 5}
+match data:
+    case {"type":"user", "id": uid}:
+        print("User id", uid)
+    case _:
+        print("Unknown")
+        </pre>
+      </section>
+
+      <section>
+        <h2>When to use</h2>
+        <ul>
+          <li>Dispatching on structured data</li>
+          <li>Replacing long if/elif chains when matching shapes</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Exercises</h2>
+        <ol>
+          <li>Write a <code>match</code> that handles 2- and 3-element tuples differently.</li>
+          <li>Use <code>match</code> to parse simple command dictionaries and return actions.</li>
+        </ol>
+      </section>
+
+      <footer class="lesson-footer">
+        <a class="btn" href="/topics/dictionaries.html">Next: Dictionaries →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Python Learning</div>
+  </footer>
 </body>
 </html>

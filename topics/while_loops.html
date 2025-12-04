@@ -1,10 +1,11 @@
+<!--
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>While Loops — Python Learning</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
@@ -62,5 +63,95 @@ while i < 10:
   <a href="match.html" class="btn btn-secondary">← Back</a>
 </footer>
 </main>
+</body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>While loops — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-logo" href="/index.html">Python Learning</a>
+      <nav class="site-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a class="active" href="/topics/index.html">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <article>
+      <h1>While loops</h1>
+      <p class="lede">A <code>while</code> loop repeats as long as a condition remains true. Use it for indefinite loops where iteration count is unknown.</p>
+
+      <section>
+        <h2>Basic syntax</h2>
+        <pre class="code">
+while condition:
+    # repeated code
+    do_something()
+        </pre>
+      </section>
+
+      <section>
+        <h2>Example: countdown</h2>
+        <pre class="code">
+n = 5
+while n > 0:
+    print(n)
+    n -= 1
+print("Lift off!")
+        </pre>
+      </section>
+
+      <section>
+        <h2>Guard against infinite loops</h2>
+        <p>Make sure the loop condition will become false eventually, or use a <code>break</code> with a safe timeout.</p>
+        <pre class="code">
+attempts = 0
+while True:
+    attempts += 1
+    if attempts > 5:
+        break
+        </pre>
+      </section>
+
+      <section>
+        <h2>Using while to read input</h2>
+        <pre class="code">
+# keep reading until user types "quit"
+while True:
+    s = input("Enter command: ")
+    if s == "quit":
+        break
+    print("You typed:", s)
+        </pre>
+      </section>
+
+      <section>
+        <h2>Exercises</h2>
+        <ul>
+          <li>Write a while-loop to sum numbers entered by user until they type "0".</li>
+          <li>Create a loop that asks for a password up to 3 times, then stops.</li>
+        </ul>
+      </section>
+
+      <footer class="lesson-footer">
+        <a class="btn" href="/topics/if_else.html">Next: If / else →</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Python Learning</div>
+  </footer>
 </body>
 </html>

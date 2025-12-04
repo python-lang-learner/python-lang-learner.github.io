@@ -1,4 +1,4 @@
-<!doctype html>
+<!--<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -64,5 +64,97 @@ for key, value in student.items():
   <a href="sets.html" class="btn btn-secondary">← Back</a>
 </footer>
 </main>
+</body>
+</html>
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dictionaries — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="site-logo" href="/index.html">Python Learning</a>
+      <nav class="site-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a class="active" href="/topics/index.html">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <article>
+      <h1>Dictionaries (dict)</h1>
+      <p class="lede">Dictionaries store key → value mappings. Keys are typically strings or numbers and must be immutable. Values can be anything.</p>
+
+      <section>
+        <h2>Create & access</h2>
+        <pre class="code">
+d = {"name":"Ada", "age":30}
+print(d["name"])       # Ada
+print(d.get("email"))  # None (safe access)
+        </pre>
+      </section>
+
+      <section>
+        <h2>Modify</h2>
+        <pre class="code">
+d["age"] = 31
+d["city"] = "Bengaluru"
+del d["city"]
+        </pre>
+      </section>
+
+      <section>
+        <h2>Iterate</h2>
+        <pre class="code">
+for k in d:
+    print(k, d[k])
+
+# keys(), values(), items()
+for k, v in d.items():
+    print(k, v)
+        </pre>
+      </section>
+
+      <section>
+        <h2>Common uses</h2>
+        <ul>
+          <li>Counting/frequency maps</li>
+          <li>Configuration objects</li>
+          <li>Storing structured data (records)</li>
+        </ul>
+        <pre class="code">
+# count words
+words = ["a","b","a"]
+counts = {}
+for w in words:
+    counts[w] = counts.get(w, 0) + 1
+        </pre>
+      </section>
+
+      <section>
+        <h2>Exercises</h2>
+        <ol>
+          <li>Write a function that inverts a dict (values → keys). What happens if values are not unique?</li>
+          <li>Given a list of people (name, score), build a dictionary mapping names to scores.</li>
+        </ol>
+      </section>
+
+      <footer class="lesson-footer">
+        <a class="btn" href="/topics/for_loops.html">Back to: For loops ←</a>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© Python Learning</div>
+  </footer>
 </body>
 </html>
