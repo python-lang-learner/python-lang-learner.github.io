@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virtual environments — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header"><div class="container">
+    <a class="brand" href="/index.html">Python Learning</a>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/intro.html">Intro</a>
+      <a href="/topics/index.html" class="active">Topics</a>
+      <a href="/projects.html">Projects</a>
+    </nav>
+  </div></header>
+
+  <main class="container narrow">
+    <h1>Virtual environments</h1>
+    <p>Virtual environments isolate project dependencies so different projects don't conflict.</p>
+
+    <h2>Create & activate</h2>
+    <pre><code>python -m venv venv        # create
+# Windows
+venv\Scripts\activate
+# mac / linux
+source venv/bin/activate</code></pre>
+
+    <h2>Deactivate</h2>
+    <pre><code>deactivate</code></pre>
+
+    <h2>Using with pip</h2>
+    <pre><code>pip install -r requirements.txt</code></pre>
+
+    <h2>Alternatives</h2>
+    <ul>
+      <li><strong>venv</strong> — built-in and widely used</li>
+      <li><strong>virtualenv</strong> — older alternative</li>
+      <li><strong>pipx</strong> — run CLI tools in isolated envs</li>
+      <li><strong>poetry / pipenv</strong> — higher-level tools for dependency + packaging management</li>
+    </ul>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>

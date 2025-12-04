@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PIP — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header"><div class="container">
+    <a class="brand" href="/index.html">Python Learning</a>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/intro.html">Intro</a>
+      <a href="/topics/index.html" class="active">Topics</a>
+      <a href="/projects.html">Projects</a>
+    </nav>
+  </div></header>
+
+  <main class="container narrow">
+    <h1>pip — Python package installer</h1>
+    <p><code>pip</code> installs and manages packages from PyPI.</p>
+
+    <h2>Common commands</h2>
+    <pre><code>pip install requests          # install package
+pip install "package==1.2.3"    # install specific version
+pip install -U package          # upgrade
+pip uninstall package</code></pre>
+
+    <h2>Requirements file</h2>
+    <pre><code># requirements.txt
+requests==2.31.0
+flask
+
+# install
+pip install -r requirements.txt</code></pre>
+
+    <h2>Best practices</h2>
+    <ul>
+      <li>Use a virtual environment per project.</li>
+      <li>Pin versions in production with a `requirements.txt` or `pip freeze > requirements.txt`.</li>
+      <li>Prefer `pip` from an activated venv to avoid global installs.</li>
+    </ul>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>

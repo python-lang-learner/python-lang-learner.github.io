@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>File handling — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header"><div class="container">
+    <a class="brand" href="/index.html">Python Learning</a>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/intro.html">Intro</a>
+      <a href="/topics/index.html" class="active">Topics</a>
+      <a href="/projects.html">Projects</a>
+    </nav>
+  </div></header>
+
+  <main class="container narrow">
+    <h1>File handling</h1>
+    <p>Open, read, write and manage files using the built-in file APIs.</p>
+
+    <h2>Open / read / write</h2>
+    <pre><code>with open("file.txt", "w", encoding="utf-8") as f:
+    f.write("Hello\n")
+
+with open("file.txt", "r", encoding="utf-8") as f:
+    text = f.read()</code></pre>
+
+    <h2>Read lines</h2>
+    <pre><code>with open("file.txt") as f:
+    for line in f:
+        print(line.strip())</code></pre>
+
+    <h2>Binary files</h2>
+    <pre><code>with open("image.png", "rb") as f:
+    data = f.read()</code></pre>
+
+    <h2>Paths</h2>
+    <pre><code>from pathlib import Path
+p = Path("data")
+p.exists()
+p.joinpath("file.txt")</code></pre>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>Always prefer `with` to ensure files close promptly.</li>
+      <li>Use `pathlib` for cross-platform path operations.</li>
+    </ul>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>

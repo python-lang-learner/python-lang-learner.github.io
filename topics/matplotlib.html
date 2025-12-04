@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Matplotlib — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header"><div class="container">
+    <a class="brand" href="/index.html">Python Learning</a>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/intro.html">Intro</a>
+      <a href="/topics/index.html" class="active">Topics</a>
+      <a href="/projects.html">Projects</a>
+    </nav>
+  </div></header>
+
+  <main class="container narrow">
+    <h1>Matplotlib — plotting in Python</h1>
+    <p>Matplotlib is the standard 2D plotting library. Use it for quick visualizations and static charts.</p>
+
+    <h2>Simple plot</h2>
+    <pre><code>import matplotlib.pyplot as plt
+
+x = [1,2,3,4]
+y = [10, 20, 15, 30]
+plt.plot(x, y, marker='o')
+plt.title("Sample plot")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.savefig("plot.png")   # save to file
+plt.show()</code></pre>
+
+    <h2>Scatter, bar, histogram</h2>
+    <pre><code>plt.scatter(x, y)
+plt.bar(["a","b","c"], [5,7,3])
+plt.hist(data, bins=20)</code></pre>
+
+    <h2>Notes</h2>
+    <ul>
+      <li>For interactive dashboards use <strong>plotly</strong> or other libraries.</li>
+      <li>Matplotlib integrates with pandas for quick plotting from DataFrames.</li>
+    </ul>
+
+    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+</body>
+</html>

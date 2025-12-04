@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Functions — Python Learning</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="../index.html">Python Learning</a>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../intro.html">Intro</a>
+        <a class="active" href="../topics/index.html">Topics</a>
+        <a href="../projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap content">
+    <h1>Functions</h1>
+    <p>Functions group reusable code. Use <code>def</code> to define a function and <code>return</code> to return a value.</p>
+
+    <section class="card">
+      <h2>Basic example</h2>
+      <pre><code>def greet(name):
+    return "Hello, " + name
+
+print(greet("Asha"))  # Hello, Asha</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Arguments & defaults</h2>
+      <pre><code>def power(x, n=2):   # n has default value 2
+    return x ** n
+
+print(power(3))    # 9
+print(power(3, 3)) # 27</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Docstrings</h2>
+      <p>Document your functions with a docstring right under the definition.</p>
+      <pre><code>def add(a, b):
+    """Return the sum of a and b."""
+    return a + b</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Exercises</h2>
+      <ol>
+        <li>Write a function that returns True if a number is prime.</li>
+        <li>Write a function that takes a list and returns the second largest value.</li>
+      </ol>
+    </section>
+
+    <footer class="pager">
+      <a href="range.html" class="btn">Next → Range</a>
+      <a href="datatypes.html" class="btn btn-secondary">← Back</a>
+    </footer>
+  </main>
+</body>
+</html>
