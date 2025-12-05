@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>String Formatting – Exercise Worksheet</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Python Learning</a>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html">Topics</a>
+        <a href="/projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>String Formatting – Exercise Worksheet</h1>
+    <p class="subtext">Practice questions to strengthen your understanding of f-strings, <code>.format()</code>, and formatting specifiers.</p>
+
+    <hr />
+
+    <h2>1. Basic f-string Questions</h2>
+    <ol>
+      <li>
+        Write an f-string that prints:
+        <pre><code>Name: Ravi, Age: 21</code></pre>
+      </li>
+
+      <li>
+        Given:
+        <pre><code>name = "Asha"
+score = 87</code></pre>
+        Print:  
+        <pre><code>Asha scored 87 marks.</code></pre>
+      </li>
+
+      <li>
+        Convert this to an f-string (don’t use <code>+</code>):
+        <pre><code>"Hello " + name + ", welcome!"</code></pre>
+      </li>
+    </ol>
+
+    <hr />
+
+    <h2>2. Number Formatting</h2>
+    <ol start="4">
+      <li>Format <code>3.14159</code> to show exactly 2 decimal places.</li>
+      <li>Format <code>25000</code> to include a comma (output: <code>25,000</code>).</li>
+      <li>Print <code>0.456</code> as a percentage with 1 decimal place.</li>
+    </ol>
+
+    <hr />
+
+    <h2>3. Alignment & Padding</h2>
+    <ol start="7">
+      <li>Center the text <code>"PYTHON"</code> in a width of 20 characters.</li>
+      <li>Left-align the text <code>"Data"</code> in a space of 10 characters.</li>
+      <li>
+        Pad the number <code>42</code> so output becomes:
+        <pre><code>00042</code></pre>
+      </li>
+    </ol>
+
+    <hr />
+
+    <h2>4. <code>.format()</code> Method</h2>
+    <ol start="10">
+      <li>
+        Use <code>.format()</code> to print:
+        <pre><code>My city is Mumbai</code></pre>
+      </li>
+      <li>
+        Reorder:
+        <pre><code>"{1} is before {0}".format("Beta", "Alpha")</code></pre>
+        What is the output?
+      </li>
+    </ol>
+
+    <hr />
+
+    <h2>5. Output Prediction</h2>
+    <ol start="12">
+      <li>
+        Predict output:
+        <pre><code>print(f"{5/2:.1f}")</code></pre>
+      </li>
+      <li>
+        Predict output:
+        <pre><code>print("Value: {:>6}".format(42))</code></pre>
+      </li>
+      <li>
+        Predict output:
+        <pre><code>print(f"{'Hi':^10}")</code></pre>
+      </li>
+    </ol>
+
+    <hr />
+
+    <h2>6. Bonus Practice</h2>
+    <ol start="15">
+      <li>Create a formatted invoice line like:  
+        <pre><code>Item: Pen      Qty: 3     Price: ₹45.00</code></pre>
+      </li>
+
+      <li>
+        Format a report card line:
+        <pre><code>Riya | Maths: 92 | Science: 88 | Avg: 90.0%</code></pre>
+      </li>
+
+      <li>
+        Build a multiline formatted message using f-string:
+        <pre><code>
+Hi Rahul, 
+Your order (#12345) is packed.
+Amount: ₹599.00
+        </code></pre>
+      </li>
+    </ol>
+
+    <hr />
+    <p class="muted"><a href="/topics/index.html">← Back to Topics</a></p>
+
+  </main>
+
+  <footer class="site-footer container">
+    © Python Learning
+  </footer>
+</body>
+</html>
