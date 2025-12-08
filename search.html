@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Search — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .wrap { max-width:980px; margin:0 auto; padding:18px; }
+    .search-bar { display:flex; gap:8px; margin-bottom:12px; }
+    .filters { display:flex; gap:8px; margin-bottom:12px; align-items:center; }
+    .result { padding:12px; border-radius:8px; background:#fff; margin-bottom:10px; box-shadow:0 6px 18px rgba(11,20,32,0.04); }
+    .badge { font-size:0.85rem; padding:4px 8px; border-radius:999px; background:#eef6ff; color:#0b6cf0; margin-left:8px; }
+    .muted { color:#666; font-size:0.95rem; }
+    mark { background: #ffeb3b; padding:0 2px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/index.html" class="logo">Python Learning</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Search</h1>
+
+    <div class="search-bar">
+      <input id="q" type="search" placeholder="Search topics, exercises, projects..." style="flex:1;padding:10px;border-radius:6px;border:1px solid #ddd">
+      <button id="btnSearch" style="padding:10px 14px;background:#0b6cf0;color:#fff;border:none;border-radius:6px">Search</button>
+    </div>
+
+    <div class="filters">
+      <label><input type="checkbox" id="filter-topics" checked> Topics</label>
+      <label><input type="checkbox" id="filter-exercises" checked> Exercises</label>
+      <label><input type="checkbox" id="filter-projects" checked> Projects</label>
+      <div style="margin-left:auto" class="muted" id="count"></div>
+    </div>
+
+    <div id="results"></div>
+  </main>
+
+  <footer class="site-footer" style="text-align:center;padding:18px;">© Python Learning</footer>
+
+  <script src="/scripts/search.js"></script>
+</body>
+</html>
