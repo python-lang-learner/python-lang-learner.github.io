@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>CSV Analyzer — Project</title><link rel="stylesheet" href="/styles.css"/><style>.wrap{max-width:900px;margin:0 auto;padding:18px}.code{background:#0b0f14;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto}</style></head>
+<body>
+  <header class="site-header"><div class="wrap"><a href="/projects/index.html">← Projects</a></div></header>
+  <main class="wrap">
+    <h1>CSV Data Analyzer</h1>
+    <p><strong>Difficulty:</strong> Intermediate • <strong>Dependencies:</strong> pandas</p>
+    <p>Load a CSV and print summary statistics and top rows for quick exploration.</p>
+
+    <p><a class="btn" href="/projects/files/analyzer.py" download>Download code (.py)</a></p>
+
+    <h3>Code (preview)</h3>
+    <pre class="code" tabindex="0">
+# analyzer.py
+# pip install pandas
+import pandas as pd
+from pathlib import Path
+
+FILE = Path("data.csv")  # replace with your CSV
+
+def summarize(path=FILE):
+    df = pd.read_csv(path)
+    print("Shape:", df.shape)
+    print("\nColumns:\n", df.columns.tolist())
+    print("\nHead:\n", df.head().to_string(index=False))
+    print("\nDescribe:\n", df.describe(include='all').to_string())
+
+if __name__ == "__main__":
+    if not FILE.exists():
+        print("Place a data.csv file in the current folder.")
+    else:
+        summarize()
+    </pre>
+
+    <h3>How to run</h3>
+    <ol>
+      <li>Install: <code>pip install pandas</code></li>
+      <li>Add a `data.csv` file next to `analyzer.py` and run: <code>python analyzer.py</code></li>
+    </ol>
+  </main>
+  <footer class="site-footer" style="text-align:center;padding:18px;">© Python Learning</footer>
+</body></html>

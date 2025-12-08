@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>To-Do CLI — Project</title><link rel="stylesheet" href="/styles.css"/><style>.wrap{max-width:900px;margin:0 auto;padding:18px}.code{background:#0b0f14;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto}</style></head>
+<body>
+  <header class="site-header"><div class="wrap"><a href="/projects/index.html">← Projects</a></div></header>
+  <main class="wrap">
+    <h1>To-Do CLI App</h1>
+    <p><strong>Difficulty:</strong> Beginner • <strong>Dependencies:</strong> None</p>
+    <p>Simple command-line to-do list saved in a local text file named <code>todo.txt</code>.</p>
+
+    <p><a class="btn" href="/projects/files/todo.py" download>Download code (.py)</a></p>
+
+    <h3>Code (preview)</h3>
+    <pre class="code" tabindex="0">
+# todo.py
+from pathlib import Path
+
+FILE = Path("todo.txt")
+
+def load_tasks():
+    if not FILE.exists():
+        return []
+    return [line.strip() for line in FILE.read_text(encoding='utf-8').splitlines() if line.strip()]
+
+def save_tasks(tasks):
+    FILE.write_text("\n".join(tasks), encoding='utf-8')
+
+def list_tasks(tasks):
+    if not tasks:
+        print("No tasks.")
+        return
+    for i, t in enumerate(tasks, 1):
+        print(f"{i}. {t}")
+
+def main():
+    tasks = load_tasks()
+    while True:
+        cmd = input("todo (add/list/done/quit): ").strip().lower()
+        if cmd == "add":
+            t = input("Task: ").strip()
+            if t:
+                tasks.append(t)
+                save_tasks(tasks)
+                print("Added.")
+        elif cmd == "list":
+            list_tasks(tasks)
+        elif cmd == "done":
+            list_tasks(tasks)
+            n = input("Complete task number: ").strip()
+            if n.isdigit():
+                idx = int(n) - 1
+                if 0 <= idx < len(tasks):
+                    tasks.pop(idx)
+                    save_tasks(tasks)
+                    print("Marked done.")
+                else:
+                    print("Invalid number.")
+        elif cmd in ("quit", "exit"):
+            break
+        else:
+            print("Unknown command.")
+
+if __name__ == '__main__':
+    main()
+    </pre>
+
+    <h3>How to run</h3>
+    <ol>
+      <li>Download `todo.py`.</li>
+      <li>Run: <code>python todo.py</code>. Use commands <code>add</code>, <code>list</code>, <code>done</code>, <code>quit</code>.</li>
+    </ol>
+  </main>
+  <footer class="site-footer" style="text-align:center;padding:18px;">© Python Learning</footer>
+</body></html>

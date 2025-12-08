@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Web Scraper — Project</title><link rel="stylesheet" href="/styles.css"/><style>.wrap{max-width:900px;margin:0 auto;padding:18px}.code{background:#0b0f14;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto}</style></head>
+<body>
+  <header class="site-header"><div class="wrap"><a href="/projects/index.html">← Projects</a></div></header>
+  <main class="wrap">
+    <h1>Web Scraper — Headlines</h1>
+    <p><strong>Difficulty:</strong> Intermediate • <strong>Dependencies:</strong> requests, beautifulsoup4</p>
+    <p>Scrapes headlines from a news site. Selector may need adjustment per site.</p>
+
+    <p><a class="btn" href="/projects/files/scraper.py" download>Download code (.py)</a></p>
+
+    <h3>Code (preview)</h3>
+    <pre class="code" tabindex="0">
+# scraper.py
+# pip install requests beautifulsoup4
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://www.bbc.com/news"
+
+def fetch_headlines(url=URL):
+    r = requests.get(url, timeout=10)
+    r.raise_for_status()
+    doc = BeautifulSoup(r.text, "html.parser")
+    headlines = []
+    for h in doc.select("h3"):
+        text = h.get_text(strip=True)
+        if text:
+            headlines.append(text)
+    return headlines[:10]
+
+if __name__ == "__main__":
+    for i, h in enumerate(fetch_headlines(), 1):
+        print(i, h)
+    </pre>
+
+    <h3>How to run</h3>
+    <ol>
+      <li>Install: <code>pip install requests beautifulsoup4</code></li>
+      <li>Run: <code>python scraper.py</code></li>
+      <li>Note: obey site terms and robots.txt, and adapt selectors as needed.</li>
+    </ol>
+  </main>
+  <footer class="site-footer" style="text-align:center;padding:18px;">© Python Learning</footer>
+</body></html>

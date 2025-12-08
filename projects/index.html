@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .wrap { max-width:1000px; margin:0 auto; padding:18px; }
+    .proj-list { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
+    .card { background:#fff;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(11,20,32,0.04); }
+    .meta { color:#666; font-size:0.95rem; margin-bottom:8px; }
+    .btn { display:inline-block;padding:8px 12px;border-radius:6px;background:#0b6cf0;color:#fff;text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap" style="display:flex;justify-content:space-between;align-items:center;">
+      <a href="/index.html" class="logo">Python Learning</a>
+      <nav><a href="/index.html">Home</a> <a href="/topics/index.html" style="margin-left:12px;">Topics</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Mini Projects</h1>
+    <p class="meta">Click a project to view details, code and download the runnable `.py` file.</p>
+
+    <div class="proj-list">
+      <div class="card">
+        <h3>Number Guessing Game</h3>
+        <p class="meta">Beginner • Console game</p>
+        <p>Guess a random number and receive hints until you find it.</p>
+        <p><a class="btn" href="/projects/number-guessing.html">Open project</a></p>
+      </div>
+
+      <div class="card">
+        <h3>To-Do CLI App</h3>
+        <p class="meta">Beginner • File-backed</p>
+        <p>Simple command-line to-do list stored in a text file.</p>
+        <p><a class="btn" href="/projects/todo-cli.html">Open project</a></p>
+      </div>
+
+      <div class="card">
+        <h3>Web Scraper (Headlines)</h3>
+        <p class="meta">Intermediate • requests + BeautifulSoup</p>
+        <p>Scrape headlines from a news site (be mindful of site rules).</p>
+        <p><a class="btn" href="/projects/web-scraper.html">Open project</a></p>
+      </div>
+
+      <div class="card">
+        <h3>CSV Data Analyzer</h3>
+        <p class="meta">Intermediate • pandas</p>
+        <p>Load CSV and print summary statistics and top rows.</p>
+        <p><a class="btn" href="/projects/csv-analyzer.html">Open project</a></p>
+      </div>
+
+      <div class="card">
+        <h3>Simple Flask Notes App</h3>
+        <p class="meta">Intermediate • Flask web app</p>
+        <p>Tiny web app to add and view notes (for learning Flask).</p>
+        <p><a class="btn" href="/projects/flask-notes.html">Open project</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" style="text-align:center;padding:18px;">© Python Learning</footer>
+</body>
+</html>

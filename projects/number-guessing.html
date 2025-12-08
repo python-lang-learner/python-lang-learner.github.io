@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Number Guessing — Project</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>.wrap{max-width:900px;margin:0 auto;padding:18px}.code{background:#0b0f14;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto}</style>
+</head>
+<body>
+  <header class="site-header"><div class="wrap"><a href="/projects/index.html">← Projects</a></div></header>
+  <main class="wrap">
+    <h1>Number Guessing Game</h1>
+    <p><strong>Difficulty:</strong> Beginner • <strong>Dependencies:</strong> None</p>
+    <p>A console game where the player guesses a random number between 1 and 100. The game gives hints "Too low" or "Too high".</p>
+
+    <p><a class="btn" href="/projects/files/number_guess.py" download>Download code (.py)</a></p>
+
+    <h3>Code (preview)</h3>
+    <pre id="code" class="code" tabindex="0">
+# number_guess.py
+import random
+
+def play():
+    print("Welcome to Number Guess!")
+    low, high = 1, 100
+    secret = random.randint(low, high)
+    attempts = 0
+
+    while True:
+        try:
+            guess = int(input(f"Guess a number between {low} and {high}: "))
+        except ValueError:
+            print("Please enter a valid integer.")
+            continue
+        attempts += 1
+        if guess == secret:
+            print(f"Correct! You took {attempts} attempts.")
+            break
+        elif guess < secret:
+            print("Too low — try again.")
+        else:
+            print("Too high — try again.")
+
+if __name__ == '__main__':
+    play()
+    </pre>
+
+    <h3>How to run</h3>
+    <ol>
+      <li>Download `number_guess.py` from above.</li>
+      <li>Run: <code>python number_guess.py</code></li>
+    </ol>
+  </main>
+  <footer class="site-footer" style="text-align:center;padding:18px;">© Python Learning</footer>
+</body>
+</html>

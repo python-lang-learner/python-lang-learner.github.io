@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Flask Notes — Project</title><link rel="stylesheet" href="/styles.css"/><style>.wrap{max-width:900px;margin:0 auto;padding:18px}.code{background:#0b0f14;color:#e6eef8;padding:12px;border-radius:8px;overflow:auto}</style></head>
+<body>
+  <header class="site-header"><div class="wrap"><a href="/projects/index.html">← Projects</a></div></header>
+  <main class="wrap">
+    <h1>Simple Flask Notes App</h1>
+    <p><strong>Difficulty:</strong> Intermediate • <strong>Dependencies:</strong> Flask</p>
+    <p>Tiny web app that stores notes in memory for demo (not persistent). Great to learn routes and templates.</p>
+
+    <p><a class="btn" href="/projects/files/app.py" download>Download code (.py)</a></p>
+
+    <h3>Code (preview)</h3>
+    <pre class="code" tabindex="0">
+# app.py
+# pip install flask
+from flask import Flask, request, redirect, render_template_string
+
+app = Flask(__name__)
+notes = []
+
+TEMPLATE = '''
+<!doctype html><html><head><meta charset="utf-8"><title>Notes</title></head>
+<body>
+  <h1>Notes</h1>
+  <form method="post" action="/add">
+    <input name="text" placeholder="Write a note" required>
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    {% for n in notes %}
+      <li>{{ n }}</li>
+    {% endfor %}
+  </ul>
+</body></html>
+'''
+
+@app.route('/')
+def index():
+    return render_template_string(TEMPLATE, notes=notes)
+
+@app.route('/add', methods=['POST'])
+def add():
+    text = request.form.get('text','').strip()
+    if text:
+        notes.append(text)
+    return redirect('/')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    </pre>
+
+    <h3>How to run</h3>
+    <ol>
+      <li>Install: <code>pip install flask</code></li>
+      <li>Run: <code>python app.py</code> and open <code>http://127.0.0.1:5000/</code></li>
+      <li>Note: This demo app stores notes in memory — restart loses data.</li>
+    </ol>
+  </main>
+  <footer class="site-footer" style="text-align:center;padding:18px;">© Python Learning</footer>
+</body></html>
