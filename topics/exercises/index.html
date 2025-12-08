@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exercises — Python Learning</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    /* small local tweaks for the exercises index */
+    .ex-list { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+    .ex-card { padding:14px; background:#fff; border-radius:8px; box-shadow:0 6px 18px rgba(11,20,32,0.04); }
+    .search { margin: 12px 0 18px 0; display:flex; gap:8px; }
+    .search input { flex:1; padding:8px 12px; border-radius:6px; border:1px solid #ddd; }
+    .count { color:#666; font-size:0.95rem; margin-left:6px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/index.html">Python Learning</a>
+      <nav class="main-nav">
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html">Topics</a>
+        <a class="active" href="/topics/exercises/index.html">Exercises</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Practice Worksheets</h1>
+    <p class="subtext">All exercises and worksheets grouped by topic. Use the search box to quickly filter the list.</p>
+
+    <div class="search">
+      <input id="searchBox" placeholder="Search worksheets (e.g. variables, loops, string formatting)"/>
+      <div class="count" id="resultCount"></div>
+    </div>
+
+    <div id="list" class="ex-list">
+      <!-- Static list for the worksheets we created earlier. If you add more files to the folder,
+           the script below will also auto-add links if it can find them. -->
+      <a class="ex-card" href="/topics/exercises/string-formatting-exercises.html"><strong>String Formatting — Exercises</strong><br/>f-strings, .format(), specifiers, alignment</a>
+
+      <a class="ex-card" href="/topics/exercises/variables-exercises.html"><strong>Variables — Exercises</strong><br/>assignment, scope, swapping, best practices</a>
+
+      <a class="ex-card" href="/topics/exercises/data-types-exercises.html"><strong>Data Types — Exercises</strong><br/>types, conversions, mutability</a>
+
+      <a class="ex-card" href="/topics/exercises/loops-exercises.html"><strong>Loops — Exercises</strong><br/>for, while, enumerate, nested loops</a>
+
+      <a class="ex-card" href="/topics/exercises/functions-exercises.html"><strong>Functions — Exercises</strong><br/>parameters, *args, recursion, higher-order</a>
+
+      <a class="ex-card" href="/topics/exercises/collections-exercises.html"><strong>Lists/Tuples/Sets — Exercises</strong><br/>comprehensions, deduplication, unpacking</a>
+    </div>
+
+    <p class="muted" style="margin-top:18px"><a href="/topics/index.html">← Back to Topics</a></p>
+  </main>
+
+  <footer class="site-footer container">© Python Learning</footer>
+
+  <!-- optional small script: client-side search + auto-detect extra files (best-effort) -->
+  <script>
+    // Simple client-side filter for the list
+    const searchBox = document.getElementById('searchBox');
+    const cards = Array.from(document.querySelectorAll('#list .ex-card'));
+    const count = document.getElementById('resultCount');
+
+    function updateCount(n) {
+      count.textContent = n ? n + ' results' : '';
+    }
+
+    function filterCards(q) {
+      const ql = q.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach(card => {
+        const t = (card.textContent || '').toLowerCase();
+        if (!ql || t.includes(ql)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      updateCount(visible);
+    }
+
+    searchBox.addEventListener('input', e => filterCards(e.target.value));
+    updateCount(cards.length);
+
+    // Optional: Attempt to fetch index of files from same folder (works only if you enabled directory listing or provide a JSON index)
+    // We keep this commented because GitHub Pages won't allow directory listing, but if you ever add a JSON index you can auto-append cards.
+  </script>
+</body>
+</html>
