@@ -1,24 +1,20 @@
 [
   {
-    "title": "Variables — Exercises",
-    "url": "/topics/exercises/variables-exercises.html",
-    "excerpt": "Practice naming, assigning, swapping, scope and best practices.",
-    "tags": ["variables","exercises","basics"],
-    "type": "exercise"
+    "title": "Variables",
+    "url": "/topics/variables.html",
+    "type": "topic",
+    "excerpt": "What variables are, naming, assignment and examples"
   },
   {
-    "title": "For loops",
+    "title": "Loops",
     "url": "/topics/for_loops.html",
-    "excerpt": "Use for to iterate over sequences (lists, tuples, strings, ranges, etc.).",
-    "tags": ["loops","for","topics"],
-    "type": "topic"
+    "type": "topic",
+    "excerpt": "for loops, while loops and loop control statements"
   },
   {
-    "title": "Number Guessing Game (project)",
-    "url": "/projects/number-guessing.html",
-    "excerpt": "Simple console number guessing game. Download runnable .py file.",
-    "tags": ["project","console","beginner"],
-    "type": "project"
+    "title": "Worksheet: Variables",
+    "url": "/exercises/variables-exercises.html",
+    "type": "exercise",
+    "excerpt": "Practice questions and answers for variables"
   }
-  /* ... more items*/
 ]

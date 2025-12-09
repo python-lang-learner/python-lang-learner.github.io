@@ -44,6 +44,91 @@ a:hover { text-decoration: underline; }
 .main-nav a:hover { background: rgba(255,255,255,0.06); }
 .main-nav a.active { background: rgba(255,255,255,0.12); font-weight: 700; }
 
+/* Search block under header */
+.site-search {
+  width: 100%;
+  background: #f7fbfd;            /* subtle background */
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+  padding: 12px 20px;
+  box-sizing: border-box;
+}
+
+.site-search .search-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#site-search-input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-size: 16px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+#site-search-input:focus {
+  border-color: #1f6feb; /* primary accent */
+  box-shadow: 0 0 0 3px rgba(31,111,235,0.08);
+}
+
+#site-search-btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #1f6feb;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-results {
+  position: absolute;
+  margin-top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 1080px;
+  z-index: 40;
+  list-style: none;
+  background: white;
+  box-shadow: 0 8px 24px rgba(3,10,30,0.08);
+  border-radius: 8px;
+  padding: 8px 0;
+  display: none;
+  max-height: 320px;
+  overflow: auto;
+}
+
+/* result item */
+.search-results li {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+.search-results li:hover {
+  background: rgba(31,111,235,0.06);
+}
+.search-results .muted {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.search-results .title {
+  font-weight: 600;
+}
+
+/* small screens */
+@media (max-width: 700px) {
+  .site-search .search-wrap { padding: 0 8px; gap: 6px; }
+  .search-results { width: calc(100% - 16px); }
+}
+
 /* ========== Button system ========== */
 .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:10px 16px; border-radius: 10px; text-decoration:none; font-weight:600; cursor:pointer; border: none; transition: transform .08s ease, box-shadow .08s ease; }
 .btn:active { transform: translateY(1px); }

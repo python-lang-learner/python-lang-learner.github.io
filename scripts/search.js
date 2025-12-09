@@ -1,113 +1,112 @@
-// scripts/search.js
-(async function () {
-  // helper: get query param
-  function getQueryParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name) || "";
+// /scripts/search.js
+(() => {
+  const input = document.getElementById('site-search-input');
+  const btn = document.getElementById('site-search-btn');
+  const resultsEl = document.getElementById('site-search-results');
+
+  if (!input || !resultsEl) return;
+
+  let index = []; // array of {title, url, type, excerpt}
+  let lastQuery = '';
+
+  // fetch index once
+  async function loadIndex() {
+    try {
+      const res = await fetch('/search_index.json', {cache: "no-store"});
+      if (!res.ok) throw new Error('index not found');
+      index = await res.json();
+    } catch (err) {
+      console.warn('Search index load error:', err);
+      index = [];
+    }
+  }
+  loadIndex();
+
+  function highlight(text, query) {
+    if (!query) return text;
+    const q = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return text.replace(new RegExp(q, 'ig'), (m) => `<mark style="background: #fff7cc; padding:0 2px;border-radius:2px;color:inherit">${m}</mark>`);
   }
 
-  // fetch index
-  let index = [];
-  try {
-    const r = await fetch("/search_index.json");
-    if (!r.ok) throw new Error("Index not found");
-    index = await r.json();
-  } catch (err) {
-    document.getElementById("results").innerHTML = "<p style='color:#c00;'>Search index not found. Run generator or create <code>/search_index.json</code>.</p>";
-    console.error(err);
-    return;
-  }
-
-  const input = document.getElementById("q");
-  const btn = document.getElementById("btnSearch");
-  const resRoot = document.getElementById("results");
-  const countEl = document.getElementById("count");
-  const fTopics = document.getElementById("filter-topics");
-  const fExercises = document.getElementById("filter-exercises");
-  const fProjects = document.getElementById("filter-projects");
-
-  // initialize with q param
-  const initialQ = getQueryParam("q");
-  input.value = initialQ;
-
-  function normalize(s) { return (s || "").toString().toLowerCase(); }
-  function highlight(text, q) {
-    if (!q) return text;
-    const esc = q.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    return text.replace(new RegExp(esc, "ig"), match => `<mark>${match}</mark>`);
-  }
-
-  function matchesItem(item, q) {
-    q = q.trim().toLowerCase();
-    if (!q) return true;
-    const hay = (item.title + " " + item.excerpt + " " + (item.tags||[]).join(" ")).toLowerCase();
-    return hay.indexOf(q) !== -1;
-  }
-
-  function scoreItem(item, q) {
-    q = q.trim().toLowerCase();
-    if (!q) return 0;
-    let score = 0;
-    const title = item.title.toLowerCase();
-    if (title.includes(q)) score += 5;
-    const excerpt = (item.excerpt||"").toLowerCase();
-    if (excerpt.includes(q)) score += 2;
-    if ((item.tags||[]).join(" ").toLowerCase().includes(q)) score += 1;
-    return score;
-  }
-
-  function filterAndRender() {
-    const q = input.value.trim();
-    // filter types
-    const types = [];
-    if (fTopics.checked) types.push("topic");
-    if (fExercises.checked) types.push("exercise");
-    if (fProjects.checked) types.push("project");
-
-    let results = index
-      .filter(i => types.includes(i.type))
-      .filter(i => matchesItem(i, q))
-      .map(i => ({item:i, score: scoreItem(i,q)}))
-      .sort((a,b) => b.score - a.score);
-
-    // show count
-    countEl.textContent = results.length + " results";
-
-    if (results.length === 0) {
-      resRoot.innerHTML = `<p class="muted">No results — try different keywords.</p>`;
+  function showResults(list) {
+    resultsEl.innerHTML = '';
+    if (!list.length) {
+      resultsEl.style.display = 'none';
       return;
     }
-
-    // render
-    resRoot.innerHTML = results.map(r => {
-      const it = r.item;
-      const t = highlight(it.title, q);
-      const ex = highlight(it.excerpt || "", q);
-      const badge = `<span class="badge">${it.type}</span>`;
-      return `<article class="result">
-        <h3><a href="${it.url}">${t}</a> ${badge}</h3>
-        <p class="muted">${ex}</p>
-        <p><a href="${it.url}">Open</a></p>
-      </article>`;
-    }).join("\n");
+    const frag = document.createDocumentFragment();
+    list.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = `<div class="title">${highlight(item.title, lastQuery)}</div>
+                      <div class="muted">${highlight(item.type || '', lastQuery)} — ${highlight(item.excerpt || '', lastQuery)}</div>`;
+      li.addEventListener('click', () => {
+        window.location.href = item.url;
+      });
+      frag.appendChild(li);
+    });
+    resultsEl.appendChild(frag);
+    resultsEl.style.display = 'block';
   }
 
-  // wire events
-  btn.addEventListener("click", () => {
-    // update URL param without reload
-    const q = input.value.trim();
-    const url = new URL(window.location);
-    url.searchParams.set("q", q);
-    history.replaceState({}, "", url);
-    filterAndRender();
+  function doSearch(q) {
+    lastQuery = q.trim();
+    if (!lastQuery) {
+      resultsEl.style.display = 'none';
+      return;
+    }
+    const terms = lastQuery.toLowerCase().split(/\s+/).filter(Boolean);
+    // score: title matches higher, url/type next, excerpt lower
+    const scored = index.map(it => {
+      const title = (it.title||'').toLowerCase();
+      const excerpt = (it.excerpt||'').toLowerCase();
+      const type = (it.type||'').toLowerCase();
+      let score = 0;
+      for (const t of terms) {
+        if (title.includes(t)) score += 10;
+        if (type.includes(t)) score += 4;
+        if (excerpt.includes(t)) score += 2;
+        if ((it.url||'').toLowerCase().includes(t)) score += 3;
+      }
+      return {it, score};
+    }).filter(s => s.score > 0)
+      .sort((a,b) => b.score - a.score)
+      .slice(0, 10)
+      .map(s => s.it);
+    showResults(scored);
+  }
+
+  let debounce;
+  input.addEventListener('input', (e) => {
+    clearTimeout(debounce);
+    debounce = setTimeout(() => doSearch(e.target.value), 150);
   });
 
-  // filter on Enter key
-  input.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); btn.click(); } });
+  // Enter: go to first result
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const first = resultsEl.querySelector('li');
+      if (first) first.click();
+      else if (input.value.trim()) {
+        // fallback: navigate to search page with query param
+        window.location.href = `/search.html?q=${encodeURIComponent(input.value.trim())}`;
+      }
+    } else if (e.key === 'Escape') {
+      resultsEl.style.display = 'none';
+    }
+  });
 
-  // filters
-  [fTopics, fExercises, fProjects].forEach(cb => cb.addEventListener("change", filterAndRender));
+  // click search button: go to search page with query
+  btn.addEventListener('click', () => {
+    const q = input.value.trim();
+    if (!q) return input.focus();
+    window.location.href = `/search.html?q=${encodeURIComponent(q)}`;
+  });
 
-  // initial render
-  filterAndRender();
+  // click outside - hide results
+  document.addEventListener('click', (e) => {
+    if (!resultsEl.contains(e.target) && e.target !== input && e.target !== btn) {
+      resultsEl.style.display = 'none';
+    }
+  });
 })();
