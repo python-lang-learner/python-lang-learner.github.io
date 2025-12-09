@@ -128,3 +128,7 @@ a:hover { text-decoration: underline; }
 .toggle-btn:hover {
   background: #004a99;
 }
+/* Search results */
+.search-result { padding:12px; border-radius:8px; background:#fff; box-shadow:0 6px 18px rgba(11,20,32,0.04); margin-bottom:10px; }
+.search-result h3 { margin:0 0 6px 0; }
+.search-result .muted { color:#666; }
