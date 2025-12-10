@@ -4,54 +4,172 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>File handling — Python Learning</title>
+
+  <!-- use absolute path so pages inside /topics/ load CSS correctly -->
   <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    /* small lesson-specific adjustments (optional) */
+    .lesson-hero { max-width:1080px; margin:40px auto 12px; padding:0 20px; }
+    .lesson-hero h1 { font-size:34px; margin-bottom:6px; }
+    .lesson-hero p { color:#64748b; margin-bottom:18px; }
+
+    .examples { max-width:1080px; margin: 8px auto 48px; padding:0 20px; }
+    .code-block { background:#0b1220; color:#e6edf3; padding:18px; border-radius:8px; font-family: "Courier New", monospace; overflow:auto; }
+    .cmd { background:#f3f6f9; color:#0b1220; padding:10px 12px; border-radius:6px; display:inline-block; margin-bottom:12px; }
+    .download-btn { display:inline-block; margin-top:12px; padding:8px 14px; background:#1f6feb; color:white; border-radius:8px; text-decoration:none; font-weight:600;}
+    .section { margin-bottom:28px; }
+    .muted { color:#64748b; font-size:15px; }
+    .exercise { border-left:4px solid #e6f0ff; background:#fbfdff; padding:12px 14px; border-radius:6px; margin-top:12px; }
+  </style>
 </head>
 <body>
-  <header class="site-header"><div class="container">
-    <a class="brand" href="/index.html">Python Learning</a>
-    <nav class="main-nav">
-      <a href="/index.html">Home</a>
-      <a href="/intro.html">Intro</a>
-      <a href="/topics/index.html" class="active">Topics</a>
-      <a href="/projects.html">Projects</a>
-    </nav>
-  </div></header>
+  <!-- If you use a header template on your site, paste this page's main content section below header -->
+  <header class="site-header">
+    <!-- your site header/nav goes here (if you're using global header skip replicating) -->
+  </header>
 
-  <main class="container narrow">
-    <h1>File handling</h1>
-    <p>Open, read, write and manage files using the built-in file APIs.</p>
+  <main>
+    <section class="lesson-hero">
+      <h1>File handling — open, read, write and delete files (Python)</h1>
+      <p class="muted">Learn how to work with files in Python safely: reading, writing, appending, and removing files. This lesson shows examples you can download and run.</p>
+      <a class="download-btn" href="/downloads/file_handling_examples.py" download>Download examples (.py)</a>
+    </section>
 
-    <h2>Open / read / write</h2>
-    <pre><code>with open("file.txt", "w", encoding="utf-8") as f:
-    f.write("Hello\n")
+    <section class="examples">
+      <article class="section">
+        <h2>1. Opening files — the `open()` function</h2>
+        <p class="muted">Use `open(path, mode)` where <code>mode</code> is e.g. <code>'r'</code>, <code>'w'</code>, <code>'a'</code>, <code>'rb'</code>, <code>'w+'</code> etc. Always prefer the <code>with</code> statement (context manager) to auto-close files.</p>
 
-with open("file.txt", "r", encoding="utf-8") as f:
-    text = f.read()</code></pre>
+        <div class="code-block" aria-label="example open read">
+<pre># read entire file (text)
+with open('data/example.txt', 'r', encoding='utf-8') as f:
+    content = f.read()
+    print(content)</pre>
+        </div>
+      </article>
 
-    <h2>Read lines</h2>
-    <pre><code>with open("file.txt") as f:
+      <article class="section">
+        <h2>2. Reading methods</h2>
+        <ul class="muted">
+          <li><code>.read()</code> — read full file as string.</li>
+          <li><code>.readline()</code> — read next line.</li>
+          <li><code>.readlines()</code> — read all lines into a list.</li>
+        </ul>
+
+        <div class="code-block" aria-label="read lines example">
+<pre># iterate lines lazily
+with open('data/example.txt', 'r', encoding='utf-8') as f:
     for line in f:
-        print(line.strip())</code></pre>
+        print(line.strip())</pre>
+        </div>
+      </article>
 
-    <h2>Binary files</h2>
-    <pre><code>with open("image.png", "rb") as f:
-    data = f.read()</code></pre>
+      <article class="section">
+        <h2>3. Writing and appending</h2>
+        <p class="muted">Use <code>'w'</code> to overwrite (creates file if missing) and <code>'a'</code> to append.</p>
 
-    <h2>Paths</h2>
-    <pre><code>from pathlib import Path
-p = Path("data")
-p.exists()
-p.joinpath("file.txt")</code></pre>
+        <div class="code-block">
+<pre># overwrite or create
+with open('data/out.txt', 'w', encoding='utf-8') as f:
+    f.write("Hello, world!\n")
 
-    <h2>Notes</h2>
-    <ul>
-      <li>Always prefer `with` to ensure files close promptly.</li>
-      <li>Use `pathlib` for cross-platform path operations.</li>
-    </ul>
+# append
+with open('data/out.txt', 'a', encoding='utf-8') as f:
+    f.write("Another line\n")</pre>
+        </div>
+      </article>
 
-    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
+      <article class="section">
+        <h2>4. Binary files (images, audio) and bytes</h2>
+        <div class="code-block">
+<pre># read an image bytes
+with open('images/pic.jpg', 'rb') as f:
+    data = f.read()
+# write binary
+with open('images/copy.jpg', 'wb') as out:
+    out.write(data)</pre>
+        </div>
+      </article>
+
+      <article class="section">
+        <h2>5. Safe file operations & deleting</h2>
+        <p class="muted">Use <code>os</code> and <code>pathlib</code> for safe checks and deletion.</p>
+
+        <div class="code-block">
+<pre>import os
+from pathlib import Path
+
+p = Path('data/out.txt')
+if p.exists():
+    p.unlink()  # deletes file
+else:
+    print('File not found')</pre>
+        </div>
+      </article>
+
+      <article class="section">
+        <h2>6. Example: read → transform → write</h2>
+
+        <div class="code-block">
+<pre># convert file lines to uppercase and write to new file
+from pathlib import Path
+
+src = Path('data/example.txt')
+dst = Path('data/example_upper.txt')
+
+if src.exists():
+    with src.open('r', encoding='utf-8') as r, dst.open('w', encoding='utf-8') as w:
+        for line in r:
+            w.write(line.upper())</pre>
+        </div>
+      </article>
+
+      <article class="section">
+        <h2>7. Using temporary files</h2>
+        <p class="muted">Use the <code>tempfile</code> module to create temporary files safely (they are often removed automatically when closed).</p>
+        <div class="code-block">
+<pre>import tempfile
+
+with tempfile.TemporaryDirectory() as tmpdir:
+    tmpfile = Path(tmpdir) / 'demo.txt'
+    tmpfile.write_text('temp data', encoding='utf-8')
+    print('temp path:', tmpfile)</pre>
+        </div>
+      </article>
+
+      <article class="section">
+        <h2>8. Example file-handling script (downloadable)</h2>
+        <p class="muted">The downloadable script includes the examples above packaged into functions you can run locally.</p>
+        <p class="exercise"><strong>Try this:</strong> 1) Download <code>file_handling_examples.py</code>, 2) create a folder <code>data/</code>, 3) create a small file <code>data/example.txt</code> and run <code>python file_handling_examples.py</code> from your terminal.</p>
+      </article>
+
+      <article class="section">
+        <h2>Exercises (Practice)</h2>
+        <ol>
+          <li>Create a function <code>count_words(path)</code> that returns the number of words in a text file.</li>
+          <li>Write <code>replace_in_file(path, old, new)</code> to replace all occurrences of <code>old</code> with <code>new</code> inside a file safely (use temp file or write to new file then replace).</li>
+          <li>Implement <code>merge_files(outpath, *paths)</code> which concatenates multiple files into one.</li>
+        </ol>
+      </article>
+
+      <article class="section">
+        <h2>Notes & tips</h2>
+        <ul class="muted">
+          <li>Prefer <code>with open(...)</code> to ensure the file closes automatically.</li>
+          <li>Specify <code>encoding='utf-8'</code> for text files to avoid encoding issues.</li>
+          <li>Avoid using <code>os.remove</code> with unchecked paths; validate or confirm with user in CLI scripts.</li>
+        </ul>
+      </article>
+
+    </section>
   </main>
 
-  <footer class="site-footer container">© Python Learning</footer>
+  <footer style="max-width:1080px;margin:40px auto;padding:0 20px;color:#64748b;">
+    <p>Part of Python Learning — file handling lesson</p>
+  </footer>
+
+  <!-- load any site scripts as needed -->
+  <script src="/scripts/search.js" defer></script>
 </body>
 </html>
