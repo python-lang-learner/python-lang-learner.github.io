@@ -3,208 +3,148 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Python Learning — Learn Python Step by Step</title>
+  <title>Python Learning — Learn Python</title>
 
-  <!-- Global site stylesheet (must be at repo root) -->
+  <!-- Link to your stylesheet (adjust path if styles.css is elsewhere) -->
   <link rel="stylesheet" href="/styles.css" />
 
-  <!-- Small page-specific styles to achieve the modern layout while respecting your global CSS -->
+  <!-- Minimal page-level styles to ensure search box and hero spacing look OK even if CSS differences exist -->
   <style>
-    /* --- layout helpers --- */
-    .hero {
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-      padding:40px 18px;
-      border-radius:12px;
-      background: linear-gradient(180deg, rgba(6,30,64,0.04), rgba(6,30,64,0.00));
-      margin-bottom:28px;
+    /* quick safe defaults to align with your existing look */
+    body { font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; color:#222; margin:0; background:#fff; }
+    .site-header { background:#0b3a6b; color:#fff; }
+    .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
+    .topbar { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+    .logo { font-weight:800; color:#fff; text-decoration:none; font-size:20px; }
+    nav a { color:rgba(255,255,255,0.95); margin-left:18px; text-decoration:none; font-weight:600; }
+    nav a.active { background:#144b84; padding:8px 12px; border-radius:8px; color:#fff; }
+    /* search area under header */
+    .search-bar { background:#f6f8fb; padding:12px 0; border-bottom:1px solid #eef2f6; }
+    .search-row { display:flex; gap:8px; max-width:1080px; margin:0 auto; padding:8px 20px; }
+    .search-row input[type="search"] { flex:1; padding:10px 12px; border-radius:8px; border:1px solid #d6dce6; font-size:15px; }
+    .search-row button { background:#0b66ff; color:#fff; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:700; }
+    /* hero */
+    .hero { padding:48px 0 24px; }
+    .hero-grid { display:grid; grid-template-columns: 1fr 360px; gap:28px; align-items:start; }
+    .hero h1 { font-size:40px; margin:0 0 14px; color:#0b1f34; }
+    .hero p.lead { color:#6b7680; margin:0 0 20px; line-height:1.6; }
+    .btn-row { display:flex; gap:12px; margin-top:18px; }
+    .btn-primary { background:#0b66ff; color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:700; }
+    .btn-ghost { border:1px solid #d6dce6; padding:10px 14px; border-radius:8px; color:#0b1f34; text-decoration:none; display:inline-block; }
+    .side-cta { background:#fff; border-radius:10px; padding:18px; box-shadow:0 10px 20px rgba(11,30,60,0.06); }
+    .cards { margin-top:34px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .feature { background:#fff; padding:18px; border-radius:12px; box-shadow:0 8px 16px rgba(11,30,60,0.04); }
+    .recommended { margin-top:12px; color:#6b7680; font-size:14px; }
+    footer { padding:28px 0; color:#6b7680; font-size:14px; border-top:1px solid #eef2f6; }
+    @media (max-width:900px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      nav a{ display:inline-block; margin-left:12px; }
+      .search-row{ flex-direction:column; gap:10px; }
     }
-    @media(min-width:900px){ .hero { flex-direction:row; align-items:center; justify-content:space-between; } }
-
-    .hero-left { flex:1; min-width:0; }
-    .hero h1 { font-size:2rem; margin:0 0 8px 0; line-height:1.08; }
-    @media(min-width:900px){ .hero h1 { font-size:2.6rem; } }
-
-    .hero p.lead { margin:0 0 18px 0; color: #333; max-width:58ch; }
-    .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:6px; }
-    .btn-primary { background:#0b6cf0; color:#fff; padding:12px 20px; border-radius:8px; text-decoration:none; display:inline-block; font-weight:600; }
-    .btn-ghost { border:1px solid #d0d7e0; padding:10px 18px; border-radius:8px; text-decoration:none; color:#111; display:inline-block; background:transparent; }
-
-    .hero-right { width:320px; max-width:40%; min-width:220px; text-align:right; }
-    .hero-card { background:#fff; border-radius:10px; padding:14px; box-shadow:0 6px 20px rgba(11,20,32,0.06); }
-
-    /* features */
-    .features { display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-bottom:26px; }
-    .feature { background:#fff; padding:14px; border-radius:10px; box-shadow:0 6px 18px rgba(11,20,32,0.04); }
-
-    /* topics preview */
-    .topics-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin-top:12px; }
-    .topic-card { padding:12px; border-radius:8px; border:1px solid #eef2f7; background:#fff; text-decoration:none; color:inherit; display:block; }
-    .topic-card h4 { margin:0 0 8px 0; font-size:1rem; }
-    .topic-card p { margin:0;color:#555;font-size:0.9rem; }
-
-    /* exercises box */
-    .ex-box { display:flex; gap:12px; align-items:center; justify-content:space-between; padding:14px; border-radius:10px; background:linear-gradient(90deg,#f7fbff,#fff); box-shadow:0 6px 18px rgba(11,20,32,0.03); margin-bottom:20px; }
-    .ex-left { min-width:0; }
-    .ex-left h3 { margin:0 0 6px 0; }
-    .ex-left p { margin:0;color:#444; }
-
-    /* footer */
-    footer.site-footer { margin-top:36px; padding:18px 0; color:#666; font-size:0.92rem; text-align:center; }
-
-    /* small utilities */
-    .wrap { max-width:1100px; margin:0 auto; padding:0 18px; }
-    .muted { color:#666; font-size:0.95rem; }
-
   </style>
-  
 
+  <!-- small helper JS to make hero search work (client-side) -->
+  <script>
+    function doSiteSearch(e){
+      e && e.preventDefault();
+      const q = document.getElementById('site-search').value.trim();
+      if(!q) return;
+      // Quick client-side search redirect — opens topics index with query param
+      // You can replace this with a real search implementation later.
+      // For now we'll try matching topics page first:
+      const encoded = encodeURIComponent(q);
+      window.location = '/topics/index.html?q=' + encoded;
+    }
+    // optional: enter to submit
+    document.addEventListener('DOMContentLoaded', function(){
+      const frm = document.getElementById('search-form');
+      frm && frm.addEventListener('submit', doSiteSearch);
+    });
+  </script>
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
-    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;">
-      <a class="logo" href="/index.html" style="font-weight:700;text-decoration:none;color:#0b5be0;font-size:1.05rem;">Python Learning</a>
+    <div class="wrap topbar">
+      <a class="logo" href="/index.html">Python Learning</a>
+
       <nav>
-        <a href="/index.html" style="margin-right:12px;">Home</a>
-        <a href="/intro.html" style="margin-right:12px;">Intro</a>
-        <a href="/topics/index.html" style="margin-right:12px;">Topics</a>
-        <a href="/topics/exercises/index.html" style="margin-right:12px;">Exercises</a>
+        <a href="/index.html">Home</a>
+        <a href="/intro.html">Intro</a>
+        <a href="/topics/index.html">Topics</a>
+        <a href="/topics/exercises/index.html">Worksheets</a>
         <a href="/projects.html">Projects</a>
       </nav>
     </div>
-    
+
+    <!-- search area (under header) -->
+    <div class="search-bar" role="search">
+      <form id="search-form" class="search-row" onsubmit="doSiteSearch(event)">
+        <input id="site-search" type="search" placeholder="Search topics, exercises, projects..." aria-label="Search the site" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
   </header>
-  <!-- put this right after your <header>…</header> -->
-<div class="site-search">
-  <div class="search-wrap">
-    <input id="site-search-input" type="search" placeholder="Search topics, exercises, projects..." aria-label="Search site" />
-    <button id="site-search-btn" type="button">Search</button>
-    <ul id="site-search-results" class="search-results" aria-live="polite"></ul>
-  </div>
-</div>
 
-<!-- include script (use absolute path) -->
-<script src="/scripts/search.js" defer></script>
-
-
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-heading">
-      <div class="hero-left">
-        <h1 id="hero-heading">Learn Python — from basics to projects</h1>
-        <p class="lead">Clear, practical lessons and bite-sized practice worksheets to help you learn Python step-by-step. Start with fundamentals and progress to real projects and data work.</p>
-
-        <div class="cta-row">
-          <a class="btn-primary" href="/topics/index.html">Start Learning →</a>
-          <a class="btn-ghost" href="/topics/exercises/index.html">Practice Worksheets</a>
-          <a class="btn-ghost" href="/projects.html">Mini Projects</a>
-        </div>
-
-        <div style="margin-top:14px; color:#444; font-size:0.95rem;">
-          <strong>Recommended path:</strong>
-          <span style="display:inline-block;margin-left:8px;">Intro → Variables → Data types → Loops → Functions → Projects</span>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-card">
-          <h3 style="margin:0 0 6px 0;">New: Practice Worksheets</h3>
-          <p style="margin:0 0 10px 0;color:#555;">Interactive answer toggle, printable worksheets, and examples — perfect for quick practice or offline printing.</p>
-          <a class="btn-primary" href="/topics/exercises/index.html">Open Worksheets</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section aria-labelledby="features-heading" style="margin-bottom:18px;">
-      <h2 id="features-heading">Why this course</h2>
-      <div class="features">
-        <div class="feature">
-          <strong>Clear lessons</strong>
-          <p class="muted">Short, focused articles with code examples you can run immediately.</p>
-        </div>
-        <div class="feature">
-          <strong>Hands-on practice</strong>
-          <p class="muted">Worksheets with answers and a global Show/Hide toggle for instructors.</p>
-        </div>
-        <div class="feature">
-          <strong>Project-based</strong>
-          <p class="muted">Small projects to build a portfolio and practise real tasks.</p>
-        </div>
-        <div class="feature">
-          <strong>Beginner → Advanced</strong>
-          <p class="muted">Curated topics: from syntax to DSA, databases and plotting.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXERCISES PROMO -->
-    <section style="margin-bottom:20px;">
-      <div class="ex-box">
-        <div class="ex-left">
-          <h3>Practice — instantly</h3>
-          <p>Worksheets per topic (Variables, Loops, Functions, Data types, Regex, File handling and more).</p>
-        </div>
+  <!-- Hero -->
+  <main>
+    <section class="hero wrap">
+      <div class="hero-grid">
         <div>
-          <a class="btn-primary" href="/topics/exercises/index.html">All Worksheets</a>
+          <h1>Learn Python — from basics to projects</h1>
+          <p class="lead">
+            Clear, practical lessons and bite-sized practice worksheets to help you learn Python step-by-step.
+            Start with fundamentals and progress to small real projects and data work.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn-primary" href="/intro.html">Start learning →</a>
+            <a class="btn-ghost" href="/topics/exercises/index.html">Practice Worksheets</a>
+            <a class="btn-ghost" href="/projects.html">Mini Projects</a>
+          </div>
+
+          <div class="recommended">
+            <strong>Recommended path:</strong>
+            Intro → Variables → Data types → Loops → Functions → Projects
+          </div>
+
+          <!-- feature cards -->
+          <div class="cards" aria-hidden="false">
+            <div class="feature"><strong>Clear lessons</strong><div style="color:#6b7680;margin-top:8px;">Short, focused articles with runnable code examples.</div></div>
+            <div class="feature"><strong>Hands-on practice</strong><div style="color:#6b7680;margin-top:8px;">Worksheets with show/hide answers and printable output.</div></div>
+            <div class="feature"><strong>Mini projects</strong><div style="color:#6b7680;margin-top:8px;">Project pages with full code and downloadable .py files.</div></div>
+            <div class="feature"><strong>Beginner → Advanced</strong><div style="color:#6b7680;margin-top:8px;">Curated progression from fundamentals to DSA, plotting and DBs.</div></div>
+          </div>
         </div>
+
+        <aside class="side-cta">
+          <strong>New: Practice Worksheets</strong>
+          <p style="color:#6b7680;margin:10px 0 14px;">Interactive answer toggle, printable worksheets, and examples — ideal for quick practice.</p>
+          <a href="/topics/exercises/index.html" class="btn-primary" style="display:inline-block;">Open Worksheets</a>
+        </aside>
       </div>
     </section>
 
-    <!-- TOPICS PREVIEW -->
-    <section aria-labelledby="topics-heading">
-      <h2 id="topics-heading">Popular topics</h2>
-      <p class="muted">Quick jump to frequently visited lessons</p>
-
-      <div class="topics-grid" role="list">
-        <a class="topic-card" role="listitem" href="/topics/variables.html">
-          <h4>Variables</h4>
-          <p>Assignment, scope, best-practices and swapping.</p>
-        </a>
-
-        <a class="topic-card" role="listitem" href="/topics/datatypes.html">
-          <h4>Data types</h4>
-          <p>Numbers, strings, lists, tuples, sets, dictionaries.</p>
-        </a>
-
-        <a class="topic-card" role="listitem" href="/topics/for_loops.html">
-          <h4>For loops</h4>
-          <p>Iteration, enumerate, range and patterns.</p>
-        </a>
-
-        <a class="topic-card" role="listitem" href="/topics/while_loops.html">
-          <h4>While loops</h4>
-          <p>Indefinite loops, break, continue and safety.</p>
-        </a>
-
-        <a class="topic-card" role="listitem" href="/topics/functions.html">
-          <h4>Functions</h4>
-          <p>Defining, args, return values, recursion.</p>
-        </a>
-
-        <a class="topic-card" role="listitem" href="/topics/string-formatting.html">
-          <h4>String formatting</h4>
-          <p>f-strings, format(), padding, alignment and specifiers.</p>
-        </a>
-      </div>
-
-      <p style="margin-top:14px;"><a href="/topics/index.html" class="btn-ghost">Browse all topics</a></p>
-    </section>
-
-    <!-- QUICK SEARCH (simple client-side) -->
-    <section style="margin-top:26px;">
-      <h2>Quick search</h2>
-      <p class="muted">Type a topic name to quickly jump to a lesson (client-side filter of the topics listed here).</p>
-
-      <div style="margin-top:10px;">
-        <input id="homeSearch" placeholder="Try: variables, loops, functions..." style="padding:10px 12px; width:100%; max-width:520px; border-radius:8px; border:1px solid #ddd;" />
+    <!-- quick links -->
+    <section class="wrap" style="padding-bottom:34px;">
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a class="btn-ghost" href="/topics/index.html">Browse Topics</a>
+        <a class="btn-ghost" href="/topics/exercises/index.html">All Worksheets</a>
+        <a class="btn-ghost" href="/projects.html">All Projects</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <!-- Footer -->
+  <footer>
     <div class="wrap">
-      <div style="display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;">
-        <div>© Python Learning — Learn and practice Python</div>
-        <small class="muted">Made with ❤️ — Add
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+        <div>© <strong>Python Learning</strong> — Learn Python tutorials & worksheets</div>
+        <div style="color:#8b97a3;">Built with simple HTML/CSS. Hosted on GitHub Pages.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
