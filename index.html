@@ -66,28 +66,31 @@
 
   <!-- Header -->
   <header class="site-header">
-    <div class="wrap topbar">
-      <a class="logo" href="/index.html">Python Learning</a>
-
-      <nav>
-        <a href="/index.html">Home</a>
-        <a href="/intro.html">Intro</a>
-        <a href="/topics/index.html">Topics</a>
-        <a href="/topics/exercises/index.html">Worksheets</a>
-        <a class="btn-ghost" href="/premium-worksheets.html">Premium Worksheets</a>
-
-        <a href="/projects.html">Projects</a>
-      </nav>
+  <div class="header-container">
+    <div class="logo">
+      <a href="/index.html">Python Learning</a>
     </div>
 
-    <!-- search area (under header) -->
-    <div class="search-bar" role="search">
-      <form id="search-form" class="search-row" onsubmit="doSiteSearch(event)">
-        <input id="site-search" type="search" placeholder="Search topics, exercises, projects..." aria-label="Search the site" />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </header>
+    <nav class="main-nav">
+      <a href="/index.html">Home</a>
+      <a href="/intro/index.html">Intro</a>
+      <a href="/topics/index.html">Topics</a>
+      <a href="/worksheets/index.html">Worksheets</a>
+      <a href="/projects/index.html">Projects</a>
+    </nav>
+  </div>
+
+  <!-- Search bar under header -->
+  <div class="search-bar">
+    <input
+      type="text"
+      id="globalSearch"
+      placeholder="Search topics, worksheets, projects..."
+    />
+    <button onclick="performSearch()">Search</button>
+  </div>
+</header>
+
 
   <!-- Hero -->
   <main>
