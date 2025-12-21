@@ -64,7 +64,8 @@
   </style>
 </head>
 <body>
-  <!-- site header (keeps same header used across site) -->
+  <!--
+   //site header (keeps same header used across site)
   <header class="site-header">
     <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;padding:18px 0;">
       <a class="logo" href="/index.html" style="font-weight:700;text-decoration:none;color:#0b5be0;font-size:1.05rem;">Python Learning</a>
@@ -78,6 +79,8 @@
     </div>
     
   </header>
+-->
+  <div id="header"></div>
   <!-- put this right after your <header>…</header> -->
 <div class="site-search">
   <div class="search-wrap">
@@ -169,7 +172,7 @@
       </article>
     </section>
   </main>
-
+<!--
   <footer class="site-footer">
     <div class="container">
       <p>© <span id="year"></span> Python Learning — curated lessons and examples</p>
@@ -177,5 +180,11 @@
   </footer>
 
   <script>document.getElementById('year').textContent = (new Date()).getFullYear();</script>
+-->
+  
+    <!--footer and layout scripts-->
+      <div id="footer"></div>
+
+      <script src="/js/layout.js" defer></script>
 </body>
 </html>

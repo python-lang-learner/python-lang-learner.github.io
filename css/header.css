@@ -1,56 +1,44 @@
 .site-header {
-  background: #0b3c6f;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: #0b3a6b;
+  color: #fff;
 }
 
-.header-inner {
+.header-container {
   max-width: 1100px;
   margin: auto;
-  padding: 12px 20px;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.brand a {
+.logo {
+  font-weight: 800;
+  font-size: 20px;
   color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
   text-decoration: none;
 }
 
-.nav-links a {
-  color: #e3efff;
-  text-decoration: none;
+.main-nav a {
+  color: #fff;
   margin-left: 18px;
-  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.nav-links a:hover {
-  color: #fff;
+.main-nav a:hover {
   text-decoration: underline;
 }
 
-.header-search {
-  max-width: 1100px;
-  margin: auto;
-  padding: 10px 20px 14px;
+.search-bar {
+  background: #f5f7fa;
+  padding: 10px;
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
 }
 
-.header-search input {
-  flex: 1;
-  padding: 9px 12px;
-  border-radius: 6px;
-  border: none;
-}
-
-.header-search button {
-  padding: 9px 16px;
-  border-radius: 6px;
-  border: none;
-  background: #2563eb;
-  color: white;
-  cursor: pointer;
+.search-bar input {
+  width: 60%;
+  padding: 8px;
 }
