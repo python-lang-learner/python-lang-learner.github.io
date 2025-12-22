@@ -1,71 +1,50 @@
-/* ===============================
-   Exercises Page Styling
-================================ */
-
-.exercises-header {
-  margin-bottom: 20px;
+.container.narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 16px;
 }
 
-.exercises-header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 6px;
-}
-
-.exercises-header p {
+.subtext {
   color: #555;
+  margin-bottom: 16px;
 }
 
-/* Search box */
-.exercise-search {
-  margin: 16px 0 24px;
+.search {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 22px;
 }
 
-.exercise-search input {
-  width: 100%;
-  max-width: 400px;
+.search input {
+  flex: 1;
   padding: 10px 12px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 1rem;
 }
 
-/* Exercise list */
-.exercise-list {
-  list-style: none;
-  padding: 0;
+.ex-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
 }
 
-.exercise-list li {
+.ex-card {
+  display: block;
+  padding: 16px;
   background: #fff;
+  border-radius: 10px;
   border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: 14px 18px;
-  margin-bottom: 12px;
+  text-decoration: none;
+  color: #111;
   transition: 0.2s ease;
 }
 
-.exercise-list li:hover {
+.ex-card:hover {
   background: #f0f6ff;
   border-color: #2563eb;
 }
 
-.exercise-list a {
-  font-weight: 600;
-  color: #1d4ed8;
-  text-decoration: none;
-}
-
-.exercise-list small {
-  display: block;
-  margin-top: 4px;
+.count {
   color: #555;
-}
-
-/* Back link */
-.back-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: #1d4ed8;
-  font-weight: 500;
-  text-decoration: none;
+  font-size: 0.9rem;
 }
