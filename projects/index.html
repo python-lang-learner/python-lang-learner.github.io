@@ -4,7 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
+  
+  <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <link rel="stylesheet" href="/css/base.css">
+
+    <link rel="stylesheet" href="/css/footer.css">
+
+
+    <script src="/js/layout.js" defer></script>
+    <script src="/js/search.js" defer></script>
+
   <style>
     .wrap { max-width:1000px; margin:0 auto; padding:18px; }
     .proj-list { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); }
@@ -28,6 +39,7 @@
   </header>
 
   <main class="wrap">
+    <header id="site-header"></header>
     <h1>Mini Projects</h1>
     <p class="meta">Click a project to view details, code and download the runnable `.py` file.</p>
 
@@ -69,6 +81,9 @@
     </div>
   </main>
 
-  <footer class="site-footer" style="text-align:center;padding:18px;">© Python Learning</footer>
+  <!-- Footer injected by layout.js -->
+        <footer id="site-footer"></footer>
+
+      <script src="/js/layout.js" defer></script>
 </body>
 </html>
