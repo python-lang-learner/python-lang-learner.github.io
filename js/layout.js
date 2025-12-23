@@ -11,12 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("footer", "/components/footer.html");
 });
 */
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("/components/header.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("site-header").innerHTML = html);
+document.addEventListener("DOMContentLoaded", async () => {
+  async function load(id, file) {
+    const el = document.getElementById(id);
+    if (!el) return;
 
-  fetch("/components/footer.html")
-    .then(r => r.text())
-    .then(html => document.getElementById("site-footer").innerHTML = html);
+    const res = await fetch(file);
+    el.innerHTML = await res.text();
+  }
+
+  await load("site-header", "/components/header.html");
+  await load("site-footer", "/components/footer.html");
 });
