@@ -1,73 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Python Learning — Learn Python</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercises — Python Learning</title>
 
-  <!-- Link to your stylesheet (adjust path if styles.css is elsewhere) -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/footer.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <script src="/js/global-search.js" defer></script>
 
-    <script src="/js/layout.js" defer></script>
-    <script src="/js/search.js" defer></script>
+  <link rel="stylesheet" href="/css/exercise.css">
+  <link rel="stylesheet" href="/css/footer.css">
 
-
-  <!-- Minimal page-level styles to ensure search box and hero spacing look OK even if CSS differences exist -->
-  <style>
-    /* quick safe defaults to align with your existing look */
-    body { font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif; color:#222; margin:0; background:#fff; }
-    .site-header { background:#0b3a6b; color:#fff; }
-    .wrap { max-width:1080px; margin:0 auto; padding:0 20px; }
-    .topbar { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
-    .logo { font-weight:800; color:#fff; text-decoration:none; font-size:20px; }
-    nav a { color:rgba(255,255,255,0.95); margin-left:18px; text-decoration:none; font-weight:600; }
-    nav a.active { background:#144b84; padding:8px 12px; border-radius:8px; color:#fff; }
-    /* search area under header */
-    .search-bar { background:#f6f8fb; padding:12px 0; border-bottom:1px solid #eef2f6; }
-    .search-row { display:flex; gap:8px; max-width:1080px; margin:0 auto; padding:8px 20px; }
-    .search-row input[type="search"] { flex:1; padding:10px 12px; border-radius:8px; border:1px solid #d6dce6; font-size:15px; }
-    .search-row button { background:#0b66ff; color:#fff; border:0; padding:10px 16px; border-radius:8px; cursor:pointer; font-weight:700; }
-    /* hero */
-    .hero { padding:48px 0 24px; }
-    .hero-grid { display:grid; grid-template-columns: 1fr 360px; gap:28px; align-items:start; }
-    .hero h1 { font-size:40px; margin:0 0 14px; color:#0b1f34; }
-    .hero p.lead { color:#6b7680; margin:0 0 20px; line-height:1.6; }
-    .btn-row { display:flex; gap:12px; margin-top:18px; }
-    .btn-primary { background:#0b66ff; color:#fff; padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:700; }
-    .btn-ghost { border:1px solid #d6dce6; padding:10px 14px; border-radius:8px; color:#0b1f34; text-decoration:none; display:inline-block; }
-    .side-cta { background:#fff; border-radius:10px; padding:18px; box-shadow:0 10px 20px rgba(11,30,60,0.06); }
-    .cards { margin-top:34px; display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
-    .feature { background:#fff; padding:18px; border-radius:12px; box-shadow:0 8px 16px rgba(11,30,60,0.04); }
-    .recommended { margin-top:12px; color:#6b7680; font-size:14px; }
-    footer { padding:28px 0; color:#6b7680; font-size:14px; border-top:1px solid #eef2f6; }
-    @media (max-width:900px){
-      .hero-grid{ grid-template-columns: 1fr; }
-      nav a{ display:inline-block; margin-left:12px; }
-      .search-row{ flex-direction:column; gap:10px; }
-    }
-  </style>
-
-  <!-- small helper JS to make hero search work (client-side) -->
-  <script>
-    function doSiteSearch(e){
-      e && e.preventDefault();
-      const q = document.getElementById('site-search').value.trim();
-      if(!q) return;
-      // Quick client-side search redirect — opens topics index with query param
-      // You can replace this with a real search implementation later.
-      // For now we'll try matching topics page first:
-      const encoded = encodeURIComponent(q);
-      window.location = '/topics/index.html?q=' + encoded;
-    }
-    // optional: enter to submit
-    document.addEventListener('DOMContentLoaded', function(){
-      const frm = document.getElementById('search-form');
-      frm && frm.addEventListener('submit', doSiteSearch);
-    });
-  </script>
+  <script src="/js/layout.js" defer></script>
+  
 </head>
+
 <body>
 
   <!-- Header -->
