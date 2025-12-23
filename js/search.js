@@ -1,3 +1,4 @@
+/*
 // /scripts/search.js
 (() => {
   const input = document.getElementById('site-search-input');
@@ -110,3 +111,23 @@
     }
   });
 })();
+*/
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("searchBox");
+  const cards = document.querySelectorAll(".ex-card");
+  const count = document.getElementById("resultCount");
+
+  function run() {
+    const q = input.value.toLowerCase();
+    let n = 0;
+    cards.forEach(c => {
+      const show = c.textContent.toLowerCase().includes(q);
+      c.style.display = show ? "" : "none";
+      if (show) n++;
+    });
+    count.textContent = n + " results";
+  }
+
+  input.addEventListener("input", run);
+  run();
+});
