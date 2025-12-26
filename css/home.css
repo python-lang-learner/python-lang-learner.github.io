@@ -1,0 +1,94 @@
+/* HOME PAGE ONLY */
+
+.hero {
+  background: linear-gradient(135deg, #0b3c6f, #0b5fa5);
+  color: #fff;
+  padding: 60px 20px;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  gap: 24px;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  max-width: 600px;
+  color: #e6f0ff;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-outline {
+  border: 1px solid #c7d2fe;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* FEATURES */
+.section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.feature-card h3 {
+  margin: 0 0 8px;
+}
+
+/* PATH */
+.path {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.path span {
+  background: #eef2ff;
+  padding: 10px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* QUICK LINKS */
+.quick-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
