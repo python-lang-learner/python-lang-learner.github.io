@@ -92,3 +92,32 @@
   gap: 14px;
   flex-wrap: wrap;
 }
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  text-align: center;
+}
+
+.hero p {
+  text-align: center;
+  margin: auto;
+}
+
+.hero-actions {
+  justify-content: center;
+}
+
+.hero-actions a {
+  transition: transform .2s, box-shadow .2s;
+}
+
+.hero-actions a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+}
+
+mark {
+  background: #fde68a;
+  padding: 2px 4px;
+  border-radius: 4px;
+}

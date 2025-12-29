@@ -112,7 +112,7 @@
   });
 })();
 */
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("searchBox");
   const cards = document.querySelectorAll(".ex-card");
   const count = document.getElementById("resultCount");
@@ -130,4 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   input.addEventListener("input", run);
   run();
-});
+});*/
+function highlight(text, query) {
+  const r = new RegExp(`(${query})`, "gi");
+  return text.replace(r, "<mark>$1</mark>");
+}
+
+// When rendering results
+result.innerHTML = `
+  <strong>${highlight(item.title, q)}</strong>
+  <div>${highlight(item.description || "", q)}</div>
+`;

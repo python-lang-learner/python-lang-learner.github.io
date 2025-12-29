@@ -1,3 +1,4 @@
+/*
 .site-header {
   background: #0b3a6b;
   color: #fff;
@@ -41,4 +42,81 @@
 .search-bar input {
   width: 60%;
   padding: 8px;
+}
+*/
+/* HEADER LAYOUT */
+.header-wrapper {
+  background: #0b3c6f;
+  color: #fff;
+}
+
+.header-top {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: #e6f0ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* SEARCH */
+.search-bar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 20px 16px;
+  display: flex;
+  gap: 10px;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .main-nav {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: 240px;
+    background: #0b3c6f;
+    flex-direction: column;
+    padding: 80px 20px;
+    transform: translateX(100%);
+    transition: 0.3s ease;
+  }
+
+  .main-nav.open {
+    transform: translateX(0);
+  }
+
+  .menu-btn {
+    display: block;
+    background: none;
+    color: #fff;
+    font-size: 1.5rem;
+    border: none;
+  }
 }
