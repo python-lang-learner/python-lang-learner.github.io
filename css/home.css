@@ -1,32 +1,32 @@
-/* HOME PAGE ONLY */
-
+/* HERO */
 .hero {
-  background: linear-gradient(135deg, #0b3c6f, #0b5fa5);
-  color: #fff;
-  padding: 60px 20px;
+  background: linear-gradient(180deg, #f4f8ff, #ffffff);
+  padding: 70px 20px;
 }
 
 .hero-inner {
-  max-width: 1100px;
+  max-width: 900px;
   margin: auto;
-  display: grid;
-  gap: 24px;
+  text-align: center;
 }
 
 .hero h1 {
-  font-size: 2.6rem;
-  line-height: 1.2;
-  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 16px;
 }
 
 .hero p {
   font-size: 1.05rem;
+  color: #444;
   max-width: 600px;
-  color: #e6f0ff;
+  margin: 0 auto 28px;
 }
 
+/* BUTTONS */
 .hero-actions {
   display: flex;
+  justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
 }
@@ -41,20 +41,27 @@
 }
 
 .btn-outline {
-  border: 1px solid #c7d2fe;
-  color: #fff;
+  border: 1px solid #2563eb;
+  color: #2563eb;
   padding: 12px 22px;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: 600;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 /* FEATURES */
-.section {
-  max-width: 1100px;
-  margin: 60px auto;
-  padding: 0 20px;
-}
-
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -65,23 +72,21 @@
   background: #fff;
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
-.feature-card h3 {
-  margin: 0 0 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  text-align: center;
 }
 
 /* PATH */
 .path {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
 }
 
 .path span {
   background: #eef2ff;
-  padding: 10px 14px;
+  padding: 8px 14px;
   border-radius: 20px;
   font-weight: 500;
 }
@@ -89,35 +94,7 @@
 /* QUICK LINKS */
 .quick-links {
   display: flex;
+  justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
-}
-
-.hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
-  text-align: center;
-}
-
-.hero p {
-  text-align: center;
-  margin: auto;
-}
-
-.hero-actions {
-  justify-content: center;
-}
-
-.hero-actions a {
-  transition: transform .2s, box-shadow .2s;
-}
-
-.hero-actions a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,.15);
-}
-
-mark {
-  background: #fde68a;
-  padding: 2px 4px;
-  border-radius: 4px;
 }
