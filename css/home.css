@@ -120,14 +120,3 @@ body.dark .search-bar input {
 body.dark .search-bar button {
   background: #3b82f6;
 }
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .search-bar {
-    padding-top: 10px;
-  }
-}
