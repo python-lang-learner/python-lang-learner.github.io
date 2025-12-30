@@ -13,19 +13,19 @@
   margin: auto;
   padding: 16px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* logo */
 .logo a {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #fff;
   text-decoration: none;
 }
 
-/* navigation */
+/* nav */
 .main-nav {
   display: flex;
   gap: 20px;
@@ -42,13 +42,13 @@
   text-decoration: underline;
 }
 
-/* search row */
+/* search bar */
 .search-bar {
   max-width: 1100px;
-  margin: 8px auto 0;
-  padding: 0 20px 14px;
+  margin: 12px auto 0;
+  padding: 0 20px 16px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .search-bar input {
@@ -64,9 +64,9 @@
   background: #2563eb;
   color: #fff;
   border: none;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -88,9 +88,5 @@
   .main-nav {
     flex-wrap: wrap;
     gap: 12px;
-  }
-
-  .search-bar {
-    padding-top: 10px;
   }
 }
