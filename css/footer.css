@@ -1,5 +1,5 @@
 /* ================= FOOTER ================= */
-
+/*
 .site-footer {
   background: #0a2e55;
   color: #e6f0ff;
@@ -27,4 +27,12 @@
 
 .footer-links a:hover {
   text-decoration: underline;
+}
+*/
+.site-footer {
+  background: #0a2e55;
+  color: #e6f0ff;
+  padding: 40px 20px;
+  margin-top: 80px;
+  text-align: center;
 }
