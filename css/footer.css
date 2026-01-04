@@ -1,8 +1,27 @@
 
+
+.site-footer a {
+  color: #c7d2fe;
+  margin: 0 10px;
+  font-size: 0.9rem;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+/******************************************************/
+.site-footer {
+  background: #0b3c6f;
+  padding: 50px 20px;
+  color: #fff;
+}
+
+
+
 /*********************************************
 ***********************************************/
 /* ================= FOOTER ================= */
-
+/*
 .site-footer {
   background: #0a2e55;
   color: #e6f0ff;
@@ -25,3 +44,4 @@
 .footer-inner a:hover {
   text-decoration: underline;
 }
+*/
