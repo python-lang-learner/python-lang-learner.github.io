@@ -91,3 +91,39 @@
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
+
+/************************************************************
+**************************************************************/
+
+/* ===== HERO SECTION (FULL WIDTH) ===== */
+.hero {
+  width: 100%;
+  background: linear-gradient(180deg, #0b3c6f, #0a2e55);
+  padding: 80px 20px;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
