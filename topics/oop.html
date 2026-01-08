@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Object Oriented Programming in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
+
+      <article class="topic-card">
+
+        <h1>Object-Oriented Programming (OOP) in Python</h1>
+
+        <p>
+          Object-Oriented Programming (OOP) is a programming approach
+          that organizes code using <strong>classes</strong> and <strong>objects</strong>.
+        </p>
+
+        <div class="info-box">
+          💡 OOP helps make programs reusable, modular, and easier to maintain.
+        </div>
+
+        <!-- ================= CLASS ================= -->
+        <h2>What is a Class?</h2>
+
+        <p>
+          A class is a blueprint for creating objects.
+          It defines properties (variables) and behaviors (methods).
+        </p>
+
+        <div class="code-block">
+<pre><code>class Student:
+    name = "Khushi"
+    age = 15</code></pre>
+        </div>
+
+        <!-- ================= OBJECT ================= -->
+        <h2>What is an Object?</h2>
+
+        <p>
+          An object is an instance of a class.
+        </p>
+
+        <div class="code-block">
+<pre><code>s1 = Student()
+print(s1.name)
+print(s1.age)</code></pre>
+        </div>
+
+        <!-- ================= INIT ================= -->
+        <h2>The __init__() Method</h2>
+
+        <p>
+          The <code>__init__()</code> method is called automatically
+          when an object is created.
+        </p>
+
+        <div class="code-block">
+<pre><code>class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+s1 = Student("Khushi", 15)
+print(s1.name, s1.age)</code></pre>
+        </div>
+
+        <!-- ================= SELF ================= -->
+        <h2>The self Keyword</h2>
+
+        <p>
+          <code>self</code> refers to the current object
+          and is used to access variables and methods inside a class.
+        </p>
+
+        <!-- ================= METHODS ================= -->
+        <h2>Class Methods</h2>
+
+        <div class="code-block">
+<pre><code>class Student:
+    def greet(self):
+        print("Hello Student!")
+
+s = Student()
+s.greet()</code></pre>
+        </div>
+
+        <!-- ================= INHERITANCE ================= -->
+        <h2>Inheritance</h2>
+
+        <p>
+          Inheritance allows one class to acquire properties of another class.
+        </p>
+
+        <div class="code-block">
+<pre><code>class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+d = Dog()
+d.speak()
+d.bark()</code></pre>
+        </div>
+
+        <!-- ================= PRACTICE ================= -->
+        <h2>Practice Exercises</h2>
+
+        <ol>
+          <li>Create a class for a mobile phone</li>
+          <li>Add attributes like brand and price</li>
+          <li>Create a method to display details</li>
+        </ol>
+
+        <!-- ================= NEXT ================= -->
+        <div class="next-topic">
+          <a href="file-handling.html">Next → File Handling</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
