@@ -1,86 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Lists — Python Learning</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    .lesson-intro{max-width:1000px;margin:36px auto;padding:18px;background:#fff;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
-    .code-block pre{background:#0b1220;color:#dbeafe;padding:14px;border-radius:8px;overflow:auto}
-    .section{margin-top:18px}
-    table{border-collapse:collapse;width:100%;margin-top:12px}
-    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
-  </style>
+  <meta charset="UTF-8">
+  <title>Lists in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
-<header class="site-header">
-  <div class="header-inner container">
-    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a href="index.html" class="active">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
 
-<main class="container">
-  <article class="lesson-intro">
-    <h2>Lists</h2>
-    <p class="note">Lists are ordered, mutable sequences. They are versatile and one of the most-used data structures in Python.</p>
+  <!-- HEADER -->
+  <header id="site-header"></header>
 
-    <section class="section">
-      <h3>Details</h3>
-      <p>Create lists with square brackets. Common methods: <code>append</code>, <code>extend</code>, <code>insert</code>, <code>pop</code>, <code>remove</code>, <code>sort</code>, <code>reverse</code>. List comprehensions provide concise syntax to transform lists.</p>
-    </section>
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
 
-    <section class="section">
-      <h3>Examples</h3>
-      <div class="code-block"><pre>fruits = ['apple','banana']
-fruits.append('kiwi')
-fruits.insert(1,'orange')
-print([f.upper() for f in fruits])  # comprehension
-fruits.sort()</pre></div>
-    </section>
+      <article class="topic-card">
 
-    <section class="section">
-      <h3>List methods (quick)</h3>
-      <table>
-        <thead><tr><th>Method</th><th>Effect</th></tr></thead>
-        <tbody>
-          <tr><td>append(x)</td><td>Add x to end</td></tr>
-          <tr><td>extend(iter)</td><td>Extend by iterable</td></tr>
-          <tr><td>pop([i])</td><td>Remove and return item</td></tr>
-          <tr><td>sort()</td><td>In-place sort</td></tr>
-        </tbody>
-      </table>
-    </section>
+        <h1>Lists in Python</h1>
 
-    <section class="section">
-      <h3>Common mistakes</h3>
-      <ul>
-        <li>Mutating a list while iterating over it can skip elements.</li>
-        <li>Copying a list by assignment <code>b = a</code> creates an alias; use <code>a.copy()</code> or <code>a[:]</code> to clone.</li>
-      </ul>
-    </section>
+        <p>
+          A list is a collection of items stored in a single variable.
+          Lists are ordered, mutable, and allow duplicate values.
+        </p>
 
-    <section class="section">
-      <h3>Exercises</h3>
-      <ol>
-        <li>Given a list, remove duplicates while preserving order.</li>
-        <li>Use a comprehension to produce squares of numbers 1–10.</li>
-      </ol>
-    </section>
+        <div class="info-box">
+          💡 Lists are created using square brackets <strong>[ ]</strong>.
+        </div>
 
-    <section class="section">
-      <h3>Next steps</h3>
-      <p>Explore <a href="tuples.html">Tuples</a> and <a href="lists.html">advanced list techniques</a> like slicing and comprehensions.</p>
-    </section>
-  </article>
-</main>
+        <h2>Creating a List</h2>
 
-<footer class="site-footer container center"><p>© Python Learning — Lists</p></footer>
+        <div class="code-block">
+<pre><code>numbers = [1, 2, 3, 4, 5]
+names = ["Khushi", "Python", "Learner"]
+mixed = [10, "Hello", True]
+
+print(numbers)
+print(names)
+print(mixed)</code></pre>
+        </div>
+
+        <h2>Accessing List Elements</h2>
+
+        <p>
+          List elements are accessed using index numbers (starting from 0).
+        </p>
+
+        <div class="code-block">
+<pre><code>fruits = ["apple", "banana", "cherry"]
+
+print(fruits[0])
+print(fruits[1])
+print(fruits[-1])</code></pre>
+        </div>
+
+        <h2>Modifying Lists</h2>
+
+        <p>
+          Lists are mutable, meaning you can change their values.
+        </p>
+
+        <div class="code-block">
+<pre><code>fruits = ["apple", "banana", "cherry"]
+fruits[1] = "mango"
+print(fruits)</code></pre>
+        </div>
+
+        <h2>Common List Methods</h2>
+
+        <div class="code-block">
+<pre><code>numbers = [1, 2, 3]
+
+numbers.append(4)
+numbers.insert(1, 10)
+numbers.remove(2)
+numbers.pop()
+
+print(numbers)</code></pre>
+        </div>
+
+        <h2>Looping Through a List</h2>
+
+        <div class="code-block">
+<pre><code>fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)</code></pre>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div class="warning-box">
+          ❌ Accessing index that doesn’t exist<br>
+          ❌ Forgetting list indices start from 0<br>
+          ❌ Confusing append() with insert()
+        </div>
+
+        <h2>Practice Exercises</h2>
+        <ol>
+          <li>Create a list of 5 numbers</li>
+          <li>Print the first and last elements</li>
+          <li>Add a new number and remove one</li>
+        </ol>
+
+        <div class="next-topic">
+          <a href="tuples.html">Next → Tuples</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
 </body>
 </html>
