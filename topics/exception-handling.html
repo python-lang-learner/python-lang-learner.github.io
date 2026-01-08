@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exception Handling in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
+
+      <article class="topic-card">
+
+        <h1>Exception Handling in Python</h1>
+
+        <p>
+          Exception handling helps prevent program crashes by managing
+          runtime errors in a controlled way.
+        </p>
+
+        <div class="info-box">
+          💡 An exception is an error that occurs during program execution.
+        </div>
+
+        <!-- ================= ERROR EXAMPLE ================= -->
+        <h2>Example of an Error</h2>
+
+        <div class="code-block">
+<pre><code>print(10 / 0)</code></pre>
+        </div>
+
+        <div class="warning-box">
+          ❌ This causes a <strong>ZeroDivisionError</strong>.
+        </div>
+
+        <!-- ================= TRY EXCEPT ================= -->
+        <h2>Using try and except</h2>
+
+        <p>
+          Use <code>try</code> to test code and <code>except</code> to handle errors.
+        </p>
+
+        <div class="code-block">
+<pre><code>try:
+    print(10 / 0)
+except:
+    print("Cannot divide by zero")</code></pre>
+        </div>
+
+        <!-- ================= MULTIPLE EXCEPT ================= -->
+        <h2>Handling Multiple Exceptions</h2>
+
+        <div class="code-block">
+<pre><code>try:
+    num = int(input("Enter number: "))
+    print(10 / num)
+except ValueError:
+    print("Please enter a valid number")
+except ZeroDivisionError:
+    print("Division by zero is not allowed")</code></pre>
+        </div>
+
+        <!-- ================= ELSE ================= -->
+        <h2>Using else Block</h2>
+
+        <div class="code-block">
+<pre><code>try:
+    x = int(input("Enter number: "))
+except ValueError:
+    print("Invalid input")
+else:
+    print("You entered:", x)</code></pre>
+        </div>
+
+        <!-- ================= FINALLY ================= -->
+        <h2>Using finally Block</h2>
+
+        <p>
+          The <code>finally</code> block always executes, whether an error occurs or not.
+        </p>
+
+        <div class="code-block">
+<pre><code>try:
+    file = open("data.txt", "r")
+except FileNotFoundError:
+    print("File not found")
+finally:
+    print("Program ended")</code></pre>
+        </div>
+
+        <!-- ================= PRACTICE ================= -->
+        <h2>Practice Exercises</h2>
+
+        <ol>
+          <li>Handle division by zero using try-except</li>
+          <li>Handle invalid user input</li>
+          <li>Use finally block to print a message</li>
+        </ol>
+
+        <!-- ================= NEXT ================= -->
+        <div class="next-topic">
+          <a href="oop.html">Next → Object Oriented Programming</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
