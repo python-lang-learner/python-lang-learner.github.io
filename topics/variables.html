@@ -1,74 +1,53 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Variables — Python Learning</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    .lesson-intro { max-width:1000px; margin:36px auto; padding:18px; background:#fff; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.04); }
-    .code-block pre { background:#0b1220; color:#dbeafe; padding:14px; border-radius:8px; overflow:auto; font-family: monospace; }
-    .section { margin-top:18px; }
-    .note { color:#666; font-size:.98rem; }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <div class="header-inner container">
-      <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
-      <nav class="main-nav">
-        <a href="../index.html">Home</a>
-        <a href="../intro.html">Intro</a>
-        <a href="index.html" class="active">Topics</a>
-        <a href="../projects.html">Projects</a>
-      </nav>
+<main>
+  <div class="topic-container">
+
+    <h1>Variables in Python</h1>
+
+    <p>
+      Variables are used to store data in Python.
+      They allow programs to remember values and reuse them later.
+    </p>
+
+    <div class="info-box">
+      💡 Python uses <strong>dynamic typing</strong> —
+      variables can change type at runtime.
     </div>
-  </header>
 
-  <main class="container">
-    <article class="lesson-intro">
-      <h2>Variables</h2>
-      <p class="note">Variables associate names with values. Python uses dynamic typing — variables can hold any type and change type at runtime.</p>
+    <h2>Creating Variables</h2>
+    <p>You can create a variable using the <code>=</code> operator.</p>
 
-      <section class="section">
-        <h3>Details</h3>
-        <p>Assign with <code>=</code>. Variable names should start with a letter or underscore, cannot start with a digit and are case-sensitive. Use <code>snake_case</code> for variable names per PEP8. Multiple assignment and tuple-unpacking are common idioms. Keep variable names descriptive and avoid single-letter names except for counters.</p>
-      </section>
-
-      <section class="section">
-        <h3>Example</h3>
-        <div class="code-block"><pre>x = 10
-name = 'Khushi'
+    <div class="code-block">
+<pre>
+x = 10
+name = "Khushi"
 a, b = 1, 2
-x = 'now a string'
-print(x, name, a, b)</pre></div>
-      </section>
+x = "now a string"
+print(x, name, a, b)
+</pre>
+    </div>
 
-      <section class="section">
-        <h3>Common mistakes</h3>
-        <ul>
-          <li>Using reserved keywords as variable names (SyntaxError).</li>
-          <li>Confusing local vs global scope leading to <code>UnboundLocalError</code>.</li>
-          <li>Reusing variable names accidentally and losing data.</li>
-        </ul>
-      </section>
+    <h2>Rules for Naming Variables</h2>
+    <ul>
+      <li>Must start with a letter or underscore</li>
+      <li>Cannot start with a number</li>
+      <li>Cannot use Python keywords</li>
+      <li>Variables are case-sensitive</li>
+    </ul>
 
-      <section class="section">
-        <h3>Exercises</h3>
-        <ol>
-          <li>Create variables <code>name</code>, <code>age</code>, and <code>city</code>, then print them in one line.</li>
-          <li>Swap two variables <code>a</code> and <code>b</code> without using a temporary variable.</li>
-          <li>Write a small snippet that assigns multiple values in one line and prints them.</li>
-        </ol>
-      </section>
+    <div class="warning-box">
+      ⚠️ Avoid using single-letter variable names except for counters.
+    </div>
 
-      <section class="section">
-        <h3>Next steps</h3>
-        <p>Continue to <a href="data-types.html">Data Types</a> to learn what values can be stored in variables and how they behave.</p>
-      </section>
-    </article>
-  </main>
+    <h2>Practice Exercises</h2>
+    <ol>
+      <li>Create variables <code>name</code>, <code>age</code>, and <code>city</code></li>
+      <li>Print them in one line</li>
+      <li>Change the value of age</li>
+    </ol>
 
-  <footer class="site-footer container center"><p>© Python Learning — Variables</p></footer>
-</body>
-</html>
+    <div class="next-topic">
+      👉 <a href="/topics/data-types.html">Next: Data Types in Python</a>
+    </div>
+
+  </div>
+</main>
