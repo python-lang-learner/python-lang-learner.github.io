@@ -1,61 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Python Comments — Python Learning</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    .lesson-intro { max-width:1000px; margin:36px auto; padding:18px; background:#fff; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.04);}
-    .code-block pre { background:#0b1220; color:#dbeafe; padding:14px; border-radius:8px; overflow:auto; }
-    .section { margin-top:18px; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Comments in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="header-inner container">
-    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a href="index.html" class="active">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header id="site-header"></header>
 
-<main class="container">
-  <article class="lesson-intro">
+  <!-- CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
 
-    <h2>Comments</h2>
-    <p class="note">Comments help explain code. They are ignored by Python during execution.</p>
+      <article class="topic-card">
 
-    <section class="section">
-      <h3>Single-line comments</h3>
-      <div class="code-block"><pre># This is a comment
-print("Hello")       # This is also a comment</pre></div>
-    </section>
+        <h1>Comments in Python</h1>
 
-    <section class="section">
-      <h3>Multi-line comments (docstrings)</h3>
-      <div class="code-block"><pre>"""
-This is a multi-line comment or documentation string.
-Useful for documenting modules, classes and functions.
-"""</pre></div>
-    </section>
+        <p>
+          Comments are used to explain code and make programs easier to understand.
+          Python ignores comments while executing the program.
+        </p>
 
-    <section class="section">
-      <h3>Exercises</h3>
-      <ol>
-        <li>Add comments to explain a print statement.</li>
-        <li>Write a function and add a docstring to explain it.</li>
-      </ol>
-    </section>
+        <div class="info-box">
+          💡 Writing good comments helps others (and your future self) understand code faster.
+        </div>
 
-  </article>
-</main>
+        <!-- ================= SINGLE LINE ================= -->
+        <h2>Single-Line Comments</h2>
 
-<footer class="site-footer container center"><p>© Python Learning — Comments</p></footer>
+        <p>
+          Single-line comments start with the <code>#</code> symbol.
+        </p>
+
+        <div class="code-block">
+<pre><code># This is a comment
+print("Hello Python")  # This prints a message</code></pre>
+        </div>
+
+        <!-- ================= MULTI LINE ================= -->
+        <h2>Multi-Line Comments</h2>
+
+        <p>
+          Python does not have official multi-line comments,
+          but we can use multiple <code>#</code> symbols.
+        </p>
+
+        <div class="code-block">
+<pre><code># This is line one
+# This is line two
+# This is line three
+print("Python Comments")</code></pre>
+        </div>
+
+        <!-- ================= DOCSTRING ================= -->
+        <h2>Docstrings</h2>
+
+        <p>
+          Docstrings are used to document functions, classes, and modules.
+          They are written using triple quotes.
+        </p>
+
+        <div class="code-block">
+<pre><code>def add(a, b):
+    """This function adds two numbers"""
+    return a + b
+
+print(add(3, 4))</code></pre>
+        </div>
+
+        <!-- ================= WHY COMMENTS ================= -->
+        <h2>Why Use Comments?</h2>
+
+        <ul>
+          <li>Improve code readability</li>
+          <li>Explain complex logic</li>
+          <li>Help in debugging</li>
+          <li>Useful for teamwork</li>
+        </ul>
+
+        <!-- ================= COMMON MISTAKES ================= -->
+        <h2>Common Mistakes</h2>
+
+        <div class="warning-box">
+          ❌ Writing unnecessary comments<br>
+          ❌ Commenting obvious code<br>
+          ❌ Forgetting to update comments after changes
+        </div>
+
+        <!-- ================= PRACTICE ================= -->
+        <h2>Practice Exercises</h2>
+
+        <ol>
+          <li>Write a program with at least three comments</li>
+          <li>Create a function and add a docstring</li>
+          <li>Explain a calculation using comments</li>
+        </ol>
+
+        <!-- ================= NEXT ================= -->
+        <div class="next-topic">
+          <a href="variables.html">Next → Variables</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
 </body>
 </html>
