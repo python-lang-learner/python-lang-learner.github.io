@@ -1,91 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Data Types — Python Learning</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    .lesson-intro { max-width:1000px; margin:36px auto; padding:18px; background:#fff; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.04); }
-    .code-block pre { background:#0b1220; color:#dbeafe; padding:14px; border-radius:8px; overflow:auto; font-family: monospace; }
-    .section { margin-top:18px; }
-    .note { color:#666; font-size:.98rem; }
-    table { border-collapse:collapse; width:100%; margin-top:12px; }
-    th,td { text-align:left; padding:8px; border-bottom:1px solid #eee; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Data Types in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="header-inner container">
-      <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
-      <nav class="main-nav">
-        <a href="../index.html">Home</a>
-        <a href="../intro.html">Intro</a>
-        <a href="index.html" class="active">Topics</a>
-        <a href="../projects.html">Projects</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <article class="lesson-intro">
-      <h2>Data Types</h2>
-      <p class="note">Python has built-in scalar types (int, float, str, bool, None) and collection types (list, tuple, set, dict). Understanding mutability and operations is important.</p>
+  <!-- HEADER -->
+  <header id="site-header"></header>
 
-      <section class="section">
-        <h3>Details</h3>
-        <p><strong>Scalars:</strong> <code>int</code> (integers), <code>float</code> (decimal numbers), <code>str</code> (text), <code>bool</code> (True/False), and <code>None</code> (no value). <strong>Collections:</strong> <code>list</code> (ordered, mutable), <code>tuple</code> (ordered, immutable), <code>set</code> (unordered, unique), <code>dict</code> (key→value mapping).</p>
-        <table>
-          <thead><tr><th>Type</th><th>Mutable?</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td>int</td><td>No</td><td><code>42</code></td></tr>
-            <tr><td>float</td><td>No</td><td><code>3.14</code></td></tr>
-            <tr><td>str</td><td>No</td><td><code>'hello'</code></td></tr>
-            <tr><td>list</td><td>Yes</td><td><code>[1,2,3]</code></td></tr>
-            <tr><td>tuple</td><td>No</td><td><code>(1,2,3)</code></td></tr>
-            <tr><td>set</td><td>Yes</td><td><code>{1,2,3}</code></td></tr>
-            <tr><td>dict</td><td>Yes</td><td><code>{'k': 'v'}</code></td></tr>
-          </tbody>
-        </table>
-      </section>
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
 
-      <section class="section">
-        <h3>Example</h3>
-        <div class="code-block"><pre>print(type(123))            # &lt;class 'int'&gt;
-print(type(3.14))           # &lt;class 'float'&gt;
-print(type('hello'))        # &lt;class 'str'&gt;
+      <article class="topic-card">
 
-L = [1,2,3]
-T = (1,2,3)
-D = {'name': 'Khushi'}
-print(L[0], T[1], D['name'])</pre></div>
-      </section>
+        <h1>Data Types in Python</h1>
 
-      <section class="section">
-        <h3>Common mistakes</h3>
+        <p>
+          Data types define the kind of value a variable can hold.
+          Python automatically determines the data type based on the value assigned.
+        </p>
+
+        <div class="info-box">
+          💡 Python is dynamically typed — you don’t need to specify data types explicitly.
+        </div>
+
+        <h2>Common Built-in Data Types</h2>
+
         <ul>
-          <li>Attempting to change a tuple (immutable) results in <code>TypeError</code>.</li>
-          <li>Using unhashable types (like lists) as dict keys or set elements (TypeError).</li>
-          <li>Confusing identity (<code>is</code>) with equality (<code>==</code>).</li>
+          <li><strong>int</strong> – Integer numbers (e.g. <code>10</code>)</li>
+          <li><strong>float</strong> – Decimal numbers (e.g. <code>3.14</code>)</li>
+          <li><strong>str</strong> – Text or strings (e.g. <code>"Python"</code>)</li>
+          <li><strong>bool</strong> – True or False</li>
         </ul>
-      </section>
 
-      <section class="section">
-        <h3>Exercises</h3>
+        <h2>Example</h2>
+
+        <div class="code-block">
+<pre><code>x = 10
+price = 99.5
+name = "Khushi"
+is_active = True
+
+print(type(x))
+print(type(price))
+print(type(name))
+print(type(is_active))</code></pre>
+        </div>
+
+        <h2>Type Conversion</h2>
+
+        <p>
+          Python allows converting one data type to another using built-in functions.
+        </p>
+
+        <div class="code-block">
+<pre><code>x = "100"
+y = int(x)
+z = float(y)
+
+print(y, z)</code></pre>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div class="warning-box">
+          ❌ Mixing incompatible data types<br>
+          ❌ Forgetting to convert user input (string) to numbers
+        </div>
+
+        <h2>Practice Exercises</h2>
         <ol>
-          <li>Create a list of numbers, append a value, and print the last element.</li>
-          <li>Create a tuple and attempt to change an element — observe the error and explain why.</li>
-          <li>Create a dict of students and their scores, then print names with scores &gt; 80.</li>
+          <li>Create variables of type int, float, and string</li>
+          <li>Print their values and data types</li>
         </ol>
-      </section>
 
-      <section class="section">
-        <h3>Next steps</h3>
-        <p>Continue to <a href="lists.html">Lists</a> and <a href="strings.html">Strings</a> to explore collection behaviors and string operations in detail.</p>
-      </section>
-    </article>
+        <div class="next-topic">
+          <a href="loops.html">Next → Loops</a>
+        </div>
+
+      </article>
+
+    </div>
   </main>
 
-  <footer class="site-footer container center"><p>© Python Learning — Data Types</p></footer>
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
 </body>
 </html>
