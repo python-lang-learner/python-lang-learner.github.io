@@ -1,65 +1,124 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Functions — Python Learning</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8">
+  <title>Functions in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="../index.html">Python Learning</a>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../intro.html">Intro</a>
-        <a class="active" href="../topics/index.html">Topics</a>
-        <a href="../projects.html">Projects</a>
-      </nav>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
+
+      <article class="topic-card">
+
+        <h1>Functions in Python</h1>
+
+        <p>
+          A function is a reusable block of code that performs a specific task.
+          Functions help make programs modular, readable, and easier to maintain.
+        </p>
+
+        <div class="info-box">
+          💡 Python functions are defined using the <strong>def</strong> keyword.
+        </div>
+
+        <h2>Defining a Function</h2>
+
+        <p>
+          You can define a function using <code>def</code>, followed by the function name
+          and parentheses.
+        </p>
+
+        <div class="code-block">
+<pre><code>def greet():
+    print("Hello, welcome to Python!")
+
+greet()</code></pre>
+        </div>
+
+        <h2>Function with Parameters</h2>
+
+        <p>
+          Parameters allow you to pass data into a function.
+        </p>
+
+        <div class="code-block">
+<pre><code>def greet(name):
+    print("Hello", name)
+
+greet("Khushi")
+greet("Python")</code></pre>
+        </div>
+
+        <h2>Function with Return Value</h2>
+
+        <p>
+          A function can return a value using the <strong>return</strong> keyword.
+        </p>
+
+        <div class="code-block">
+<pre><code>def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)</code></pre>
+        </div>
+
+        <h2>Default Parameters</h2>
+
+        <p>
+          You can assign default values to parameters.
+        </p>
+
+        <div class="code-block">
+<pre><code>def greet(name="Student"):
+    print("Hello", name)
+
+greet()
+greet("Khushi")</code></pre>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div class="warning-box">
+          ❌ Forgetting to call the function<br>
+          ❌ Not using return when a value is needed<br>
+          ❌ Indentation errors inside functions
+        </div>
+
+        <h2>Practice Exercises</h2>
+        <ol>
+          <li>Create a function that prints your name</li>
+          <li>Create a function that adds two numbers</li>
+          <li>Create a function that checks if a number is even</li>
+        </ol>
+
+        <div class="next-topic">
+          <a href="lists.html">Next → Lists</a>
+        </div>
+
+      </article>
+
     </div>
-  </header>
-
-  <main class="wrap content">
-    <h1>Functions</h1>
-    <p>Functions group reusable code. Use <code>def</code> to define a function and <code>return</code> to return a value.</p>
-
-    <section class="card">
-      <h2>Basic example</h2>
-      <pre><code>def greet(name):
-    return "Hello, " + name
-
-print(greet("Asha"))  # Hello, Asha</code></pre>
-    </section>
-
-    <section class="card">
-      <h2>Arguments & defaults</h2>
-      <pre><code>def power(x, n=2):   # n has default value 2
-    return x ** n
-
-print(power(3))    # 9
-print(power(3, 3)) # 27</code></pre>
-    </section>
-
-    <section class="card">
-      <h2>Docstrings</h2>
-      <p>Document your functions with a docstring right under the definition.</p>
-      <pre><code>def add(a, b):
-    """Return the sum of a and b."""
-    return a + b</code></pre>
-    </section>
-
-    <section class="card">
-      <h2>Exercises</h2>
-      <ol>
-        <li>Write a function that returns True if a number is prime.</li>
-        <li>Write a function that takes a list and returns the second largest value.</li>
-      </ol>
-    </section>
-
-    <footer class="pager">
-      <a href="range.html" class="btn">Next → Range</a>
-      <a href="datatypes.html" class="btn btn-secondary">← Back</a>
-    </footer>
   </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
 </body>
 </html>
