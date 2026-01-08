@@ -1,53 +1,55 @@
-<main>
-  <div class="topic-container">
+<body>
+  <!-- HEADER -->
+  <header id="site-header" class="site-header"></header>
 
-    <h1>Variables in Python</h1>
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="content-wrapper">
+      <div class="topic-card">
 
-    <p>
-      Variables are used to store data in Python.
-      They allow programs to remember values and reuse them later.
-    </p>
+        <h1>Variables in Python</h1>
 
-    <div class="info-box">
-      💡 Python uses <strong>dynamic typing</strong> —
-      variables can change type at runtime.
+        <p>
+            Variables are used to store information in Python programs.
+            They help us reuse and manipulate data easily.
+        </p>
+
+        <div class="info-box">
+        💡 Python uses dynamic typing — variable types can change at runtime.
+        </div>
+
+        <h2>Creating Variables</h2>
+
+        <div class="code-block">
+          <pre>
+              x = 10
+              name = "Khushi"
+              a, b = 1, 2
+              x = "now a string"
+              print(x, name, a, b)
+          </pre>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div class="warning-box">
+          ❌ Using keywords as variable names<br>
+          ❌ Confusing local and global variables
+        </div>
+
+        <h2>Practice</h2>
+        <ol>
+          <li>Create name, age and city variables</li>
+          <li>Print them in one line</li>
+        </ol>
+
+        <div class="next-topic">
+          <a href="data-types.html">Next → Data Types</a>
+        </div>
+
+      </div>
     </div>
-
-    <h2>Creating Variables</h2>
-    <p>You can create a variable using the <code>=</code> operator.</p>
-
-    <div class="code-block">
-<pre>
-x = 10
-name = "Khushi"
-a, b = 1, 2
-x = "now a string"
-print(x, name, a, b)
-</pre>
-    </div>
-
-    <h2>Rules for Naming Variables</h2>
-    <ul>
-      <li>Must start with a letter or underscore</li>
-      <li>Cannot start with a number</li>
-      <li>Cannot use Python keywords</li>
-      <li>Variables are case-sensitive</li>
-    </ul>
-
-    <div class="warning-box">
-      ⚠️ Avoid using single-letter variable names except for counters.
-    </div>
-
-    <h2>Practice Exercises</h2>
-    <ol>
-      <li>Create variables <code>name</code>, <code>age</code>, and <code>city</code></li>
-      <li>Print them in one line</li>
-      <li>Change the value of age</li>
-    </ol>
-
-    <div class="next-topic">
-      👉 <a href="/topics/data-types.html">Next: Data Types in Python</a>
-    </div>
-
-  </div>
-</main>
+  </main>
+  <!-- FOOTER (loaded by JS) -->
+  <footer id="site-footer"></footer>    
+</body>

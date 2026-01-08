@@ -77,3 +77,53 @@ body,
     background-color 0.35s ease,
     opacity 0.35s ease;
 }
+/**************************************************/
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* ===== FIXED HEADER ===== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: #0f172a;
+  color: #fff;
+  z-index: 1000;
+}
+
+/* ===== FIXED FOOTER ===== */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background: #0f172a;
+  color: #cbd5e1;
+  z-index: 1000;
+}
+
+/* ===== PAGE SPACING ===== */
+.page-content {
+  padding-top: 80px;   /* header height + gap */
+  padding-bottom: 80px; /* footer height + gap */
+}
+
+/* ===== CONTENT WRAPPER ===== */
+.content-wrapper {
+  max-width: 980px;
+  margin: auto;
+  padding: 32px;
+}
