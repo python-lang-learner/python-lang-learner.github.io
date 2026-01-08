@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loops in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
+
+      <article class="topic-card">
+
+        <h1>Loops in Python</h1>
+
+        <p>
+          Loops are used to execute a block of code repeatedly.
+          They help reduce repetition and make programs efficient.
+        </p>
+
+        <div class="info-box">
+          💡 Python mainly uses <strong>for</strong> loops and <strong>while</strong> loops.
+        </div>
+
+        <h2>For Loop</h2>
+
+        <p>
+          A <strong>for loop</strong> is used to iterate over a sequence
+          such as a list, string, or range.
+        </p>
+
+        <div class="code-block">
+<pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+        </div>
+
+        <h2>While Loop</h2>
+
+        <p>
+          A <strong>while loop</strong> runs as long as a condition is true.
+        </p>
+
+        <div class="code-block">
+<pre><code>count = 1
+while count <= 5:
+    print(count)
+    count += 1</code></pre>
+        </div>
+
+        <h2>Loop Control Statements</h2>
+
+        <ul>
+          <li><strong>break</strong> – exits the loop</li>
+          <li><strong>continue</strong> – skips the current iteration</li>
+          <li><strong>pass</strong> – does nothing (placeholder)</li>
+        </ul>
+
+        <div class="code-block">
+<pre><code>for i in range(1, 6):
+    if i == 3:
+        continue
+    if i == 5:
+        break
+    print(i)</code></pre>
+        </div>
+
+        <h2>Common Mistakes</h2>
+
+        <div class="warning-box">
+          ❌ Infinite loops due to wrong condition<br>
+          ❌ Forgetting to update loop variables
+        </div>
+
+        <h2>Practice Exercises</h2>
+        <ol>
+          <li>Print numbers from 1 to 10 using a loop</li>
+          <li>Print even numbers between 1 and 20</li>
+        </ol>
+
+        <div class="next-topic">
+          <a href="functions.html">Next → Functions</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
