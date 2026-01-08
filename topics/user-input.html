@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Output in Python | Python Learning</title>
+  <title>Input in Python | Python Learning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../css/base.css">
@@ -21,52 +21,47 @@
   <div class="topic-layout">
     <article class="topic-card">
 
-      <h1>Output in Python</h1>
+      <h1>Input in Python</h1>
 
       <p>
-        Output in Python is used to display information on the screen.
-        The most common way to produce output is using the <code>print()</code> function.
+        Input allows users to enter data into a program.
+        Python uses the <code>input()</code> function to take input from the user.
       </p>
 
       <div class="info-box">
-        💡 The <code>print()</code> function can display text, numbers, and variables.
+        💡 Data entered using <code>input()</code> is always treated as a string.
       </div>
 
-      <h2>Using print()</h2>
+      <h2>Basic Input Example</h2>
 
       <div class="code-block">
-<pre><code>print("Hello World")
-print(10)
-print(5 + 3)</code></pre>
+<pre><code>name = input("Enter your name: ")
+print("Hello", name)</code></pre>
       </div>
 
-      <h2>Printing Multiple Values</h2>
+      <h2>Input with Numbers</h2>
+
+      <p>
+        To take numeric input, we convert the input using <code>int()</code> or <code>float()</code>.
+      </p>
 
       <div class="code-block">
-<pre><code>name = "Khushi"
-age = 18
-print(name, age)</code></pre>
-      </div>
-
-      <h2>Formatted Output</h2>
-
-      <div class="code-block">
-<pre><code>name = "Python"
-print("I am learning", name)</code></pre>
+<pre><code>age = int(input("Enter your age: "))
+print("You are", age, "years old")</code></pre>
       </div>
 
       <div class="warning-box">
-        ❌ Forgetting quotes around text causes errors
+        ❌ Forgetting type conversion causes logical errors
       </div>
 
       <h2>Practice</h2>
       <ol>
-        <li>Print your name</li>
-        <li>Print the result of 10 + 20</li>
+        <li>Ask the user for their city</li>
+        <li>Add two numbers entered by the user</li>
       </ol>
 
       <div class="next-topic">
-        <a href="input.html">Next → Input in Python</a>
+        <a href="comments.html">Next → Comments in Python</a>
       </div>
 
     </article>

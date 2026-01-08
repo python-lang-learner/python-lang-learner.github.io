@@ -1,64 +1,86 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Python Syntax — Python Learning</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    .lesson-intro { max-width:1000px; margin:36px auto; padding:18px; background:#fff; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.04);}
-    .code-block pre { background:#0b1220; color:#dbeafe; padding:14px; border-radius:8px; overflow:auto; font-family:monospace;}
-    .section { margin-top:18px; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Python Syntax | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="header-inner container">
-    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a href="index.html" class="active">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
+<header id="site-header"></header>
 
-<main class="container">
-  <article class="lesson-intro">
-    <h2>Python Syntax</h2>
-    <p class="note">Python uses indentation, not braces, to define blocks of code. This makes syntax clean, readable and consistent.</p>
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-    <section class="section">
-      <h3>Indentation</h3>
-      <p>Python requires indentation to define code blocks (loops, functions, conditionals). Default is 4 spaces.</p>
-      <div class="code-block"><pre>if True:
-    print("Indented block")
-print("Outside block")</pre></div>
-    </section>
+      <h1>Python Syntax</h1>
 
-    <section class="section">
-      <h3>Statements</h3>
-      <p>Python uses newlines to separate statements. Semicolons are allowed but discouraged.</p>
-    </section>
+      <p>
+        Python syntax refers to the rules that define how a Python program is written and interpreted.
+        Python syntax is simple, readable, and beginner-friendly.
+      </p>
 
-    <section class="section">
-      <h3>Comments</h3>
-      <p>Single-line comments: <code># comment</code><br>Docstrings: triple quotes <code>""" """</code>.</p>
-    </section>
+      <div class="info-box">
+        💡 Python focuses on readability — code looks almost like plain English.
+      </div>
 
-    <section class="section">
-      <h3>Exercises</h3>
+      <h2>Basic Python Syntax</h2>
+
+      <div class="code-block">
+<pre><code>print("Hello, Python!")</code></pre>
+      </div>
+
+      <h2>Indentation in Python</h2>
+
+      <p>
+        Python uses indentation instead of braces <code>{ }</code> to define blocks of code.
+      </p>
+
+      <div class="code-block">
+<pre><code>if 5 > 2:
+    print("Five is greater than two")</code></pre>
+      </div>
+
+      <div class="warning-box">
+        ❌ Incorrect indentation will cause an error
+      </div>
+
+      <h2>Case Sensitivity</h2>
+
+      <p>
+        Python is case-sensitive.
+      </p>
+
+      <div class="code-block">
+<pre><code>name = "Python"
+Name = "Programming"
+print(name)
+print(Name)</code></pre>
+      </div>
+
+      <h2>Practice</h2>
       <ol>
-        <li>Write an <code>if</code> block with proper indentation.</li>
-        <li>Rewrite a multi-line block incorrectly and observe the error.</li>
+        <li>Write a simple print statement</li>
+        <li>Use indentation in an if statement</li>
       </ol>
-    </section>
-  </article>
+
+      <div class="next-topic">
+        <a href="output.html">Next → Output in Python</a>
+      </div>
+
+    </article>
+  </div>
 </main>
 
-<footer class="site-footer container center"><p>© Python Learning — Syntax</p></footer>
+<footer id="site-footer"></footer>
 
 </body>
 </html>
