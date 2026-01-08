@@ -1,46 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Variables in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
+</head>
+
 <body>
+
   <!-- HEADER -->
-  <header id="site-header" class="site-header"></header>
+  <header id="site-header"></header>
 
   <!-- PAGE CONTENT -->
   <main class="page-content">
-    <div class="content-wrapper">
-      <div class="topic-card">
+    <div class="topic-layout">
+
+      <article class="topic-card">
 
         <h1>Variables in Python</h1>
 
         <p>
-            Variables are used to store information in Python programs.
-            They help us reuse and manipulate data easily.
+          Variables are used to store data in Python programs.
+          Python uses <strong>dynamic typing</strong>, meaning variable types
+          can change during runtime.
         </p>
 
         <div class="info-box">
-        💡 Python uses dynamic typing — variable types can change at runtime.
+          💡 Variables do not need explicit type declarations in Python.
         </div>
 
         <h2>Creating Variables</h2>
 
         <div class="code-block">
-          <pre>
-            x = 10
-            name = "Khushi"
-            a, b = 1, 2
-            x = "now a string"
-            print(x, name, a, b)
-          </pre>
-
+<pre><code>x = 10
+name = "Khushi"
+a, b = 1, 2
+x = "now a string"
+print(x, name, a, b)</code></pre>
         </div>
 
         <h2>Common Mistakes</h2>
 
         <div class="warning-box">
-          ❌ Using keywords as variable names<br>
+          ❌ Using reserved keywords as variable names<br>
           ❌ Confusing local and global variables
         </div>
 
-        <h2>Practice</h2>
+        <h2>Practice Exercises</h2>
         <ol>
-          <li>Create name, age and city variables</li>
+          <li>Create variables <code>name</code>, <code>age</code>, and <code>city</code></li>
           <li>Print them in one line</li>
         </ol>
 
@@ -48,9 +65,13 @@
           <a href="data-types.html">Next → Data Types</a>
         </div>
 
-      </div>
+      </article>
+
     </div>
   </main>
-  <!-- FOOTER (loaded by JS) -->
-  <footer id="site-footer"></footer>    
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
 </body>
+</html>
