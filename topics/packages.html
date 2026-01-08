@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Packages | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
+
+      <article class="topic-card">
+
+        <h1>Packages in Python</h1>
+
+        <p>
+          A <strong>package</strong> is a collection of related modules organized
+          inside directories. Packages help manage large Python projects
+          efficiently.
+        </p>
+
+        <div class="info-box">
+          💡 A package is simply a folder that contains Python modules.
+        </div>
+
+        <!-- ================= PACKAGE STRUCTURE ================= -->
+        <h2>Package Structure</h2>
+
+        <p>
+          A package must contain a special file called <code>__init__.py</code>.
+        </p>
+
+        <div class="code-block">
+<pre><code>mypackage/
+│
+├── __init__.py
+├── math_utils.py
+└── string_utils.py</code></pre>
+        </div>
+
+        <!-- ================= CREATING PACKAGE ================= -->
+        <h2>Creating a Package</h2>
+
+        <p>Create a folder and add Python files inside it.</p>
+
+        <div class="code-block">
+<pre><code># math_utils.py
+def add(a, b):
+    return a + b</code></pre>
+        </div>
+
+        <!-- ================= USING PACKAGE ================= -->
+        <h2>Using a Package</h2>
+
+        <p>Import modules from a package like this:</p>
+
+        <div class="code-block">
+<pre><code>from mypackage import math_utils
+
+print(math_utils.add(5, 7))</code></pre>
+        </div>
+
+        <!-- ================= DIRECT IMPORT ================= -->
+        <h2>Import Specific Functions</h2>
+
+        <div class="code-block">
+<pre><code>from mypackage.math_utils import add
+
+print(add(10, 20))</code></pre>
+        </div>
+
+        <!-- ================= BUILT-IN PACKAGES ================= -->
+        <h2>Built-in Python Packages</h2>
+
+        <p>
+          Python provides many useful built-in packages such as:
+        </p>
+
+        <ul>
+          <li><strong>os</strong> – interacting with the operating system</li>
+          <li><strong>sys</strong> – system-specific parameters</li>
+          <li><strong>collections</strong> – advanced data structures</li>
+          <li><strong>json</strong> – working with JSON data</li>
+        </ul>
+
+        <!-- ================= PRACTICE ================= -->
+        <h2>Practice Exercises</h2>
+
+        <ol>
+          <li>Create a package with two modules</li>
+          <li>Import a function from one module</li>
+          <li>Use a built-in package like <code>os</code></li>
+        </ol>
+
+        <!-- ================= NEXT ================= -->
+        <div class="next-topic">
+          <a href="functions.html">Next → Functions</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
