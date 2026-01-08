@@ -1,70 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Tuples — Python Learning</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    .lesson-intro{max-width:1000px;margin:36px auto;padding:18px;background:#fff;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
-    .code-block pre{background:#0b1220;color:#dbeafe;padding:14px;border-radius:8px;overflow:auto}
-    .section{margin-top:18px}
-  </style>
+  <meta charset="UTF-8">
+  <title>Tuples in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
-<header class="site-header">
-  <div class="header-inner container">
-    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a href="index.html" class="active">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
 
-<main class="container">
-  <article class="lesson-intro">
-    <h2>Tuples</h2>
-    <p class="note">Tuples are ordered, immutable sequences. They are useful for fixed collections and for using as dict keys (when elements are hashable).</p>
+  <!-- HEADER -->
+  <header id="site-header"></header>
 
-    <section class="section">
-      <h3>Details</h3>
-      <p>Create tuples with parentheses or by comma separation. Tuples support indexing and unpacking. Because they are immutable, operations that seem to modify create new tuples instead.</p>
-    </section>
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
 
-    <section class="section">
-      <h3>Examples</h3>
-      <div class="code-block"><pre>point = (3, 4)
-x, y = point
-single = (5,)   # single element tuple
-print(x, y)</pre></div>
-    </section>
+      <article class="topic-card">
 
-    <section class="section">
-      <h3>Common mistakes</h3>
-      <ul>
-        <li>Expecting methods like <code>append</code> (lists) to exist on tuples.</li>
-        <li>Forgetting trailing comma for single-element tuples.</li>
-      </ul>
-    </section>
+        <h1>Tuples in Python</h1>
 
-    <section class="section">
-      <h3>Exercises</h3>
-      <ol>
-        <li>Unpack a tuple of three elements into variables and print them.</li>
-        <li>Convert a list into a tuple and demonstrate immutability.</li>
-      </ol>
-    </section>
+        <p>
+          A tuple is a collection of items that is ordered and <strong>immutable</strong>.
+          Once created, a tuple cannot be changed.
+        </p>
 
-    <section class="section">
-      <h3>Next steps</h3>
-      <p>Use tuples for fixed records. Explore <a href="lists.html">lists</a> when mutability is needed.</p>
-    </section>
-  </article>
-</main>
+        <div class="info-box">
+          💡 Tuples are written using round brackets <strong>( )</strong>.
+        </div>
 
-<footer class="site-footer container center"><p>© Python Learning — Tuples</p></footer>
+        <h2>Creating a Tuple</h2>
+
+        <div class="code-block">
+<pre><code>numbers = (1, 2, 3)
+names = ("Khushi", "Python", "Learner")
+single = (5,)
+
+print(numbers)
+print(names)
+print(single)</code></pre>
+        </div>
+
+        <h2>Accessing Tuple Elements</h2>
+
+        <p>
+          Tuple elements are accessed using index positions, similar to lists.
+        </p>
+
+        <div class="code-block">
+<pre><code>colors = ("red", "green", "blue")
+
+print(colors[0])
+print(colors[1])
+print(colors[-1])</code></pre>
+        </div>
+
+        <h2>Immutability of Tuples</h2>
+
+        <p>
+          Tuples cannot be modified after creation.
+        </p>
+
+        <div class="warning-box">
+          ❌ This will cause an error:
+        </div>
+
+        <div class="code-block">
+<pre><code>colors = ("red", "green", "blue")
+colors[1] = "yellow"   # TypeError</code></pre>
+        </div>
+
+        <h2>Tuple Unpacking</h2>
+
+        <p>
+          You can assign tuple values to multiple variables at once.
+        </p>
+
+        <div class="code-block">
+<pre><code>person = ("Khushi", 18, "India")
+name, age, country = person
+
+print(name)
+print(age)
+print(country)</code></pre>
+        </div>
+
+        <h2>Tuple Methods</h2>
+
+        <p>
+          Tuples have limited methods compared to lists.
+        </p>
+
+        <div class="code-block">
+<pre><code>nums = (1, 2, 2, 3)
+
+print(nums.count(2))
+print(nums.index(3))</code></pre>
+        </div>
+
+        <h2>When to Use Tuples?</h2>
+
+        <ul>
+          <li>When data should not change</li>
+          <li>For fixed collections</li>
+          <li>Better performance than lists</li>
+        </ul>
+
+        <h2>Practice Exercises</h2>
+        <ol>
+          <li>Create a tuple of 5 subjects</li>
+          <li>Print the first and last subject</li>
+          <li>Unpack the tuple into variables</li>
+        </ol>
+
+        <div class="next-topic">
+          <a href="sets.html">Next → Sets</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
 </body>
 </html>
