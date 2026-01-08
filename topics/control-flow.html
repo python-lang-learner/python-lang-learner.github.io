@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Control Flow in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
+
+      <article class="topic-card">
+
+        <h1>Control Flow in Python</h1>
+
+        <p>
+          Control flow allows you to <strong>control the execution</strong> of your
+          program based on conditions and repetition.
+        </p>
+
+        <div class="info-box">
+          💡 Control flow decides <strong>what runs, when it runs, and how many times</strong>.
+        </div>
+
+        <!-- ================= IF / ELSE ================= -->
+        <h2>if Statement</h2>
+
+        <p>
+          The <code>if</code> statement runs code only when a condition is true.
+        </p>
+
+        <div class="code-block">
+<pre><code>age = 18
+
+if age >= 18:
+    print("You are eligible to vote")</code></pre>
+        </div>
+
+        <h2>if – else</h2>
+
+        <div class="code-block">
+<pre><code>age = 15
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")</code></pre>
+        </div>
+
+        <h2>if – elif – else</h2>
+
+        <div class="code-block">
+<pre><code>marks = 75
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 60:
+    print("Grade B")
+else:
+    print("Grade C")</code></pre>
+        </div>
+
+        <!-- ================= LOOPS ================= -->
+        <h2>Loops in Python</h2>
+
+        <p>
+          Loops allow you to repeat code multiple times.
+        </p>
+
+        <div class="info-box">
+          🔁 Python has two main loops: <strong>for</strong> and <strong>while</strong>.
+        </div>
+
+        <!-- ================= FOR LOOP ================= -->
+        <h2>for Loop</h2>
+
+        <p>
+          Used when you know how many times you want to loop.
+        </p>
+
+        <div class="code-block">
+<pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+        </div>
+
+        <h2>Looping Through a List</h2>
+
+        <div class="code-block">
+<pre><code>fruits = ["apple", "banana", "mango"]
+
+for fruit in fruits:
+    print(fruit)</code></pre>
+        </div>
+
+        <!-- ================= WHILE LOOP ================= -->
+        <h2>while Loop</h2>
+
+        <p>
+          Runs as long as the condition remains true.
+        </p>
+
+        <div class="code-block">
+<pre><code>count = 1
+
+while count <= 5:
+    print(count)
+    count += 1</code></pre>
+        </div>
+
+        <!-- ================= BREAK & CONTINUE ================= -->
+        <h2>break Statement</h2>
+
+        <p>
+          Stops the loop immediately.
+        </p>
+
+        <div class="code-block">
+<pre><code>for i in range(1, 10):
+    if i == 5:
+        break
+    print(i)</code></pre>
+        </div>
+
+        <h2>continue Statement</h2>
+
+        <p>
+          Skips the current iteration.
+        </p>
+
+        <div class="code-block">
+<pre><code>for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)</code></pre>
+        </div>
+
+        <!-- ================= PRACTICE ================= -->
+        <h2>Practice Exercises</h2>
+
+        <ol>
+          <li>Check if a number is even or odd</li>
+          <li>Print numbers from 1 to 20 using a loop</li>
+          <li>Print only even numbers using <code>continue</code></li>
+          <li>Stop the loop when number reaches 10</li>
+        </ol>
+
+        <!-- ================= NEXT ================= -->
+        <div class="next-topic">
+          <a href="functions.html">Next → Functions</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
