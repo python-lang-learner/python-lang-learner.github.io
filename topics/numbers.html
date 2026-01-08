@@ -1,63 +1,139 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Numbers — Python Learning</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    .lesson-intro { max-width:1000px; margin:36px auto; padding:18px; background:#fff; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.04);}
-    .code-block pre { background:#0b1220; color:#dbeafe; padding:14px; border-radius:8px; overflow:auto;}
-  </style>
+  <meta charset="UTF-8">
+  <title>Numbers and Type Casting in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="header-inner container">
-    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a href="index.html" class="active">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
+<!-- HEADER -->
+<header id="site-header"></header>
 
-<main class="container">
-  <article class="lesson-intro">
-    <h2>Numbers</h2>
-    <p class="note">Python supports integers, floats and complex numbers.</p>
+<!-- CONTENT -->
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-    <section class="section">
-      <h3>Types of Numbers</h3>
+      <h1>Numbers and Type Casting in Python</h1>
+
+      <p>
+        Python supports different types of numbers such as integers, floating-point numbers,
+        and complex numbers. Type casting is used to convert one data type into another.
+      </p>
+
+      <div class="info-box">
+        💡 Numbers are widely used in calculations, marks, age, prices, and more.
+      </div>
+
+      <!-- ============================= -->
+      <h2>Types of Numbers</h2>
+
+      <p>Python mainly supports the following numeric data types:</p>
+
       <ul>
-        <li><b>int</b> – integer values</li>
-        <li><b>float</b> – decimal values</li>
-        <li><b>complex</b> – numbers with real and imaginary parts</li>
+        <li><strong>int</strong> – Whole numbers (10, -5, 100)</li>
+        <li><strong>float</strong> – Decimal numbers (3.14, 0.5)</li>
+        <li><strong>complex</strong> – Numbers with real and imaginary parts</li>
       </ul>
-    </section>
 
-    <section class="section">
-      <h3>Examples</h3>
-      <div class="code-block"><pre>a = 10          # int
-b = 3.14        # float
-c = 5 + 2j      # complex
+      <div class="code-block">
+<pre><code>a = 10
+b = 3.5
+c = 2 + 3j
 
-print(type(a), type(b), type(c))</pre></div>
-    </section>
+print(type(a))
+print(type(b))
+print(type(c))</code></pre>
+      </div>
 
-    <section class="section">
-      <h3>Exercises</h3>
+      <!-- ============================= -->
+      <h2>Basic Arithmetic Operations</h2>
+
+      <p>Python supports all common arithmetic operations:</p>
+
+      <div class="code-block">
+<pre><code>x = 10
+y = 3
+
+print(x + y)   # Addition
+print(x - y)   # Subtraction
+print(x * y)   # Multiplication
+print(x / y)   # Division
+print(x % y)   # Modulus
+print(x ** y)  # Power</code></pre>
+      </div>
+
+      <!-- ============================= -->
+      <h2>Type Casting</h2>
+
+      <p>
+        Type casting is the process of converting one data type into another.
+        Python provides built-in functions for casting.
+      </p>
+
+      <div class="info-box">
+        🔁 Type casting is commonly used when taking user input.
+      </div>
+
+      <!-- ============================= -->
+      <h2>int() Casting</h2>
+
+      <div class="code-block">
+<pre><code>x = "10"
+y = int(x)
+print(y + 5)</code></pre>
+      </div>
+
+      <!-- ============================= -->
+      <h2>float() Casting</h2>
+
+      <div class="code-block">
+<pre><code>x = "3.5"
+y = float(x)
+print(y + 1.5)</code></pre>
+      </div>
+
+      <!-- ============================= -->
+      <h2>str() Casting</h2>
+
+      <div class="code-block">
+<pre><code>age = 18
+print("I am " + str(age) + " years old")</code></pre>
+      </div>
+
+      <div class="warning-box">
+        ❌ Invalid conversions will raise errors (e.g., int("abc"))
+      </div>
+
+      <!-- ============================= -->
+      <h2>Practice</h2>
       <ol>
-        <li>Create 3 numbers of different types and print their types.</li>
-        <li>Perform addition, subtraction, multiplication and division.</li>
+        <li>Convert a float to an integer</li>
+        <li>Add two numbers taken as input from the user</li>
+        <li>Print your age using string casting</li>
       </ol>
-    </section>
 
-  </article>
+      <div class="next-topic">
+        <a href="strings.html">Next → Strings</a>
+      </div>
+
+    </article>
+  </div>
 </main>
 
-<footer class="site-footer container center"><p>© Python Learning — Numbers</p></footer>
+<!-- FOOTER -->
+<footer id="site-footer"></footer>
+
 </body>
 </html>
