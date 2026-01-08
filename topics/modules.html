@@ -1,54 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Modules — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8">
+  <title>Python Modules | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="/index.html">Python Learning</a>
-      <nav class="main-nav">
-        <a href="/index.html">Home</a>
-        <a href="/intro.html">Intro</a>
-        <a href="/topics/index.html" class="active">Topics</a>
-        <a href="/projects.html">Projects</a>
-      </nav>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
+
+      <article class="topic-card">
+
+        <h1>Modules in Python</h1>
+
+        <p>
+          A <strong>module</strong> is a file that contains Python code such as
+          functions, variables, and classes.
+          Modules help you organize and reuse code efficiently.
+        </p>
+
+        <div class="info-box">
+          💡 Python modules allow you to <strong>write code once</strong> and
+          <strong>use it anywhere</strong>.
+        </div>
+
+        <!-- ================= BUILT-IN MODULES ================= -->
+        <h2>Using Built-in Modules</h2>
+
+        <p>
+          Python comes with many built-in modules like
+          <code>math</code>, <code>random</code>, and <code>datetime</code>.
+        </p>
+
+        <div class="code-block">
+<pre><code>import math
+
+print(math.sqrt(25))
+print(math.pi)</code></pre>
+        </div>
+
+        <!-- ================= IMPORT METHODS ================= -->
+        <h2>Different Ways to Import Modules</h2>
+
+        <h3>1. Import entire module</h3>
+
+        <div class="code-block">
+<pre><code>import random
+
+print(random.randint(1, 10))</code></pre>
+        </div>
+
+        <h3>2. Import specific items</h3>
+
+        <div class="code-block">
+<pre><code>from math import sqrt, pi
+
+print(sqrt(16))
+print(pi)</code></pre>
+        </div>
+
+        <h3>3. Import with alias</h3>
+
+        <div class="code-block">
+<pre><code>import datetime as dt
+
+print(dt.date.today())</code></pre>
+        </div>
+
+        <!-- ================= CUSTOM MODULE ================= -->
+        <h2>Creating Your Own Module</h2>
+
+        <p>
+          You can create your own module by saving Python code in a <code>.py</code> file.
+        </p>
+
+        <div class="code-block">
+<pre><code># file: calculator.py
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b</code></pre>
+        </div>
+
+        <p>Using your custom module:</p>
+
+        <div class="code-block">
+<pre><code>import calculator
+
+print(calculator.add(5, 3))
+print(calculator.subtract(10, 4))</code></pre>
+        </div>
+
+        <!-- ================= DIR & HELP ================= -->
+        <h2>Exploring Modules</h2>
+
+        <p>
+          Use <code>dir()</code> and <code>help()</code> to explore module contents.
+        </p>
+
+        <div class="code-block">
+<pre><code>import math
+
+print(dir(math))
+help(math)</code></pre>
+        </div>
+
+        <!-- ================= PRACTICE ================= -->
+        <h2>Practice Exercises</h2>
+
+        <ol>
+          <li>Use the <code>random</code> module to generate a number between 1 and 100</li>
+          <li>Import only <code>sqrt</code> from the math module</li>
+          <li>Create a module that converts Celsius to Fahrenheit</li>
+        </ol>
+
+        <!-- ================= NEXT ================= -->
+        <div class="next-topic">
+          <a href="packages.html">Next → Packages</a>
+        </div>
+
+      </article>
+
     </div>
-  </header>
-
-  <main class="container narrow">
-    <h1>Modules & Packages</h1>
-    <p>Modules are Python files providing functions, classes and variables. Packages are directories with an <code>__init__.py</code> (optional in modern Python) that group related modules.</p>
-
-    <h2>Importing</h2>
-    <pre><code>import math
-from math import sqrt
-import mymodule as mm</code></pre>
-
-    <h2>Creating a module</h2>
-    <p>Make a file <code>utils.py</code>:</p>
-    <pre><code># utils.py
-def greet(name):
-    return f"Hello, {name}"</code></pre>
-    <p>Then use it:</p>
-    <pre><code>from utils import greet
-print(greet("Anna"))</code></pre>
-
-    <h2>Packages</h2>
-    <pre><code>mypkg/
-  __init__.py
-  math_tools.py
-  io_tools.py</code></pre>
-
-    <h2>Installing & virtual environments</h2>
-    <p>Use <code>pip install package-name</code>. Always use a virtual environment: <code>python -m venv venv</code> then <code>venv\Scripts\activate</code> (Windows) or <code>source venv/bin/activate</code> (mac/linux).</p>
-
-    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
   </main>
 
-  <footer class="site-footer container">© Python Learning</footer>
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
 </body>
 </html>
