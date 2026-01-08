@@ -1,71 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Sets — Python Learning</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="../styles.css">
-  <style>
-    .lesson-intro{max-width:1000px;margin:36px auto;padding:18px;background:#fff;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,0.04)}
-    .code-block pre{background:#0b1220;color:#dbeafe;padding:14px;border-radius:8px;overflow:auto}
-    .section{margin-top:18px}
-  </style>
+  <meta charset="UTF-8">
+  <title>Sets in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
-<header class="site-header">
-  <div class="header-inner container">
-    <h1 class="brand"><a href="../index.html">Python Learning</a></h1>
-    <nav class="main-nav">
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a href="index.html" class="active">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
 
-<main class="container">
-  <article class="lesson-intro">
-    <h2>Sets</h2>
-    <p class="note">Sets are unordered collections of unique elements. They are efficient for membership tests and set algebra (union, intersection, difference).</p>
+  <!-- HEADER -->
+  <header id="site-header"></header>
 
-    <section class="section">
-      <h3>Details</h3>
-      <p>Create sets with curly braces or <code>set()</code>. Elements must be hashable. Useful operations: <code>|</code> (union), <code>&amp;</code> (intersection), <code>-</code> (difference), <code>^</code> (symmetric difference).</p>
-    </section>
+  <!-- PAGE CONTENT -->
+  <main class="page-content">
+    <div class="topic-layout">
 
-    <section class="section">
-      <h3>Examples</h3>
-      <div class="code-block"><pre>a = {1,2,3,3}
-print(a)           # {1,2,3}
-b = {2,3,4}
-print(a & b)       # intersection
-print(a | b)       # union</pre></div>
-    </section>
+      <article class="topic-card">
 
-    <section class="section">
-      <h3>Common mistakes</h3>
-      <ul>
-        <li>Expecting order in sets — iteration order is arbitrary.</li>
-        <li>Using unhashable items like lists as set elements (TypeError).</li>
-      </ul>
-    </section>
+        <h1>Sets in Python</h1>
 
-    <section class="section">
-      <h3>Exercises</h3>
-      <ol>
-        <li>Remove duplicates from a list using a set and preserve order (hint: use helper structure).</li>
-        <li>Compute intersection and difference of two lists using sets.</li>
-      </ol>
-    </section>
+        <p>
+          A set is a collection of unique items.
+          Sets are <strong>unordered</strong> and <strong>do not allow duplicates</strong>.
+        </p>
 
-    <section class="section">
-      <h3>Next steps</h3>
-      <p>Use sets for quick membership checks and deduplication. Continue to <a href="dictionaries.html">Dictionaries</a> for key-value storage.</p>
-    </section>
-  </article>
-</main>
+        <div class="info-box">
+          💡 Sets are written using curly brackets <strong>{ }</strong>.
+        </div>
 
-<footer class="site-footer container center"><p>© Python Learning — Sets</p></footer>
+        <h2>Creating a Set</h2>
+
+        <div class="code-block">
+<pre><code>numbers = {1, 2, 3, 4}
+colors = {"red", "green", "blue"}
+
+print(numbers)
+print(colors)</code></pre>
+        </div>
+
+        <h2>No Duplicate Values</h2>
+
+        <p>
+          Duplicate values are automatically removed.
+        </p>
+
+        <div class="code-block">
+<pre><code>nums = {1, 2, 2, 3, 3, 4}
+print(nums)</code></pre>
+        </div>
+
+        <h2>Adding & Removing Elements</h2>
+
+        <div class="code-block">
+<pre><code>fruits = {"apple", "banana"}
+
+fruits.add("orange")
+fruits.remove("banana")
+
+print(fruits)</code></pre>
+        </div>
+
+        <h2>Set Operations</h2>
+
+        <p>
+          Sets support mathematical operations like union and intersection.
+        </p>
+
+        <div class="code-block">
+<pre><code>a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a | b)   # Union
+print(a & b)   # Intersection
+print(a - b)   # Difference</code></pre>
+        </div>
+
+        <h2>Checking Membership</h2>
+
+        <div class="code-block">
+<pre><code>langs = {"python", "java", "c++"}
+
+print("python" in langs)
+print("ruby" in langs)</code></pre>
+        </div>
+
+        <h2>When to Use Sets?</h2>
+
+        <ul>
+          <li>To remove duplicates</li>
+          <li>Fast membership testing</li>
+          <li>Mathematical operations</li>
+        </ul>
+
+        <h2>Practice Exercises</h2>
+        <ol>
+          <li>Create a set of five numbers</li>
+          <li>Add two new numbers</li>
+          <li>Remove one number</li>
+          <li>Find intersection of two sets</li>
+        </ol>
+
+        <div class="next-topic">
+          <a href="dictionaries.html">Next → Dictionaries</a>
+        </div>
+
+      </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
 </body>
 </html>
