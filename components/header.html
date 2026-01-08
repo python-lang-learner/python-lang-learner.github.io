@@ -79,23 +79,35 @@
       <a href="/">Python Learning</a>
     </div>
 
+  <!--*******************************************************************************-->
+  <!-- Desktop Nav -->
     <nav class="main-nav">
-      <a href="/">Home</a>
       <a href="/intro.html">Intro</a>
       <a href="/topics/index.html">Topics</a>
-      <a href="/topics/exercises/index.html">Worksheets</a>
       <a href="/projects.html">Projects</a>
     </nav>
-    <div class="header-actions">
-      <button class="dark-toggle">🌙</button>
-      <button class="menu-btn">☰</button>
-    </div>
 
+    <!-- Mobile Toggle -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
   </div>
-  
+
+  <!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <nav>
+    <a href="/intro.html">Intro</a>
+    <a href="/topics/index.html">Topics</a>
+    <a href="/projects.html">Projects</a>
+  </nav>
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+
   <form class="search-bar">
     <input type="search" placeholder="Search topics, worksheets, projects">
     <button type="submit">Search</button>
   </form>
+
 </header>
+
 

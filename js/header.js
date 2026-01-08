@@ -18,3 +18,24 @@ toggle?.addEventListener("click", () => {
     ? "dark"
     : "light";
 });
+
+/**************************************************************** */
+/**************************************************************** */
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("menuToggle");
+  const drawer = document.getElementById("mobileDrawer");
+  const overlay = document.getElementById("drawerOverlay");
+
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    drawer.classList.add("open");
+    overlay.classList.add("show");
+  });
+
+  overlay.addEventListener("click", () => {
+    drawer.classList.remove("open");
+    overlay.classList.remove("show");
+  });
+});
+

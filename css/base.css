@@ -69,3 +69,11 @@ body,
     color 0.35s ease,
     border-color 0.35s ease;
 }
+
+/************************************************/
+.mobile-drawer,
+.drawer-overlay {
+  transition:
+    background-color 0.35s ease,
+    opacity 0.35s ease;
+}
