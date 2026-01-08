@@ -38,8 +38,34 @@ body.dark {
   --bg: #0f172a;
   --text: #e5e7eb;
 }
-
+/*
 body {
   background: var(--bg);
   color: var(--text);
+}*/
+body {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ===== SMOOTH DARK MODE TRANSITION ===== */
+body,
+.site-header,
+.site-footer,
+.feature-card,
+.section,
+.hero {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
 }
