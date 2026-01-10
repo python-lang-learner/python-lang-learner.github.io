@@ -378,3 +378,20 @@ body.dark .hero {
   font-size: 2.6rem;
   margin-bottom: 18px;
 }
+
+/**********************************************/
+textarea {
+  width: 100%;
+  font-family: monospace;
+  padding: 10px;
+}
+
+button {
+  margin: 10px 0;
+}
+
+pre {
+  background: #111;
+  color: #0f0;
+  padding: 10px;
+}
