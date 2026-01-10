@@ -19,6 +19,10 @@
   <!--pyodide.js-->
   <script src="../js/pyodide-runner.js"></script>
 
+  <!--******************************************************-->
+  
+  <!--********************************************************-->
+
 </head>
 <body>
 
@@ -41,7 +45,7 @@
 
       <!-- ============================= -->
       <h2>Beginner Level Projects</h2>
-
+<!--
       <ul>
         <li><strong>Simple Calculator</strong> – Perform basic arithmetic operations</li>
         <li><strong>Number Guessing Game</strong> – Use loops and conditions</li>
@@ -61,7 +65,31 @@
 
 <button onclick="runPython('code1','out1')">▶ Run Code</button>
 
-<pre id="out1"></pre>
+<pre id="out1"></pre>-->
+<h2>Beginner Level Projects</h2>
+
+<div class="project-item">
+  <button class="project-title" onclick="toggleProject('p1')">
+    ▶ Even or Odd Checker
+  </button>
+
+  <div class="project-content" id="p1">
+    <textarea id="code1" rows="10">
+num = 7  # change this number
+
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+    </textarea>
+
+    <button onclick="runPython('code1','out1')">▶ Run Code</button>
+    <button onclick="copyCode('code1')">📋 Copy</button>
+
+    <pre id="out1"></pre>
+  </div>
+</div>
+
 
       <!-- ============================= -->
       <h2>Intermediate Level Projects</h2>

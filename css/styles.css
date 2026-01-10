@@ -395,3 +395,24 @@ pre {
   color: #0f0;
   padding: 10px;
 }
+/*****************************************************/
+.project-title {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #1a73e8;
+  margin: 10px 0;
+}
+
+.project-content {
+  display: none;
+  margin: 10px 0 20px;
+}
+
+.project-content textarea {
+  width: 100%;
+  font-family: monospace;
+  padding: 10px;
+}
