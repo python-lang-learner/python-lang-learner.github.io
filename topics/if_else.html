@@ -1,164 +1,130 @@
-<!--
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>If–Else — Python Learning</title>
-  <link rel="stylesheet" href="../styles.css" />
-</head>
-
-<body>
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="../index.html">Python Learning</a>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a class="active" href="../topics/index.html">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap content">
-<h1>If–Else Statements</h1>
-<p><code>if</code> statements execute code based on conditions.</p>
-
-<section class="card">
-  <h2>Basic example</h2>
-<pre><code>x = 10
-
-if x > 5:
-    print("Greater")
-else:
-    print("Smaller")</code></pre>
-</section>
-
-<section class="card">
-  <h2>elif</h2>
-<pre><code>score = 72
-
-if score >= 90:
-    print("A")
-elif score >= 75:
-    print("B")
-elif score >= 50:
-    print("C")
-else:
-    print("Fail")</code></pre>
-</section>
-
-<section class="card">
-  <h2>Nested conditions</h2>
-<pre><code>x = 20
-y = 5
-
-if x > 10:
-    if y > 0:
-        print("Valid pair")</code></pre>
-</section>
-
-<section class="card">
-  <h2>Exercises</h2>
-  <ol>
-    <li>Take user age and print: Child, Teen, Adult, Senior.</li>
-    <li>Check whether a number is positive, negative or zero.</li>
-  </ol>
-</section>
-
-<footer class="pager">
-  <a href="match.html" class="btn">Next → Match Statements</a>
-  <a href="dictionaries.html" class="btn btn-secondary">← Back</a>
-</footer>
-</main>
-</body>
-</html>
--->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>If / else — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python if–else Statements</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
-    <div class="container">
-      <a class="site-logo" href="/index.html">Python Learning</a>
-      <nav class="site-nav">
-        <a href="/index.html">Home</a>
-        <a href="/intro.html">Intro</a>
-        <a class="active" href="/topics/index.html">Topics</a>
-        <a href="/projects.html">Projects</a>
-      </nav>
-    </div>
+    <h1>Python Conditional Statements</h1>
+    <p class="subtitle">Decision making using <code>if</code>, <code>elif</code> and <code>else</code></p>
   </header>
 
-  <main class="container content">
-    <article>
-      <h1>Conditional statements — <code>if</code>, <code>elif</code>, <code>else</code></h1>
+  <!-- Main Content -->
+  <main class="content">
 
-      <section>
-        <h2>Basic pattern</h2>
-        <pre class="code">
-if condition1:
-    # do A
-elif condition2:
-    # do B
+    <!-- Introduction -->
+    <section class="card">
+      <h2>What is if–else?</h2>
+      <p>
+        In Python, <strong>if–else statements</strong> are used to make decisions.
+        The program checks a condition and executes different blocks of code
+        depending on whether the condition is <strong>True</strong> or <strong>False</strong>.
+      </p>
+    </section>
+
+    <!-- if statement -->
+    <section class="card">
+      <h2>1. if Statement</h2>
+      <p>The <code>if</code> statement runs code only when the condition is true.</p>
+
+      <pre><code class="code-block">age = 18
+
+if age >= 18:
+    print("You are eligible to vote")
+</code></pre>
+
+      <div class="output">
+        <strong>Output:</strong>
+        <p>You are eligible to vote</p>
+      </div>
+    </section>
+
+    <!-- if else -->
+    <section class="card">
+      <h2>2. if–else Statement</h2>
+      <p>
+        The <code>else</code> block runs when the <code>if</code> condition is false.
+      </p>
+
+      <pre><code class="code-block">number = 5
+
+if number % 2 == 0:
+    print("Even number")
 else:
-    # default
-        </pre>
-      </section>
+    print("Odd number")
+</code></pre>
 
-      <section>
-        <h2>Examples</h2>
-        <pre class="code">
-x = 10
-if x < 0:
-    print("negative")
-elif x == 0:
-    print("zero")
+      <div class="output">
+        <strong>Output:</strong>
+        <p>Odd number</p>
+      </div>
+    </section>
+
+    <!-- elif -->
+    <section class="card">
+      <h2>3. if–elif–else Statement</h2>
+      <p>
+        Use <code>elif</code> to check multiple conditions.
+      </p>
+
+      <pre><code class="code-block">marks = 75
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 60:
+    print("Grade B")
 else:
-    print("positive")
-        </pre>
-      </section>
+    print("Grade C")
+</code></pre>
 
-      <section>
-        <h2>Boolean expressions</h2>
-        <p>You can combine conditions:</p>
-        <pre class="code">
-age = 20
-if 13 <= age <= 19:
-    print("teen")
-        </pre>
-        <p>Use <code>and</code>, <code>or</code>, <code>not</code> for complex logic.</p>
-      </section>
+      <div class="output">
+        <strong>Output:</strong>
+        <p>Grade B</p>
+      </div>
+    </section>
 
-      <section>
-        <h2>Ternary (one-line) conditional</h2>
-        <pre class="code">
-status = "even" if x % 2 == 0 else "odd"
-        </pre>
-      </section>
+    <!-- Important rules -->
+    <section class="card highlight">
+      <h2>Important Rules</h2>
+      <ul>
+        <li>Conditions must end with a colon <code>:</code></li>
+        <li>Indentation is mandatory in Python</li>
+        <li><code>elif</code> can be used multiple times</li>
+        <li><code>else</code> is optional</li>
+      </ul>
+    </section>
 
-      <section>
-        <h2>Exercises</h2>
-        <ol>
-          <li>Given a score 0..100, print grade A/B/C/D/F using if/elif/else.</li>
-          <li>Write a function that returns whether a year is leap (hint: divisible by 4 but not by 100 unless 400).</li>
-        </ol>
-      </section>
+    <!-- Real-life example -->
+    <section class="card">
+      <h2>Real-Life Example</h2>
+      <p>Checking whether a person can enter a movie theater:</p>
 
-      <footer class="lesson-footer">
-        <a class="btn" href="/topics/match.html">Next: Pattern matching →</a>
-      </footer>
-    </article>
+      <pre><code class="code-block">age = 12
+
+if age >= 13:
+    print("Entry allowed")
+else:
+    print("Entry not allowed")
+</code></pre>
+    </section>
+
+    <!-- Navigation -->
+    <div class="page-nav">
+      <a href="loops.html" class="btn">⬅ Previous: Loops</a>
+      <a href="while_loop.html" class="btn">Next: While Loop ➡</a>
+    </div>
+
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">© Python Learning</div>
+    <p>© 2026 Python Learning Path | Designed for Beginners</p>
   </footer>
+
 </body>
 </html>
