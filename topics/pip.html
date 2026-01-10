@@ -1,50 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PIP — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8">
+  <title>pip Package Manager in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
 </head>
 <body>
-  <header class="site-header"><div class="container">
-    <a class="brand" href="/index.html">Python Learning</a>
-    <nav class="main-nav">
-      <a href="/index.html">Home</a>
-      <a href="/intro.html">Intro</a>
-      <a href="/topics/index.html" class="active">Topics</a>
-      <a href="/projects.html">Projects</a>
-    </nav>
-  </div></header>
+<header id="site-header"></header>
 
-  <main class="container narrow">
-    <h1>pip — Python package installer</h1>
-    <p><code>pip</code> installs and manages packages from PyPI.</p>
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-    <h2>Common commands</h2>
-    <pre><code>pip install requests          # install package
-pip install "package==1.2.3"    # install specific version
-pip install -U package          # upgrade
-pip uninstall package</code></pre>
+      <h1>pip – Python Package Manager</h1>
 
-    <h2>Requirements file</h2>
-    <pre><code># requirements.txt
-requests==2.31.0
-flask
+      <p>
+        <strong>pip</strong> is a tool used to install, upgrade, and manage external
+        Python libraries.
+      </p>
 
-# install
-pip install -r requirements.txt</code></pre>
+      <div class="info-box">📦 pip helps extend Python’s functionality.</div>
 
-    <h2>Best practices</h2>
-    <ul>
-      <li>Use a virtual environment per project.</li>
-      <li>Pin versions in production with a `requirements.txt` or `pip freeze > requirements.txt`.</li>
-      <li>Prefer `pip` from an activated venv to avoid global installs.</li>
-    </ul>
+      <h2>Check pip Version</h2>
+      <div class="code-block">
+<pre><code>pip --version</code></pre>
+      </div>
 
-    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
-  </main>
+      <h2>Install a Package</h2>
+      <div class="code-block">
+<pre><code>pip install numpy</code></pre>
+      </div>
 
-  <footer class="site-footer container">© Python Learning</footer>
+      <h2>Upgrade a Package</h2>
+      <div class="code-block">
+<pre><code>pip install --upgrade numpy</code></pre>
+      </div>
+
+      <h2>Uninstall a Package</h2>
+      <div class="code-block">
+<pre><code>pip uninstall numpy</code></pre>
+      </div>
+
+      <div class="warning-box">❌ Internet connection is required to install packages.</div>
+
+      <div class="next-topic">
+        <a href="match.html">Next → match statement</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
 </body>
 </html>

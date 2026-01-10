@@ -1,52 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Regex — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8">
+  <title>Regular Expressions in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="/index.html">Python Learning</a>
-      <nav class="main-nav">
-        <a href="/index.html">Home</a>
-        <a href="/intro.html">Intro</a>
-        <a href="/topics/index.html" class="active">Topics</a>
-        <a href="/projects.html">Projects</a>
-      </nav>
-    </div>
-  </header>
+<header id="site-header"></header>
 
-  <main class="container narrow">
-    <h1>Regular Expressions (regex)</h1>
-    <p>Use the <code>re</code> module for pattern matching in strings.</p>
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-    <h2>Quick examples</h2>
-    <pre><code>import re
+      <h1>Regular Expressions (Regex)</h1>
 
-# search
-m = re.search(r"\d{4}-\d{2}-\d{2}", "2025-12-31")
-if m:
-    print("Found date:", m.group())
+      <p>
+        <strong>Regular Expressions</strong> are used to search, match, and
+        manipulate text patterns.
+      </p>
 
-# find all
-emails = re.findall(r"[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", text)</code></pre>
+      <div class="info-box">🔍 Regex is powerful for validation and searching.</div>
 
-    <h2>Useful patterns</h2>
-    <ul>
-      <li><code>\d</code> digits, <code>\w</code> word char, <code>\s</code> whitespace</li>
-      <li>Quantifiers: <code>+</code>, <code>*</code>, <code>?</code>, <code>{n,m}</code></li>
-      <li>Groups and captures: <code>(...)</code>, non-capturing <code>(?:...)</code></li>
-    </ul>
+      <h2>Basic Example</h2>
+      <div class="code-block">
+<pre><code>import re
 
-    <h2>Safety & performance</h2>
-    <p>Avoid catastrophic backtracking by using non-greedy tokens or simpler patterns. Always test complex regex on sample inputs.</p>
+text = "My phone number is 9876543210"
+result = re.search("\\d{10}", text)
+print(result.group())</code></pre>
+      </div>
 
-    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
-  </main>
+      <h2>Common Functions</h2>
+      <ul>
+        <li><code>re.search()</code></li>
+        <li><code>re.findall()</code></li>
+        <li><code>re.sub()</code></li>
+      </ul>
 
-  <footer class="site-footer container">© Python Learning</footer>
+      <div class="next-topic">
+        <a href="matplotlib.html">Next → Matplotlib</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
 </body>
 </html>
