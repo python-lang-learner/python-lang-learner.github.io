@@ -1,50 +1,74 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Virtual environments — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8">
+  <title>Virtual Environment in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
 </head>
 <body>
-  <header class="site-header"><div class="container">
-    <a class="brand" href="/index.html">Python Learning</a>
-    <nav class="main-nav">
-      <a href="/index.html">Home</a>
-      <a href="/intro.html">Intro</a>
-      <a href="/topics/index.html" class="active">Topics</a>
-      <a href="/projects.html">Projects</a>
-    </nav>
-  </div></header>
 
-  <main class="container narrow">
-    <h1>Virtual environments</h1>
-    <p>Virtual environments isolate project dependencies so different projects don't conflict.</p>
+<header id="site-header"></header>
 
-    <h2>Create & activate</h2>
-    <pre><code>python -m venv venv        # create
-# Windows
-venv\Scripts\activate
-# mac / linux
-source venv/bin/activate</code></pre>
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-    <h2>Deactivate</h2>
-    <pre><code>deactivate</code></pre>
+      <h1>Python Virtual Environment</h1>
 
-    <h2>Using with pip</h2>
-    <pre><code>pip install -r requirements.txt</code></pre>
+      <p>
+        A <strong>virtual environment</strong> is an isolated workspace that allows
+        you to install Python packages separately for different projects.
+      </p>
 
-    <h2>Alternatives</h2>
-    <ul>
-      <li><strong>venv</strong> — built-in and widely used</li>
-      <li><strong>virtualenv</strong> — older alternative</li>
-      <li><strong>pipx</strong> — run CLI tools in isolated envs</li>
-      <li><strong>poetry / pipenv</strong> — higher-level tools for dependency + packaging management</li>
-    </ul>
+      <div class="info-box">🧪 Virtual environments prevent package version conflicts.</div>
 
-    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
-  </main>
+      <h2>Why Use a Virtual Environment?</h2>
+      <ul>
+        <li>Different projects need different package versions</li>
+        <li>Keeps global Python installation clean</li>
+        <li>Easy dependency management</li>
+      </ul>
 
-  <footer class="site-footer container">© Python Learning</footer>
+      <h2>Create a Virtual Environment</h2>
+      <div class="code-block">
+<pre><code>python -m venv myenv</code></pre>
+      </div>
+
+      <h2>Activate Virtual Environment</h2>
+
+      <p><strong>Windows:</strong></p>
+      <div class="code-block">
+<pre><code>myenv\Scripts\activate</code></pre>
+      </div>
+
+      <p><strong>Linux / macOS:</strong></p>
+      <div class="code-block">
+<pre><code>source myenv/bin/activate</code></pre>
+      </div>
+
+      <h2>Deactivate Virtual Environment</h2>
+      <div class="code-block">
+<pre><code>deactivate</code></pre>
+      </div>
+
+      <div class="warning-box">❌ Always activate the environment before installing packages.</div>
+
+      <div class="next-topic">
+        <a href="break_continue.html">Next → break & continue</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
 </body>
 </html>

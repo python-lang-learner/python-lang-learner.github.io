@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>break and continue in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
+
+      <h1>break and continue Statements</h1>
+
+      <p>
+        The <strong>break</strong> and <strong>continue</strong> statements are used
+        to control the flow of loops in Python.
+      </p>
+
+      <div class="info-box">🔁 These statements work inside loops only.</div>
+
+      <h2>break Statement</h2>
+      <p>
+        The <strong>break</strong> statement stops the loop immediately.
+      </p>
+
+      <div class="code-block">
+<pre><code>for i in range(1, 6):
+    if i == 3:
+        break
+    print(i)</code></pre>
+      </div>
+
+      <h2>continue Statement</h2>
+      <p>
+        The <strong>continue</strong> statement skips the current iteration
+        and moves to the next one.
+      </p>
+
+      <div class="code-block">
+<pre><code>for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)</code></pre>
+      </div>
+
+      <h2>Difference Between break and continue</h2>
+      <ul>
+        <li><strong>break</strong> exits the loop</li>
+        <li><strong>continue</strong> skips one iteration</li>
+      </ul>
+
+      <div class="warning-box">❌ Misuse can make loops hard to understand.</div>
+
+      <h2>Practice</h2>
+      <ol>
+        <li>Stop a loop when number becomes 7</li>
+        <li>Skip printing even numbers</li>
+      </ol>
+
+      <div class="next-topic">
+        <a href="nested_loops.html">Next → Nested Loops</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+</body>
+</html>
