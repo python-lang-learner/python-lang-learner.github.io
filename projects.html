@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Python Projects | Python Learning</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--Pyodide change-->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
 
   <!-- CSS -->
   <link rel="stylesheet" href="../css/base.css">
@@ -13,6 +16,9 @@
 
   <!-- JS -->
   <script src="../js/layout.js" defer></script>
+  <!--pyodide.js-->
+  <script src="../js/pyodide-runner.js"></script>
+
 </head>
 <body>
 
@@ -42,16 +48,20 @@
         <li><strong>Even or Odd Checker</strong> – Practice if–else</li>
         <li><strong>Multiplication Table Generator</strong></li>
       </ul>
+      <h3>Try It Yourself – Even or Odd Checker</h3>
 
-      <div class="code-block">
-<pre><code># Example: Even or Odd Checker
-num = int(input("Enter a number: "))
+      <textarea id="code1" rows="10">
+        num = 7  # change this number
 
-if num % 2 == 0:
-    print("Even")
-else:
-    print("Odd")</code></pre>
-      </div>
+        if num % 2 == 0:
+            print("Even")
+        else:
+            print("Odd")
+      </textarea>
+
+<button onclick="runPython('code1','out1')">▶ Run Code</button>
+
+<pre id="out1"></pre>
 
       <!-- ============================= -->
       <h2>Intermediate Level Projects</h2>
