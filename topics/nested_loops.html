@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nested Loops in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
+
+      <h1>Nested Loops in Python</h1>
+
+      <p>
+        A <strong>nested loop</strong> is a loop placed inside another loop.
+        The inner loop runs completely for each iteration of the outer loop.
+      </p>
+
+      <div class="info-box">🔁 Commonly used for patterns, tables, and matrices.</div>
+
+      <!-- ============================= -->
+      <h2>Basic Nested Loop Example</h2>
+
+      <div class="code-block">
+<pre><code>for i in range(1, 4):
+    for j in range(1, 4):
+        print(i, j)</code></pre>
+      </div>
+
+      <!-- ============================= -->
+      <h2>Pattern Printing Example</h2>
+
+      <p>Printing a square star pattern:</p>
+
+      <div class="code-block">
+<pre><code>for i in range(4):
+    for j in range(4):
+        print("*", end=" ")
+    print()</code></pre>
+      </div>
+
+      <!-- ============================= -->
+      <h2>Multiplication Table</h2>
+
+      <p>Using nested loops to print tables from 1 to 5:</p>
+
+      <div class="code-block">
+<pre><code>for i in range(1, 6):
+    for j in range(1, 11):
+        print(i * j, end=" ")
+    print()</code></pre>
+      </div>
+
+      <!-- ============================= -->
+      <h2>Nested while Loop</h2>
+
+      <div class="code-block">
+<pre><code>i = 1
+while i <= 3:
+    j = 1
+    while j <= 3:
+        print(i, j)
+        j += 1
+    i += 1</code></pre>
+      </div>
+
+      <div class="warning-box">
+        ❌ Nested loops may slow down programs if used unnecessarily.
+      </div>
+
+      <!-- ============================= -->
+      <h2>Practice</h2>
+      <ol>
+        <li>Print a right-angle triangle pattern</li>
+        <li>Print tables from 1 to 10</li>
+        <li>Print all coordinate pairs from (1,1) to (3,3)</li>
+      </ol>
+
+      <div class="next-topic">
+        <a href="functions.html">Next → Functions</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+</body>
+</html>
