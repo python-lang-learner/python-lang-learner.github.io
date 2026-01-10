@@ -1,69 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Iterators — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8">
+  <title>Iterators in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="/index.html">Python Learning</a>
-      <nav class="main-nav">
-        <a href="/index.html">Home</a>
-        <a href="/intro.html">Intro</a>
-        <a href="/topics/index.html" class="active">Topics</a>
-        <a href="/projects.html">Projects</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container narrow">
-    <h1>Iterators & Iterables</h1>
-    <p>An <strong>iterable</strong> is an object you can loop over (lists, tuples, dicts, sets, strings). An <strong>iterator</strong> is an object representing a stream of data — it returns the next element with <code>next()</code>.</p>
+<header id="site-header"></header>
 
-    <h2>Basics</h2>
-    <pre><code>nums = [1,2,3]
-it = iter(nums)         # get iterator
-next(it)                # 1
-next(it)                # 2</code></pre>
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-    <h2>Writing your own iterator (class)</h2>
-    <pre><code>class Count:
-    def __init__(self, limit):
-        self.i = 0
-        self.limit = limit
-    def __iter__(self):
-        return self
-    def __next__(self):
-        if self.i >= self.limit:
-            raise StopIteration
-        val = self.i
-        self.i += 1
-        return val
+      <h1>Iterators in Python</h1>
 
-for n in Count(3):
-    print(n)  # 0,1,2</code></pre>
+      <p>
+        An <strong>iterator</strong> is an object that contains a countable number
+        of values and can be traversed one value at a time.
+      </p>
 
-    <h2>Generator functions (easy iterators)</h2>
-    <p>Generators are functions using <code>yield</code> — they return an iterator.</p>
-    <pre><code>def squares(n):
-    for i in range(n):
-        yield i*i
+      <div class="info-box">➡️ Iterators use <code>__iter__()</code> and <code>__next__()</code>.</div>
 
-for s in squares(5):
-    print(s)</code></pre>
+      <h2>Iterator Example</h2>
+      <div class="code-block">
+<pre><code>numbers = [1, 2, 3]
 
-    <h2>When to use them</h2>
-    <ul>
-      <li>Large or infinite streams of data (avoid building huge lists)</li>
-      <li>Lazy evaluation and pipelines</li>
-    </ul>
+it = iter(numbers)
+print(next(it))
+print(next(it))
+print(next(it))</code></pre>
+      </div>
 
-    <p class="muted"><a href="/topics/index.html">← Back to topics index</a></p>
-  </main>
+      <h2>Using for Loop with Iterator</h2>
+      <div class="code-block">
+<pre><code>numbers = [10, 20, 30]
 
-  <footer class="site-footer container">© Python Learning</footer>
+for num in numbers:
+    print(num)</code></pre>
+      </div>
+
+      <h2>StopIteration Error</h2>
+      <div class="warning-box">❌ Raised when iterator has no more items.</div>
+
+      <h2>Practice</h2>
+      <ol>
+        <li>Create an iterator from a list</li>
+        <li>Access elements using next()</li>
+      </ol>
+
+      <div class="next-topic">
+        <a href="break_continue.html">Next → break & continue</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
 </body>
 </html>

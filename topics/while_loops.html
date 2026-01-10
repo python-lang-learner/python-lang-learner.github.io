@@ -1,157 +1,73 @@
-<!--
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>While Loops — Python Learning</title>
-  <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8">
+  <title>While Loop in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
 </head>
-
 <body>
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="../index.html">Python Learning</a>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a class="active" href="../topics/index.html">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
 
-<main class="wrap content">
-<h1>While Loops</h1>
-<p><code>while</code> repeats code as long as the condition is <strong>True</strong>.</p>
+<header id="site-header"></header>
 
-<section class="card">
-  <h2>Basic example</h2>
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
+
+      <h1>While Loop in Python</h1>
+
+      <p>
+        A <strong>while loop</strong> is used to repeat a block of code as long as
+        a condition remains true.
+      </p>
+
+      <div class="info-box">🔁 Used when the number of iterations is not known in advance.</div>
+
+      <h2>Basic Syntax</h2>
+      <div class="code-block">
 <pre><code>i = 1
+
 while i <= 5:
     print(i)
     i += 1</code></pre>
-</section>
+      </div>
 
-<section class="card">
-  <h2>Break & continue</h2>
-<pre><code>i = 1
-while i < 10:
-    if i == 5:
-        break
-    print(i)
-    i += 1</code></pre>
-</section>
+      <h2>while Loop with Condition</h2>
+      <div class="code-block">
+<pre><code>number = 1
 
-<section class="card">
-  <h2>Infinite loop (avoid!)</h2>
+while number <= 10:
+    print(number)
+    number += 2</code></pre>
+      </div>
+
+      <h2>Infinite Loop</h2>
+      <div class="warning-box">❌ Be careful! Infinite loops never stop.</div>
+      <div class="code-block">
 <pre><code>while True:
-    print("Running")
-    break</code></pre>
-</section>
+    print("Hello")</code></pre>
+      </div>
 
-<section class="card">
-  <h2>Exercises</h2>
-  <ol>
-    <li>Print all even numbers from 1 to 50.</li>
-    <li>Count digits in a number using a while loop.</li>
-  </ol>
-</section>
+      <h2>Practice</h2>
+      <ol>
+        <li>Print numbers from 1 to 20</li>
+        <li>Print even numbers using while loop</li>
+      </ol>
 
-<footer class="pager">
-  <a href="for_loops.html" class="btn">Next → For Loops</a>
-  <a href="match.html" class="btn btn-secondary">← Back</a>
-</footer>
-</main>
-</body>
-</html>
--->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>While loops — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <a class="site-logo" href="/index.html">Python Learning</a>
-      <nav class="site-nav">
-        <a href="/index.html">Home</a>
-        <a href="/intro.html">Intro</a>
-        <a class="active" href="/topics/index.html">Topics</a>
-        <a href="/projects.html">Projects</a>
-      </nav>
-    </div>
-  </header>
+      <div class="next-topic">
+        <a href="for_loops.html">Next → For Loop</a>
+      </div>
 
-  <main class="container content">
-    <article>
-      <h1>While loops</h1>
-      <p class="lede">A <code>while</code> loop repeats as long as a condition remains true. Use it for indefinite loops where iteration count is unknown.</p>
-
-      <section>
-        <h2>Basic syntax</h2>
-        <pre class="code">
-while condition:
-    # repeated code
-    do_something()
-        </pre>
-      </section>
-
-      <section>
-        <h2>Example: countdown</h2>
-        <pre class="code">
-n = 5
-while n > 0:
-    print(n)
-    n -= 1
-print("Lift off!")
-        </pre>
-      </section>
-
-      <section>
-        <h2>Guard against infinite loops</h2>
-        <p>Make sure the loop condition will become false eventually, or use a <code>break</code> with a safe timeout.</p>
-        <pre class="code">
-attempts = 0
-while True:
-    attempts += 1
-    if attempts > 5:
-        break
-        </pre>
-      </section>
-
-      <section>
-        <h2>Using while to read input</h2>
-        <pre class="code">
-# keep reading until user types "quit"
-while True:
-    s = input("Enter command: ")
-    if s == "quit":
-        break
-    print("You typed:", s)
-        </pre>
-      </section>
-
-      <section>
-        <h2>Exercises</h2>
-        <ul>
-          <li>Write a while-loop to sum numbers entered by user until they type "0".</li>
-          <li>Create a loop that asks for a password up to 3 times, then stops.</li>
-        </ul>
-      </section>
-
-      <footer class="lesson-footer">
-        <a class="btn" href="/topics/if_else.html">Next: If / else →</a>
-      </footer>
     </article>
-  </main>
+  </div>
+</main>
 
-  <footer class="site-footer">
-    <div class="container">© Python Learning</div>
-  </footer>
+<footer id="site-footer"></footer>
 </body>
 </html>

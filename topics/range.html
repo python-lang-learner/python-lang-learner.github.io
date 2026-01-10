@@ -1,57 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Range — Python Learning</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8">
+  <title>range() Function in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="../index.html">Python Learning</a>
-      <nav>
-        <a href="../index.html">Home</a>
-        <a href="../intro.html">Intro</a>
-        <a class="active" href="../topics/index.html">Topics</a>
-        <a href="../projects.html">Projects</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="wrap content">
-    <h1>Range</h1>
-    <p><code>range()</code> creates a sequence of integers commonly used with loops.</p>
+<header id="site-header"></header>
 
-    <section class="card">
-      <h2>Usage</h2>
-      <pre><code>for i in range(5):
-    print(i)     # prints 0 1 2 3 4
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-for i in range(2, 8):
-    print(i)     # 2..7
+      <h1>range() Function in Python</h1>
 
-for i in range(10, 0, -2):
-    print(i)     # 10 8 6 4 2 (step -2)</code></pre>
-    </section>
+      <p>
+        The <strong>range()</strong> function generates a sequence of numbers and
+        is commonly used with for loops.
+      </p>
 
-    <section class="card">
-      <h2>Range & lists</h2>
-      <pre><code>print(list(range(5)))    # [0,1,2,3,4]</code></pre>
-    </section>
+      <div class="info-box">🔢 range() saves memory and improves performance.</div>
 
-    <section class="card">
-      <h2>Exercises</h2>
+      <h2>range(stop)</h2>
+      <div class="code-block">
+<pre><code>for i in range(5):
+    print(i)</code></pre>
+      </div>
+
+      <h2>range(start, stop)</h2>
+      <div class="code-block">
+<pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+      </div>
+
+      <h2>range(start, stop, step)</h2>
+      <div class="code-block">
+<pre><code>for i in range(2, 11, 2):
+    print(i)</code></pre>
+      </div>
+
+      <h2>Practice</h2>
       <ol>
-        <li>Use <code>range()</code> to print even numbers from 2 to 20.</li>
-        <li>Use range to create a list of square numbers for 1..10.</li>
+        <li>Print numbers from 10 to 1</li>
+        <li>Print multiples of 5 up to 50</li>
       </ol>
-    </section>
 
-    <footer class="pager">
-      <a href="strings.html" class="btn">Next → Strings</a>
-      <a href="functions.html" class="btn btn-secondary">← Back</a>
-    </footer>
-  </main>
+      <div class="next-topic">
+        <a href="iterators.html">Next → Iterators</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
 </body>
 </html>

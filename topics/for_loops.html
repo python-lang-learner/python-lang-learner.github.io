@@ -1,164 +1,68 @@
-<!--
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>For Loops — Python Learning</title>
-  <link rel="stylesheet" href="../styles.css" />
+  <meta charset="UTF-8">
+  <title>For Loop in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
 </head>
-
 <body>
-<header class="site-header">
-  <div class="wrap">
-    <a class="logo" href="../index.html">Python Learning</a>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../intro.html">Intro</a>
-      <a class="active" href="../topics/index.html">Topics</a>
-      <a href="../projects.html">Projects</a>
-    </nav>
-  </div>
-</header>
 
-<main class="wrap content">
-<h1>For Loops</h1>
-<p><code>for</code> loops iterate over sequences like lists, strings, tuples, sets and dictionaries.</p>
+<header id="site-header"></header>
 
-<section class="card">
-  <h2>Basic iteration</h2>
-<pre><code>for x in [1, 2, 3]:
-    print(x)</code></pre>
-</section>
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-<section class="card">
-  <h2>Looping strings</h2>
-<pre><code>for ch in "python":
-    print(ch)</code></pre>
-</section>
+      <h1>For Loop in Python</h1>
 
-<section class="card">
-  <h2>Looping with range</h2>
-<pre><code>for i in range(1, 6):
+      <p>
+        A <strong>for loop</strong> is used to iterate over a sequence such as a list,
+        string, or range.
+      </p>
+
+      <div class="info-box">📌 Best when the number of iterations is known.</div>
+
+      <h2>Basic Example</h2>
+      <div class="code-block">
+<pre><code>for i in range(5):
     print(i)</code></pre>
-</section>
+      </div>
 
-<section class="card">
-  <h2>Looping dictionaries</h2>
-<pre><code>student = {"name": "Asha", "age": 20}
+      <h2>Looping through a List</h2>
+      <div class="code-block">
+<pre><code>fruits = ["apple", "banana", "cherry"]
 
-for k, v in student.items():
-    print(k, v)</code></pre>
-</section>
+for fruit in fruits:
+    print(fruit)</code></pre>
+      </div>
 
-<section class="card">
-  <h2>Exercises</h2>
-  <ol>
-    <li>Print all squares from 1 to 20.</li>
-    <li>Loop through a list and count positive numbers.</li>
-  </ol>
-</section>
+      <h2>Looping through a String</h2>
+      <div class="code-block">
+<pre><code>for char in "Python":
+    print(char)</code></pre>
+      </div>
 
-<footer class="pager">
-  <a href="functions.html" class="btn btn-secondary">← Back</a>
-</footer>
-</main>
-</body>
-</html>
--->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>For loops — Python Learning</title>
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container">
-      <a class="site-logo" href="/index.html">Python Learning</a>
-      <nav class="site-nav">
-        <a href="/index.html">Home</a>
-        <a href="/intro.html">Intro</a>
-        <a class="active" href="/topics/index.html">Topics</a>
-        <a href="/projects.html">Projects</a>
-      </nav>
-    </div>
-  </header>
+      <h2>Practice</h2>
+      <ol>
+        <li>Print numbers from 1 to 10</li>
+        <li>Print each character of your name</li>
+      </ol>
 
-  <main class="container content">
-    <article>
-      <h1>For loops</h1>
-      <p class="lede">Use <code>for</code> to iterate over sequences (lists, tuples, strings, ranges, etc.). For loops are fundamental for repeating tasks in Python.</p>
+      <div class="next-topic">
+        <a href="range.html">Next → range()</a>
+      </div>
 
-      <section>
-        <h2>Basic syntax</h2>
-        <pre class="code">
-for item in sequence:
-    # use item
-    print(item)
-        </pre>
-        <p>Example: iterate over a list</p>
-        <pre class="code">
-fruits = ["apple", "banana", "cherry"]
-for f in fruits:
-    print("I like", f)
-        </pre>
-      </section>
-
-      <section>
-        <h2>Using <code>range()</code></h2>
-        <p><code>range(n)</code> produces numbers from 0 to n-1. Useful when you need an index.</p>
-        <pre class="code">
-for i in range(5):
-    print(i)  # 0 1 2 3 4
-        </pre>
-      </section>
-
-      <section>
-        <h2>Loop with index (enumerate)</h2>
-        <pre class="code">
-names = ["Ana", "Ben", "Cleo"]
-for idx, name in enumerate(names, start=1):
-    print(idx, name)
-        </pre>
-      </section>
-
-      <section>
-        <h2>Common patterns</h2>
-        <ul>
-          <li>Loop and build new list: use list comprehensions when possible</li>
-          <li>Break out early: use <code>break</code></li>
-          <li>Skip an iteration: use <code>continue</code></li>
-        </ul>
-        <pre class="code">
-total = 0
-for n in range(1, 11):
-    if n == 7:
-        continue
-    total += n
-print(total)
-        </pre>
-      </section>
-
-      <section>
-        <h2>Exercises</h2>
-        <ol>
-          <li>Write a loop to print even numbers from 2 to 20.</li>
-          <li>Given a list of grades, compute the average using a for loop.</li>
-          <li>Use a loop to build a list of squared numbers from 1..10.</li>
-        </ol>
-      </section>
-
-      <footer class="lesson-footer">
-        <a class="btn" href="/topics/while_loops.html">Next: While loops →</a>
-      </footer>
     </article>
-  </main>
+  </div>
+</main>
 
-  <footer class="site-footer">
-    <div class="container">© Python Learning — basic tutorials</div>
-  </footer>
+<footer id="site-footer"></footer>
 </body>
 </html>
