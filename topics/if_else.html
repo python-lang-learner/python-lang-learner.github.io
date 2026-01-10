@@ -1,130 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Python if–else Statements</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>If–Else Statements in Python | Python Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <!-- JS -->
+  <script src="../js/layout.js" defer></script>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <h1>Python Conditional Statements</h1>
-    <p class="subtitle">Decision making using <code>if</code>, <code>elif</code> and <code>else</code></p>
-  </header>
+<!-- HEADER -->
+<header id="site-header"></header>
 
-  <!-- Main Content -->
-  <main class="content">
+<!-- CONTENT -->
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-    <!-- Introduction -->
-    <section class="card">
-      <h2>What is if–else?</h2>
+      <h1>If–Else Conditional Statements in Python</h1>
+
       <p>
-        In Python, <strong>if–else statements</strong> are used to make decisions.
-        The program checks a condition and executes different blocks of code
-        depending on whether the condition is <strong>True</strong> or <strong>False</strong>.
+        Conditional statements in Python are used to make decisions.
+        The program executes different blocks of code depending on whether
+        a condition is <strong>True</strong> or <strong>False</strong>.
       </p>
-    </section>
 
-    <!-- if statement -->
-    <section class="card">
-      <h2>1. if Statement</h2>
-      <p>The <code>if</code> statement runs code only when the condition is true.</p>
+      <div class="info-box">
+        💡 Decision-making is one of the most important concepts in programming.
+      </div>
 
-      <pre><code class="code-block">age = 18
+      <!-- ============================= -->
+      <h2>What is an if Statement?</h2>
+
+      <p>
+        The <strong>if</strong> statement executes a block of code only when
+        the given condition is true.
+      </p>
+
+      <div class="code-block">
+<pre><code>age = 18
 
 if age >= 18:
-    print("You are eligible to vote")
-</code></pre>
-
-      <div class="output">
-        <strong>Output:</strong>
-        <p>You are eligible to vote</p>
+    print("You are eligible to vote")</code></pre>
       </div>
-    </section>
 
-    <!-- if else -->
-    <section class="card">
-      <h2>2. if–else Statement</h2>
+      <!-- ============================= -->
+      <h2>if–else Statement</h2>
+
       <p>
-        The <code>else</code> block runs when the <code>if</code> condition is false.
+        The <strong>else</strong> block runs when the <code>if</code> condition
+        is false.
       </p>
 
-      <pre><code class="code-block">number = 5
+      <div class="code-block">
+<pre><code>number = 5
 
 if number % 2 == 0:
     print("Even number")
 else:
-    print("Odd number")
-</code></pre>
-
-      <div class="output">
-        <strong>Output:</strong>
-        <p>Odd number</p>
+    print("Odd number")</code></pre>
       </div>
-    </section>
 
-    <!-- elif -->
-    <section class="card">
-      <h2>3. if–elif–else Statement</h2>
+      <!-- ============================= -->
+      <h2>if–elif–else Statement</h2>
+
       <p>
-        Use <code>elif</code> to check multiple conditions.
+        Use <strong>elif</strong> (else if) to check multiple conditions.
+        Python checks conditions from top to bottom.
       </p>
 
-      <pre><code class="code-block">marks = 75
+      <div class="code-block">
+<pre><code>marks = 75
 
 if marks >= 90:
     print("Grade A")
 elif marks >= 60:
     print("Grade B")
 else:
-    print("Grade C")
-</code></pre>
-
-      <div class="output">
-        <strong>Output:</strong>
-        <p>Grade B</p>
+    print("Grade C")</code></pre>
       </div>
-    </section>
 
-    <!-- Important rules -->
-    <section class="card highlight">
+      <!-- ============================= -->
       <h2>Important Rules</h2>
+
+      <div class="info-box">
+        📌 Follow these rules to avoid errors in conditional statements.
+      </div>
+
       <ul>
         <li>Conditions must end with a colon <code>:</code></li>
         <li>Indentation is mandatory in Python</li>
         <li><code>elif</code> can be used multiple times</li>
         <li><code>else</code> is optional</li>
       </ul>
-    </section>
 
-    <!-- Real-life example -->
-    <section class="card">
+      <!-- ============================= -->
       <h2>Real-Life Example</h2>
-      <p>Checking whether a person can enter a movie theater:</p>
 
-      <pre><code class="code-block">age = 12
+      <p>Checking whether a student has passed an exam:</p>
 
-if age >= 13:
-    print("Entry allowed")
+      <div class="code-block">
+<pre><code>marks = 32
+
+if marks >= 35:
+    print("Pass")
 else:
-    print("Entry not allowed")
-</code></pre>
-    </section>
+    print("Fail")</code></pre>
+      </div>
 
-    <!-- Navigation -->
-    <div class="page-nav">
-      <a href="loops.html" class="btn">⬅ Previous: Loops</a>
-      <a href="while_loop.html" class="btn">Next: While Loop ➡</a>
-    </div>
+      <div class="warning-box">
+        ❌ Incorrect indentation will cause an error in Python.
+      </div>
 
-  </main>
+      <!-- ============================= -->
+      <h2>Practice</h2>
+      <ol>
+        <li>Check if a number is positive or negative</li>
+        <li>Write a program to check even or odd</li>
+        <li>Check grade based on marks</li>
+      </ol>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <p>© 2026 Python Learning Path | Designed for Beginners</p>
-  </footer>
+      <div class="next-topic">
+        <a href="loops.html">Next → Loops</a>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer id="site-footer"></footer>
 
 </body>
 </html>
