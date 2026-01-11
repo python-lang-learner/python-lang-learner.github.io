@@ -11,11 +11,10 @@
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/footer.css">
 
-  <!-- Header / Footer Loader -->
+  <!-- Header/Footer Loader -->
   <script src="../js/layout.js" defer></script>
 
   <style>
-    /* --- PROJECT PAGE ONLY --- */
     .filter-buttons {
       display: flex;
       gap: 10px;
@@ -77,29 +76,28 @@
 
 <body>
 
-<!-- HEADER -->
 <header id="site-header"></header>
 
-<!-- CONTENT -->
 <main class="page-content">
   <div class="topic-layout">
     <article class="topic-card">
 
       <h1>Mini Python Projects</h1>
+      <p>Click a project name to view code. Copy and run it in your Python editor.</p>
 
-      <!-- FILTER BUTTONS -->
+      <!-- FILTER -->
       <div class="filter-buttons">
         <button class="active" onclick="filterProjects('all', this)">All</button>
         <button onclick="filterProjects('beginner', this)">Beginner</button>
         <button onclick="filterProjects('intermediate', this)">Intermediate</button>
       </div>
 
-      <!-- PROJECT 1 -->
-      <div class="project-item" data-level="beginner">
-        <h3 onclick="toggleProject(this)">Even or Odd Checker</h3>
+      <!-- ================= BEGINNER PROJECTS ================= -->
 
+      <div class="project-item" data-level="beginner">
+        <h3 onclick="toggleProject(this)">1. Even or Odd Checker</h3>
         <div class="project-content">
-          <textarea rows="8">
+          <textarea rows="7">
 num = int(input("Enter a number: "))
 
 if num % 2 == 0:
@@ -107,46 +105,163 @@ if num % 2 == 0:
 else:
     print("Odd")
           </textarea>
-
           <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
         </div>
       </div>
 
-      <!-- PROJECT 2 -->
       <div class="project-item" data-level="beginner">
-        <h3 onclick="toggleProject(this)">Simple Calculator</h3>
-
+        <h3 onclick="toggleProject(this)">2. Simple Calculator</h3>
         <div class="project-content">
-          <textarea rows="8">
+          <textarea rows="10">
 a = int(input("Enter first number: "))
 b = int(input("Enter second number: "))
 
-print("Sum =", a + b)
-print("Difference =", a - b)
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)
           </textarea>
-
           <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
         </div>
       </div>
 
-      <!-- PROJECT 3 -->
-      <div class="project-item" data-level="intermediate">
-        <h3 onclick="toggleProject(this)">Number Guessing Game</h3>
-
+      <div class="project-item" data-level="beginner">
+        <h3 onclick="toggleProject(this)">3. Fibonacci Series</h3>
         <div class="project-content">
           <textarea rows="10">
+n = int(input("Enter number of terms: "))
+
+a, b = 0, 1
+for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+          </textarea>
+          <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="project-item" data-level="beginner">
+        <h3 onclick="toggleProject(this)">4. Prime Number Checker</h3>
+        <div class="project-content">
+          <textarea rows="10">
+num = int(input("Enter a number: "))
+
+if num > 1:
+    for i in range(2, num):
+        if num % i == 0:
+            print("Not Prime")
+            break
+    else:
+        print("Prime")
+else:
+    print("Not Prime")
+          </textarea>
+          <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="project-item" data-level="beginner">
+        <h3 onclick="toggleProject(this)">5. Multiplication Table</h3>
+        <div class="project-content">
+          <textarea rows="8">
+num = int(input("Enter a number: "))
+
+for i in range(1, 11):
+    print(num, "x", i, "=", num * i)
+          </textarea>
+          <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+      </div>
+
+      <!-- ================= INTERMEDIATE PROJECTS ================= -->
+
+      <div class="project-item" data-level="intermediate">
+        <h3 onclick="toggleProject(this)">6. Number Guessing Game</h3>
+        <div class="project-content">
+          <textarea rows="12">
 import random
 
 secret = random.randint(1, 10)
 
-guess = int(input("Guess the number (1-10): "))
-
-if guess == secret:
-    print("Correct!")
-else:
-    print("Wrong! Number was", secret)
+while True:
+    guess = int(input("Guess number (1-10): "))
+    if guess == secret:
+        print("You won!")
+        break
+    else:
+        print("Try again")
           </textarea>
+          <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+      </div>
 
+      <div class="project-item" data-level="intermediate">
+        <h3 onclick="toggleProject(this)">7. Password Strength Checker</h3>
+        <div class="project-content">
+          <textarea rows="12">
+password = input("Enter password: ")
+
+if len(password) < 8:
+    print("Weak password")
+elif password.isalnum():
+    print("Medium password")
+else:
+    print("Strong password")
+          </textarea>
+          <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="project-item" data-level="intermediate">
+        <h3 onclick="toggleProject(this)">8. ATM Simulator</h3>
+        <div class="project-content">
+          <textarea rows="14">
+balance = 5000
+
+while True:
+    print("1. Deposit  2. Withdraw  3. Balance  4. Exit")
+    choice = input("Choose: ")
+
+    if choice == "1":
+        balance += int(input("Amount: "))
+    elif choice == "2":
+        balance -= int(input("Amount: "))
+    elif choice == "3":
+        print("Balance:", balance)
+    else:
+        break
+          </textarea>
+          <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="project-item" data-level="intermediate">
+        <h3 onclick="toggleProject(this)">9. Contact Book</h3>
+        <div class="project-content">
+          <textarea rows="14">
+contacts = {}
+
+while True:
+    name = input("Name (or exit): ")
+    if name == "exit":
+        break
+    phone = input("Phone: ")
+    contacts[name] = phone
+
+print(contacts)
+          </textarea>
+          <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+        </div>
+      </div>
+
+      <div class="project-item" data-level="intermediate">
+        <h3 onclick="toggleProject(this)">10. Word Counter</h3>
+        <div class="project-content">
+          <textarea rows="8">
+text = input("Enter a sentence: ")
+words = text.split()
+print("Word count:", len(words))
+          </textarea>
           <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
         </div>
       </div>
@@ -155,10 +270,8 @@ else:
   </div>
 </main>
 
-<!-- FOOTER -->
 <footer id="site-footer"></footer>
 
-<!-- JS -->
 <script>
 function toggleProject(title) {
   const content = title.nextElementSibling;
@@ -181,9 +294,9 @@ function filterProjects(level, btn) {
   buttons.forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
 
-  projects.forEach(project => {
-    project.style.display =
-      level === "all" || project.dataset.level === level
+  projects.forEach(p => {
+    p.style.display =
+      level === "all" || p.dataset.level === level
         ? "block"
         : "none";
   });
