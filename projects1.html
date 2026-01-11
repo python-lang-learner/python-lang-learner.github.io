@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Python Projects — Python Learning</title>
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+
+  <script src="../js/layout.js" defer></script>
+
+
+  <style>
+    /* small page-specific styles */
+    .wrap { max-width:1100px; margin:0 auto; padding:18px; }
+    .project { background:#fff; border-radius:10px; padding:14px; margin-bottom:14px; box-shadow:0 6px 18px rgba(11,20,32,0.04); }
+    .project h3 { margin:0 0 6px 0; }
+    .meta { color:#666; font-size:0.95rem; margin-bottom:8px; }
+    pre.code { background:#0b0f14; color:#e6eef8; padding:12px; border-radius:8px; overflow:auto; white-space:pre; }
+    .controls { display:flex; gap:8px; margin-bottom:8px; }
+    .btn { padding:8px 12px; border-radius:6px; background:#0b6cf0; color:#fff; text-decoration:none; border:0; cursor:pointer; }
+    .btn-muted { background:#f0f4f8; color:#111; border:1px solid #e0e6ef; }
+    details { margin-top:8px; }
+    .note { font-size:0.95rem; color:#444; margin-top:8px;}
+  </style>
+</head>
+<body>
+ <header id="site-header"></header>
+
+ <main class="page-content">
+   <div class="topic-layout">
+      <article class="topic-card">
+
+    <h1>Mini Python Projects (click a project to view its code)</h1>
+    <div class="filter-buttons">
+      <button onclick="filterProjects('all')" class="active">All</button>
+      <button onclick="filterProjects('beginner')">Beginner</button>
+      <button onclick="filterProjects('intermediate')">Intermediate</button>
+    </div>
+
+    <p class="meta">Each project below includes runnable example code, dependencies and a short explanation. Click <strong>Show code</strong> to reveal. Use the <em>Copy code</em> button to copy the snippet.</p>
+
+    <!-- Project 1 -->
+    <article class="project" id="proj-1">
+      <h3>1. Number Guessing Game (Console)</h3>
+      <div class="meta">Difficulty: Beginner • Dependencies: None • Runs: Python 3</div>
+      <p class="note">Player guesses a random number; the game gives hints until the player wins.</p>
+
+      <div class="controls">
+        <button class="btn copy-btn" data-target="code-1">Copy code</button>
+        <a class="btn btn-muted" href="#proj-1" onclick="document.getElementById('code-1').scrollIntoView({behavior:'smooth'});">Open code ↓</a>
+      </div>
+
+      <details>
+        <summary><strong>Show code</strong></summary>
+        <pre id="code-1" class="code" tabindex="0">
+# number_guess.py
+import random
+
+def play():
+    print("Welcome to Number Guess!")
+    low, high = 1, 100
+    secret = random.randint(low, high)
+    attempts = 0
+
+    while True:
+        try:
+            guess = int(input(f"Guess a number between {low} and {high}: "))
+        except ValueError:
+            print("Please enter a valid integer.")
+            continue
+        attempts += 1
+        if guess == secret:
+            print(f"Correct! You took {attempts} attempts.")
+            break
+        elif guess < secret:
+            print("Too low — try again.")
+        else:
+            print("Too high — try again.")
+
+if __name__ == '__main__':
+    play()
+        </pre>
+        <p class="note"><strong>How to run:</strong> `python number_guess.py`</p>
+      </details>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project" id="proj-2">
+      <h3>2. To-Do CLI App (File-backed)</h3>
+      <div class="meta">Difficulty: Beginner → Intermediate • Dependencies: None • Runs: Python 3</div>
+      <p class="note">Simple command-line todo list saved to a local text file `todo.txt`.</p>
+
+      <div class="controls">
+        <button class="btn copy-btn" data-target="code-2">Copy code</button>
+        <a class="btn btn-muted" href="#proj-2" onclick="document.getElementById('code-2').scrollIntoView({behavior:'smooth'});">Open code ↓</a>
+      </div>
+
+      <details>
+        <summary><strong>Show code</strong></summary>
+        <pre id="code-2" class="code" tabindex="0">
+# todo.py
+from pathlib import Path
+
+FILE = Path("todo.txt")
+
+def load_tasks():
+    if not FILE.exists():
+        return []
+    return [line.strip() for line in FILE.read_text(encoding='utf-8').splitlines() if line.strip()]
+
+def save_tasks(tasks):
+    FILE.write_text("\n".join(tasks), encoding='utf-8')
+
+def list_tasks(tasks):
+    if not tasks:
+        print("No tasks.")
+        return
+    for i, t in enumerate(tasks, 1):
+        print(f"{i}. {t}")
+
+def main():
+    tasks = load_tasks()
+    while True:
+        cmd = input("todo (add/list/done/quit): ").strip().lower()
+        if cmd == "add":
+            t = input("Task: ").strip()
+            if t:
+                tasks.append(t)
+                save_tasks(tasks)
+                print("Added.")
+        elif cmd == "list":
+            list_tasks(tasks)
+        elif cmd == "done":
+            list_tasks(tasks)
+            n = input("Complete task number: ").strip()
+            if n.isdigit():
+                idx = int(n) - 1
+                if 0 <= idx < len(tasks):
+                    tasks.pop(idx)
+                    save_tasks(tasks)
+                    print("Marked done.")
+                else:
+                    print("Invalid number.")
+        elif cmd in ("quit", "exit"):
+            break
+        else:
+            print("Unknown command.")
+
+if __name__ == '__main__':
+    main()
+        </pre>
+        <p class="note"><strong>How to run:</strong> `python todo.py` — tasks saved in `todo.txt` in same folder.</p>
+      </details>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="project" id="proj-3">
+      <h3>3. Web Scraper (fetch headlines)</h3>
+      <div class="meta">Difficulty: Intermediate • Dependencies: requests, beautifulsoup4 • Runs: Python 3</div>
+      <p class="note">Scrapes headlines from a web page (example uses BBC or any news site — be mindful of site rules).</p>
+
+      <div class="controls">
+        <button class="btn copy-btn" data-target="code-3">Copy code</button>
+        <a class="btn btn-muted" href="#proj-3" onclick="document.getElementById('code-3').scrollIntoView({behavior:'smooth'});">Open code ↓</a>
+      </div>
+
+      <details>
+        <summary><strong>Show code</strong></summary>
+        <pre id="code-3" class="code" tabindex="0">
+# scraper.py
+# pip install requests beautifulsoup4
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://www.bbc.com/news"
+
+def fetch_headlines(url=URL):
+    r = requests.get(url, timeout=10)
+    r.raise_for_status()
+    doc = BeautifulSoup(r.text, "html.parser")
+    # Selector depends on site structure; here's a general example for headlines
+    headlines = []
+    for h in doc.select("h3"):
+        text = h.get_text(strip=True)
+        if text:
+            headlines.append(text)
+    return headlines[:10]
+
+if __name__ == "__main__":
+    for i, h in enumerate(fetch_headlines(), 1):
+        print(i, h)
+        </pre>
+        <p class="note"><strong>How to run:</strong><br/>
+        1) `pip install requests beautifulsoup4`<br/>
+        2) `python scraper.py`<br/>
+        <em>Note:</em> selectors may need adjustment per site. Respect robots.txt and terms.</p>
+      </details>
+    </article>
+
+    <!-- Project 4 -->
+    <article class="project" id="proj-4">
+      <h3>4. CSV Data Analyzer (summary stats)</h3>
+      <div class="meta">Difficulty: Intermediate • Dependencies: pandas • Runs: Python 3</div>
+      <p class="note">Reads a CSV and prints summary statistics and top rows. Useful for quick data exploration.</p>
+
+      <div class="controls">
+        <button class="btn copy-btn" data-target="code-4">Copy code</button>
+        <a class="btn btn-muted" href="#proj-4" onclick="document.getElementById('code-4').scrollIntoView({behavior:'smooth'});">Open code ↓</a>
+      </div>
+
+      <details>
+        <summary><strong>Show code</strong></summary>
+        <pre id="code-4" class="code" tabindex="0">
+# analyzer.py
+# pip install pandas
+import pandas as pd
+from pathlib import Path
+
+FILE = Path("data.csv")  # replace with your CSV
+
+def summarize(path=FILE):
+    df = pd.read_csv(path)
+    print("Shape:", df.shape)
+    print("\nColumns:\n", df.columns.tolist())
+    print("\nHead:\n", df.head().to_string(index=False))
+    print("\nDescribe:\n", df.describe(include='all').to_string())
+
+if __name__ == "__main__":
+    if not FILE.exists():
+        print("Place a data.csv file in the current folder.")
+    else:
+        summarize()
+        </pre>
+        <p class="note"><strong>How to run:</strong><br/>`pip install pandas` → `python analyzer.py` (ensure `data.csv` exists)</p>
+      </details>
+    </article>
+
+    <!-- Project 5 -->
+    <article class="project" id="proj-5">
+      <h3>5. Simple Flask Notes App (Web)</h3>
+      <div class="meta">Difficulty: Intermediate • Dependencies: Flask • Runs: Python 3</div>
+      <p class="note">Tiny web app where users can add/view notes. Great for learning simple web server & templates.</p>
+
+      <div class="controls">
+        <button class="btn copy-btn" data-target="code-5">Copy code</button>
+        <a class="btn btn-muted" href="#proj-5" onclick="document.getElementById('code-5').scrollIntoView({behavior:'smooth'});">Open code ↓</a>
+      </div>
+
+      <details>
+        <summary><strong>Show code (app.py)</strong></summary>
+        <pre id="code-5" class="code" tabindex="0">
+# app.py
+# pip install flask
+from flask import Flask, request, redirect, render_template_string
+
+app = Flask(__name__)
+notes = []
+
+TEMPLATE = '''
+<!doctype html><html><head><meta charset="utf-8"><title>Notes</title></head>
+<body>
+  <h1>Notes</h1>
+  <form method="post" action="/add">
+    <input name="text" placeholder="Write a note" required>
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    {% for n in notes %}
+      <li>{{ n }}</li>
+    {% endfor %}
+  </ul>
+</body></html>
+'''
+
+@app.route('/')
+def index():
+    return render_template_string(TEMPLATE, notes=notes)
+
+@app.route('/add', methods=['POST'])
+def add():
+    text = request.form.get('text','').strip()
+    if text:
+        notes.append(text)
+    return redirect('/')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+        </pre>
+        <p class="note"><strong>How to run:</strong><br/>1) `pip install flask`<br/>2) `python app.py` → open <code>http://127.0.0.1:5000/</code></p>
+      </details>
+    </article>
+
+    <hr />
+    <!--<p class="muted">Want more projects (e.g., database-backed app, web API, visualization dashboard)? Tell me which area and I’ll add 5 more with full code.</p>-->
+      </article>
+  </div>
+</main>
+
+
+<footer id="site-footer"></footer>
+
+
+  <script>
+    // Copy-to-clipboard for each copy-btn
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.copy-btn');
+      if (!btn) return;
+      const id = btn.getAttribute('data-target');
+      const pre = document.getElementById(id);
+      if (!pre) return;
+      const text = pre.innerText.replace(/\u00A0/g, ''); // remove nbsp
+      navigator.clipboard.writeText(text).then(() => {
+        const old = btn.textContent;
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = old, 1500);
+      }).catch(() => alert("Copy failed — select and copy manually."));
+    });
+  </script>
+</body>
+</html>
