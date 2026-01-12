@@ -1,4 +1,4 @@
-/*header.css*/
+/* ================= HEADER ================= */
 
 .site-header {
   background: #0b3c6f;
@@ -37,6 +37,8 @@
   text-decoration: underline;
 }
 
+/* ================= SEARCH ================= */
+
 .search-bar {
   max-width: 1100px;
   margin: 0 auto;
@@ -60,18 +62,8 @@
   border-radius: 8px;
 }
 
-.theme-toggle {
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease;
-}
+/* ================= MOBILE MENU ================= */
 
-.theme-toggle:active {
-  transform: scale(0.9);
-}
-
-
-/* ===== MOBILE MENU ===== */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -81,7 +73,7 @@
   cursor: pointer;
 }
 
-/* Drawer */
+/* Drawer panel */
 .mobile-drawer {
   position: fixed;
   top: 0;
@@ -113,7 +105,7 @@
   z-index: 1000;
 }
 
-/* Active State */
+/* Active states */
 .mobile-drawer.open {
   right: 0;
 }
@@ -123,7 +115,8 @@
   pointer-events: all;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
   .main-nav {
     display: none;
