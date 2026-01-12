@@ -127,3 +127,10 @@ body {
   margin: auto;
   padding: 32px;
 }
+/*************************************/
+/*********space for header footer*****/
+/* Space below header and above footer */
+.page-topics {
+  margin-top: 32px;     /* space after header */
+  margin-bottom: 48px;  /* space before footer */
+}

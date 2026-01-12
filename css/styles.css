@@ -456,3 +456,10 @@ pre.code {
   color: #fff;
   border-color: #2563eb;
 }
+/************************************/
+/**********space for header footer***/
+/* Space below header and above footer */
+.page-topics {
+  margin-top: 32px;     /* space after header */
+  margin-bottom: 48px;  /* space before footer */
+}
