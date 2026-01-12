@@ -3,79 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Intro — Python Learning</title>
+  <title>Introduction to Python | Python Learning</title>
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/footer.css">
 
-  <!-- Page specific CSS -->
-  <link rel="stylesheet" href="/css/intro.css">
-
-  <!-- Core JS -->
+  <!-- JS -->
   <script src="/js/layout.js" defer></script>
   <script src="/js/global-search.js" defer></script>
 </head>
 
 <body>
 
-  <!-- HEADER (Injected by layout.js) -->
-  <header id="site-header"></header>
+<!-- HEADER -->
+<header id="site-header"></header>
 
-  <main class="container intro-page">
+<!-- CONTENT -->
+<main class="page-content">
+  <div class="topic-layout">
+    <article class="topic-card">
 
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Intro to Python — first steps</h1>
+      <!-- HERO -->
+      <section class="intro-hero">
+        <h1>Introduction to Python 🐍</h1>
         <p class="lead">
-          Python is a beginner-friendly, powerful programming language used for
-          web development, data science, automation, AI, and more.
+          Python is a powerful yet beginner-friendly programming language used in
+          web development, data science, artificial intelligence, automation, and more.
         </p>
+      </section>
+
+      <div class="info-box">
+        💡 Python is known for its simple syntax and readability, making it perfect for beginners.
       </div>
-    </section>
 
-    <article class="lesson-intro">
+      <!-- WHY PYTHON -->
+      <h2>Why Learn Python?</h2>
+      <ul>
+        <li>Easy to read and write</li>
+        <li>Huge community support</li>
+        <li>Used by Google, Netflix, NASA</li>
+        <li>Great for beginners and professionals</li>
+      </ul>
 
-      <section class="quick-setup">
-        <h3>1. Install Python</h3>
-        <p>
-          Download Python (3.10+ recommended) from
-          <a href="https://www.python.org" target="_blank">python.org</a>.
-          On macOS use Homebrew, on Linux use your package manager.
-        </p>
+      <!-- INSTALLATION -->
+      <h2>Step 1: Install Python</h2>
+      <p>
+        Download Python (version 3.10 or higher recommended) from the official website:
+        <a href="https://www.python.org" target="_blank">python.org</a>
+      </p>
+
+      <div class="warning-box">
+        ⚠️ During installation on Windows, make sure to check
+        <strong>"Add Python to PATH"</strong>.
+      </div>
+
+      <!-- FIRST PROGRAM -->
+      <h2>Step 2: Your First Python Program</h2>
+      <p>Create a file named <code>hello.py</code> and write:</p>
+
+      <div class="code-block">
+<pre><code>print("Hello, Python!")</code></pre>
+      </div>
+
+      <p>Run the program using the command line:</p>
+
+      <div class="code-block">
+<pre><code>python hello.py</code></pre>
+      </div>
+
+      <div class="info-box">
+        🎉 If you see <strong>Hello, Python!</strong>, congratulations — you ran your first program!
+      </div>
+
+      <!-- WHAT NEXT -->
+      <h2>What Will You Learn Next?</h2>
+      <ul>
+        <li><a href="/topics/syntax.html">Python Syntax</a></li>
+        <li><a href="/topics/output.html">Output & Print</a></li>
+        <li><a href="/topics/variables.html">Variables</a></li>
+        <li><a href="/topics/data-types.html">Data Types</a></li>
+      </ul>
+
+      <!-- LEARNING PATH -->
+      <section class="section">
+        <h2>Recommended Learning Path</h2>
+        <div class="path">
+          <a href="/topics/intro.html" class="active">Intro</a>
+          <a href="/topics/variables.html">Variables</a>
+          <a href="/topics/data-types.html">Data Types</a>
+          <a href="/topics/loops.html">Loops</a>
+          <a href="/topics/functions.html">Functions</a>
+          <a href="/projects.html">Projects</a>
+        </div>
       </section>
 
-      <section class="first-script">
-        <h3>2. Your first Python script</h3>
-        <p>Create a file named <code>hello.py</code>:</p>
-
-        <pre class="code-block"><code>print("Hello, Python!")</code></pre>
-
-        <p>Run it using:</p>
-        <pre class="code-block"><code>python hello.py</code></pre>
-      </section>
-
-      <section class="next-steps">
-        <h3>3. What to learn next</h3>
-        <ul>
-          <li><a href="/topics/syntax.html">Python Syntax</a></li>
-          <li><a href="/topics/output.html">Output</a></li>
-          <li><a href="/topics/variables.html">Variables</a></li>
-        </ul>
-      </section>
-
+      <!-- ACTIONS -->
       <div class="lesson-actions">
-        <a class="btn-primary" href="/topics/syntax.html">Start Syntax</a>
-        <a class="btn-ghost" href="/topics/index.html">View All Topics</a>
+        <a class="btn-primary" href="/topics/syntax.html">Start Learning →</a>
+        <a class="btn-ghost" href="/topics/index.html">All Topics</a>
       </div>
 
     </article>
+  </div>
+</main>
 
-  </main>
-
-  <!-- FOOTER (Injected by layout.js) -->
-  <footer id="site-footer"></footer>
+<!-- FOOTER -->
+<footer id="site-footer"></footer>
 
 </body>
 </html>
