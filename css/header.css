@@ -3,6 +3,9 @@
 .site-header {
   background: #0b3c6f;
   color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
 }
 
 .header-container {
