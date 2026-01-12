@@ -134,3 +134,8 @@ body {
   margin-top: 32px;     /* space after header */
   margin-bottom: 48px;  /* space before footer */
 }
+/*************************/
+main {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
