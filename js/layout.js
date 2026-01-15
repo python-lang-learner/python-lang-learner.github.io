@@ -1,36 +1,19 @@
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-  // Load HEADER
-  const header = document.getElementById("site-header");
-  if (header) {
-    const res = await fetch("/components/header.html");
-    header.innerHTML = await res.text();
-  }
+  // Load Header
+  fetch("/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
+    })
+    .catch(err => console.error("Header load error:", err));
 
-  // Load FOOTER
-  const footer = document.getElementById("site-footer");
-  if (footer) {
-    const res = await fetch("/components/footer.html");
-    footer.innerHTML = await res.text();
-  }
-
-  // Mobile menu (after header loads)
-  setTimeout(() => {
-    const toggle = document.getElementById("menuToggle");
-    const drawer = document.getElementById("mobileDrawer");
-    const overlay = document.getElementById("drawerOverlay");
-
-    if (toggle && drawer && overlay) {
-      toggle.onclick = () => {
-        drawer.classList.toggle("open");
-        overlay.classList.toggle("show");
-      };
-
-      overlay.onclick = () => {
-        drawer.classList.remove("open");
-        overlay.classList.remove("show");
-      };
-    }
-  }, 50);
+  // Load Footer
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("site-footer").innerHTML = data;
+    })
+    .catch(err => console.error("Footer load error:", err));
 
 });
