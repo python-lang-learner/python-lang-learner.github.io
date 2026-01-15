@@ -1,36 +1,43 @@
-// js/layout.js
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-  // Load HEADER
-  const header = document.getElementById("site-header");
-  if (header) {
-    const res = await fetch("/components/header.html");
-    header.innerHTML = await res.text();
-  }
+  // HEADER
+  fetch("/components/header.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Header not found");
+      return res.text();
+    })
+    .then(data => {
+      document.getElementById("site-header").innerHTML = data;
 
-  // Load FOOTER
-  const footer = document.getElementById("site-footer");
-  if (footer) {
-    const res = await fetch("/components/footer.html");
-    footer.innerHTML = await res.text();
-  }
+      // Mobile menu logic (AFTER header loads)
+      const toggle = document.getElementById("menuToggle");
+      const drawer = document.getElementById("mobileDrawer");
+      const overlay = document.getElementById("drawerOverlay");
 
-  // Mobile menu (AFTER header loads)
-  setTimeout(() => {
-    const toggle = document.getElementById("menuToggle");
-    const drawer = document.getElementById("mobileDrawer");
-    const overlay = document.getElementById("drawerOverlay");
+      if (toggle && drawer && overlay) {
+        toggle.onclick = () => {
+          drawer.classList.toggle("open");
+          overlay.classList.toggle("show");
+        };
 
-    if (toggle && drawer && overlay) {
-      toggle.onclick = () => {
-        drawer.classList.toggle("open");
-        overlay.classList.toggle("show");
-      };
+        overlay.onclick = () => {
+          drawer.classList.remove("open");
+          overlay.classList.remove("show");
+        };
+      }
+    })
+    .catch(err => console.error(err));
 
-      overlay.onclick = () => {
-        drawer.classList.remove("open");
-        overlay.classList.remove("show");
-      };
-    }
-  }, 100);
+
+  // FOOTER
+  fetch("/components/footer.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Footer not found");
+      return res.text();
+    })
+    .then(data => {
+      document.getElementById("site-footer").innerHTML = data;
+    })
+    .catch(err => console.error(err));
+
 });
