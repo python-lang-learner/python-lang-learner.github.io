@@ -1,19 +1,12 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  async function load(id, file) {
+    const el = document.getElementById(id);
+    if (!el) return;
 
-  // Load Header
-  fetch("/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("site-header").innerHTML = data;
-    })
-    .catch(err => console.error("Header load error:", err));
+    const res = await fetch(file);
+    el.innerHTML = await res.text();
+  }
 
-  // Load Footer
-  fetch("/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("site-footer").innerHTML = data;
-    })
-    .catch(err => console.error("Footer load error:", err));
-
+  await load("site-header", "/components/header.html");
+  await load("site-footer", "/components/footer.html");
 });
