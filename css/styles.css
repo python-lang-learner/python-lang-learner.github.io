@@ -69,23 +69,33 @@
   padding: 80px 20px;
 }*/
 
-.hero {
+/*.hero {
   background: linear-gradient(180deg, #0b3c6f, #0a2e55);
   transition: background 0.6s ease;
+}*/
+.hero {
+  background: linear-gradient(180deg, #0b3c6f, #0a2e55);
 }
 
 body.dark .hero {
   background: linear-gradient(180deg, #020617, #020617);
 }
 
-
+/*
 .hero-inner {
   max-width: 1100px;
   margin: auto;
   text-align: center;
   color: #fff;
 }
-
+*/
+.hero-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 80px 20px;
+  text-align: center;
+  color: #ffffff;
+}
 .hero h1 {
   font-size: 3rem;
   line-height: 1.2;
