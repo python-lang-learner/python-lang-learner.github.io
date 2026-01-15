@@ -1,42 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
-  // Detect base path (works on GitHub Pages)
-  const basePath = location.pathname.includes("/topics/") ||
-                   location.pathname.includes("/projects/")
-                   ? "../"
-                   : "";
+  // Load HEADER
+  const header = document.getElementById("site-header");
+  if (header) {
+    const res = await fetch("/components/header.html");
+    header.innerHTML = await res.text();
+  }
 
-  // LOAD HEADER
-  fetch(basePath + "components/header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("site-header").innerHTML = html;
+  // Load FOOTER
+  const footer = document.getElementById("site-footer");
+  if (footer) {
+    const res = await fetch("/components/footer.html");
+    footer.innerHTML = await res.text();
+  }
 
-      // Mobile menu AFTER header loads
-      const toggle = document.getElementById("menuToggle");
-      const drawer = document.getElementById("mobileDrawer");
-      const overlay = document.getElementById("drawerOverlay");
+  // Mobile menu (after header loads)
+  setTimeout(() => {
+    const toggle = document.getElementById("menuToggle");
+    const drawer = document.getElementById("mobileDrawer");
+    const overlay = document.getElementById("drawerOverlay");
 
-      if (toggle && drawer && overlay) {
-        toggle.onclick = () => {
-          drawer.classList.toggle("open");
-          overlay.classList.toggle("show");
-        };
+    if (toggle && drawer && overlay) {
+      toggle.onclick = () => {
+        drawer.classList.toggle("open");
+        overlay.classList.toggle("show");
+      };
 
-        overlay.onclick = () => {
-          drawer.classList.remove("open");
-          overlay.classList.remove("show");
-        };
-      }
-    })
-    .catch(err => console.error("Header load failed", err));
-
-  // LOAD FOOTER
-  fetch(basePath + "components/footer.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("site-footer").innerHTML = html;
-    })
-    .catch(err => console.error("Footer load failed", err));
+      overlay.onclick = () => {
+        drawer.classList.remove("open");
+        overlay.classList.remove("show");
+      };
+    }
+  }, 50);
 
 });
