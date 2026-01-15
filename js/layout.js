@@ -1,15 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // HEADER
-  fetch("/components/header.html")
-    .then(res => {
-      if (!res.ok) throw new Error("Header not found");
-      return res.text();
-    })
-    .then(data => {
-      document.getElementById("site-header").innerHTML = data;
+  // Detect base path (works on GitHub Pages)
+  const basePath = location.pathname.includes("/topics/") ||
+                   location.pathname.includes("/projects/")
+                   ? "../"
+                   : "";
 
-      // Mobile menu logic (AFTER header loads)
+  // LOAD HEADER
+  fetch(basePath + "components/header.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("site-header").innerHTML = html;
+
+      // Mobile menu AFTER header loads
       const toggle = document.getElementById("menuToggle");
       const drawer = document.getElementById("mobileDrawer");
       const overlay = document.getElementById("drawerOverlay");
@@ -26,18 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
         };
       }
     })
-    .catch(err => console.error(err));
+    .catch(err => console.error("Header load failed", err));
 
-
-  // FOOTER
-  fetch("/components/footer.html")
-    .then(res => {
-      if (!res.ok) throw new Error("Footer not found");
-      return res.text();
+  // LOAD FOOTER
+  fetch(basePath + "components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("site-footer").innerHTML = html;
     })
-    .then(data => {
-      document.getElementById("site-footer").innerHTML = data;
-    })
-    .catch(err => console.error(err));
+    .catch(err => console.error("Footer load failed", err));
 
 });
