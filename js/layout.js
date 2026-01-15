@@ -1,34 +1,36 @@
+// js/layout.js
 document.addEventListener("DOMContentLoaded", async () => {
 
-  async function load(selector, file) {
-    const el = document.querySelector(selector);
-    if (!el) return;
+  // Load HEADER
+  const header = document.getElementById("site-header");
+  if (header) {
+    const res = await fetch("/components/header.html");
+    header.innerHTML = await res.text();
+  }
 
-    const res = await fetch(file);
-    if (!res.ok) {
-      console.error("Failed to load:", file);
-      return;
+  // Load FOOTER
+  const footer = document.getElementById("site-footer");
+  if (footer) {
+    const res = await fetch("/components/footer.html");
+    footer.innerHTML = await res.text();
+  }
+
+  // Mobile menu (AFTER header loads)
+  setTimeout(() => {
+    const toggle = document.getElementById("menuToggle");
+    const drawer = document.getElementById("mobileDrawer");
+    const overlay = document.getElementById("drawerOverlay");
+
+    if (toggle && drawer && overlay) {
+      toggle.onclick = () => {
+        drawer.classList.toggle("open");
+        overlay.classList.toggle("show");
+      };
+
+      overlay.onclick = () => {
+        drawer.classList.remove("open");
+        overlay.classList.remove("show");
+      };
     }
-    el.innerHTML = await res.text();
-  }
-
-  await load("#site-header", "includes/header.html");
-  await load("#site-footer", "includes/footer.html");
-
-  // Mobile menu (after header loads)
-  const toggle = document.getElementById("menuToggle");
-  const drawer = document.getElementById("mobileDrawer");
-  const overlay = document.getElementById("drawerOverlay");
-
-  if (toggle && drawer && overlay) {
-    toggle.onclick = () => {
-      drawer.classList.toggle("open");
-      overlay.classList.toggle("show");
-    };
-
-    overlay.onclick = () => {
-      drawer.classList.remove("open");
-      overlay.classList.remove("show");
-    };
-  }
+  }, 100);
 });
