@@ -3,29 +3,31 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadLayout() {
-  const basePath = window.location.hostname.includes("github.io")
-    ? "/n-lang-learner"
-    : "";
-
   /* ---------- LOAD HEADER ---------- */
-  fetch(`${basePath}/header.html`)
-    .then(res => res.text())
+  fetch("../components/header.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Header not found");
+      return res.text();
+    })
     .then(html => {
       document.getElementById("site-header").innerHTML = html;
-      initMobileMenu(); // 🔥 IMPORTANT
+      initMobileMenu(); // 🔥 important
     })
-    .catch(err => console.error("Header load failed:", err));
+    .catch(err => console.error(err));
 
   /* ---------- LOAD FOOTER ---------- */
-  fetch(`${basePath}/footer.html`)
-    .then(res => res.text())
+  fetch("../components/footer.html")
+    .then(res => {
+      if (!res.ok) throw new Error("Footer not found");
+      return res.text();
+    })
     .then(html => {
       document.getElementById("site-footer").innerHTML = html;
     })
-    .catch(err => console.error("Footer load failed:", err));
+    .catch(err => console.error(err));
 }
 
-/* ---------- MOBILE MENU LOGIC ---------- */
+/* ---------- MOBILE MENU ---------- */
 function initMobileMenu() {
   const menuToggle = document.getElementById("menuToggle");
   const mobileDrawer = document.getElementById("mobileDrawer");
