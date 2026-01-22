@@ -473,14 +473,23 @@ pre.code {
   margin-top: 32px;     /* space after header */
   margin-bottom: 48px;  /* space before footer */
 }
+/*
 main {
   padding-top: 80px;
 }
 .page-content {
   padding-top: 80px;
-}
+}*/
 
 /**********************************************/
-body {
+/*body {
   margin: 0;
+}
+*/
+body {
+  padding-top: 64px;
+}
+.menu-toggle {
+  color: #ffffff;
+  font-size: 1.8rem;
 }

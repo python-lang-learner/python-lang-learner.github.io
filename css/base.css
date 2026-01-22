@@ -116,10 +116,10 @@ body {
 }
 
 /* ===== PAGE SPACING ===== */
-.page-content {
+/*.page-content {
   padding-top: 80px;   /* header height + gap */
-  padding-bottom: 80px; /* footer height + gap */
-}
+  /*padding-bottom: 80px; /* footer height + gap */
+/*}*/
 
 /* ===== CONTENT WRAPPER ===== */
 .content-wrapper {
@@ -135,10 +135,18 @@ body {
   margin-bottom: 48px;  /* space before footer */
 }
 /*************************/
-main {
+/*main {
   padding-top: 80px;
-}
+}*/
 /***************************/
-body {
+/*body {
   margin: 0;
+}*/
+body {
+  padding-top: 64px;
+}
+
+.menu-toggle {
+  color: #ffffff;
+  font-size: 1.8rem;
 }
