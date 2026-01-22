@@ -69,7 +69,10 @@
   background: none;
   border: none;
   color: #ffffff;
+  z-index: 1500;       /* 🔥 REQUIRED */
+  cursor: pointer;    /* UX fix */
 }
+
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -93,6 +96,13 @@
   padding: 90px 20px;
   transition: right 0.3s ease;
   z-index: 1200;
+}
+.mobile-drawer {
+  z-index: 1600;   /* higher than header */
+}
+
+.drawer-overlay {
+  z-index: 1500;
 }
 
 .mobile-drawer.open {
