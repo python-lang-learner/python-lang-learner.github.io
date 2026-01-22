@@ -56,3 +56,49 @@
     display: block;
   }
 }
+/**********************************/
+/**********************************/
+/* ===== MOBILE DRAWER ===== */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100vh;
+  background: #020617;
+  padding: 90px 20px;
+  transition: right 0.3s ease;
+  z-index: 1200;
+}
+
+.mobile-drawer.open {
+  right: 0;
+}
+
+.mobile-drawer nav a {
+  display: block;
+  padding: 14px 0;
+  color: #93c5fd;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.mobile-drawer nav a:hover {
+  color: #ffffff;
+}
+
+/* Overlay */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1100;
+}
+
+.drawer-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}

@@ -1,12 +1,27 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  async function load(id, file) {
-    const el = document.getElementById(id);
-    if (!el) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileDrawer = document.getElementById("mobileDrawer");
+  const drawerOverlay = document.getElementById("drawerOverlay");
 
-    const res = await fetch(file);
-    el.innerHTML = await res.text();
+  if (!menuToggle || !mobileDrawer || !drawerOverlay) return;
+
+  function openDrawer() {
+    mobileDrawer.classList.add("open");
+    drawerOverlay.classList.add("show");
+    document.body.style.overflow = "hidden";
   }
 
-  await load("site-header", "/components/header.html");
-  await load("site-footer", "/components/footer.html");
+  function closeDrawer() {
+    mobileDrawer.classList.remove("open");
+    drawerOverlay.classList.remove("show");
+    document.body.style.overflow = "";
+  }
+
+  menuToggle.addEventListener("click", openDrawer);
+  drawerOverlay.addEventListener("click", closeDrawer);
+
+  // Close drawer when link clicked
+  mobileDrawer.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeDrawer);
+  });
 });
