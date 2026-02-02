@@ -488,9 +488,13 @@ main {
 */
 body {
   padding-top: 64px;
-  padding-bottom: 56px;
+  
 }
 .menu-toggle {
   color: #ffffff;
   font-size: 1.8rem;
+}
+.page-content {
+  min-height: calc(100vh - 64px); /* header height */
+  padding: 40px 20px;
 }
