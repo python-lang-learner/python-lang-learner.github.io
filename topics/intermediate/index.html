@@ -1,42 +1,94 @@
-<main class="container page-topics">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Python Comprehensions | Intermediate Python</title>
 
-  <section class="topics-hero">
-    <h2>Intermediate Python</h2>
-    <p class="lede">
-      Strengthen your Python skills with real-world concepts,
-      better code structure, and practical examples.
-    </p>
-  </section>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
 
-  <section class="topics-list">
+  <!-- JS -->
+  <script src="/js/layout.js" defer></script>
+</head>
 
-    <article class="topic-group">
-      <h3>Python Core (Intermediate)</h3>
-      <ul class="topic-links">
-        <li><a href="comprehensions.html">Comprehensions</a></li>
-        <li><a href="lambda.html">Lambda functions</a></li>
-        <li><a href="args_kwargs.html">*args & **kwargs</a></li>
-        <li><a href="scope.html">Variable scope</a></li>
-      </ul>
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container page-topics">
+
+    <article class="topic-card">
+
+      <span class="topic-level">Intermediate</span>
+
+      <h1>List, Dict & Set Comprehensions</h1>
+
+      <p class="intro">
+        Comprehensions provide a compact and readable way to create collections
+        in Python. They are widely used in real-world Python code.
+      </p>
+
+      <!-- SECTION -->
+      <h2>What is a List Comprehension?</h2>
+      <p>
+        A list comprehension allows you to create a new list from an iterable
+        using a single line of code.
+      </p>
+
+      <div class="code-block">
+        <pre>
+numbers = [1, 2, 3, 4, 5]
+
+squares = [n * n for n in numbers]
+
+print(squares)
+        </pre>
+      </div>
+
+      <div class="info-box">
+        ✔ Cleaner than loops  
+        ✔ Faster execution  
+        ✔ Common in interviews & real projects
+      </div>
+
+      <!-- SECTION -->
+      <h2>Conditional Comprehension</h2>
+      <p>
+        You can also apply conditions inside comprehensions.
+      </p>
+
+      <div class="code-block">
+        <pre>
+even_numbers = [n for n in range(1, 11) if n % 2 == 0]
+print(even_numbers)
+        </pre>
+      </div>
+
+      <!-- PRACTICE -->
+      <div class="warning-box">
+        📝 <strong>Practice:</strong><br>
+        Create a list of squares for odd numbers from 1 to 10.
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="next-topic">
+        <a href="/topics/intermediate/lambda.html">
+          Next → Lambda Functions
+        </a>
+      </div>
+
     </article>
 
-    <article class="topic-group">
-      <h3>Error Handling</h3>
-      <ul class="topic-links">
-        <li><a href="error-handling.html">try / except</a></li>
-        <li><a href="custom-exceptions.html">Custom exceptions</a></li>
-      </ul>
-    </article>
+  </main>
 
-    <article class="topic-group">
-      <h3>Object-Oriented Programming</h3>
-      <ul class="topic-links">
-        <li><a href="oops/classes.html">Classes & Objects</a></li>
-        <li><a href="oops/inheritance.html">Inheritance</a></li>
-        <li><a href="oops/polymorphism.html">Polymorphism</a></li>
-      </ul>
-    </article>
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
 
-  </section>
-
-</main>
+</body>
+</html>
