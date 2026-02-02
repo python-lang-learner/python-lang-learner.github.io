@@ -4,6 +4,8 @@
   color: #cbd5e1;
   padding: 20px 16px;
   text-align: center;
+  height: 56px;
+  position: fixed;
 }
 
 /* Links row */
@@ -12,7 +14,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 18px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .site-footer a {
