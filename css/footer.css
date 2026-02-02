@@ -1,24 +1,23 @@
-/* ================= FOOTER ================= */
-/*
+/*============Footer.html===========*/
 .site-footer {
   background: #0f172a;
   color: #cbd5e1;
-  padding: 24px 16px;
+  padding: 20px 16px;
   text-align: center;
-  margin-top: 80px; /* pushes footer below content *//*
-} */
+}
 
+/* Links row */
 .site-footer .footer-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .site-footer a {
   color: #60a5fa;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   text-decoration: none;
 }
 
@@ -26,7 +25,9 @@
   color: #ffffff;
 }
 
-.site-footer p {
+/* Copyright text — ALWAYS CENTER */
+.footer-copy {
   font-size: 0.85rem;
   color: #94a3b8;
+  text-align: center;
 }
