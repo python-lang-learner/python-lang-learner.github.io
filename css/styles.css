@@ -498,3 +498,22 @@ body {
   min-height: calc(100vh - 64px); /* header height */
   padding: 40px 20px;
 }
+/* ===== INTERMEDIATE BADGE ===== */
+.topic-level {
+  display: inline-block;
+  background: #6366f1;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+/* Intro paragraph */
+.topic-card .intro {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 24px;
+}
+
