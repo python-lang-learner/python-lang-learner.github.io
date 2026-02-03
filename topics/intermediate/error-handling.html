@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Error Handling | Intermediate Python</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- JS -->
+  <script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container page-topics content-safe">
+
+    <article class="topic-card">
+
+      <span class="topic-level">Intermediate</span>
+
+      <h1>Error Handling in Python</h1>
+
+      <p class="intro">
+        Error handling allows your program to deal with unexpected situations
+        without crashing. Python uses <code>try</code>, <code>except</code>,
+        <code>else</code>, and <code>finally</code> blocks to handle runtime errors.
+      </p>
+
+      <!-- SECTION -->
+      <h2>What is an Exception?</h2>
+      <p>
+        An exception is an error that occurs during program execution.
+        If not handled, the program will stop abruptly.
+      </p>
+
+      <div class="code-block">
+        <pre>
+x = 10
+y = 0
+
+print(x / y)  # ZeroDivisionError
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Basic try / except</h2>
+      <p>
+        Use <code>try</code> and <code>except</code> to catch and handle errors.
+      </p>
+
+      <div class="code-block">
+        <pre>
+try:
+    x = 10
+    y = 0
+    print(x / y)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+        </pre>
+      </div>
+
+      <div class="info-box">
+        ✔ Prevents program crash  
+        ✔ Handles runtime errors gracefully  
+        ✔ Improves user experience
+      </div>
+
+      <!-- SECTION -->
+      <h2>Handling Multiple Exceptions</h2>
+      <p>
+        You can handle different types of exceptions separately.
+      </p>
+
+      <div class="code-block">
+        <pre>
+try:
+    num = int("abc")
+    print(num)
+except ValueError:
+    print("Invalid number")
+except ZeroDivisionError:
+    print("Division by zero")
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Using else Block</h2>
+      <p>
+        The <code>else</code> block runs if no exception occurs.
+      </p>
+
+      <div class="code-block">
+        <pre>
+try:
+    num = int("123")
+except ValueError:
+    print("Conversion failed")
+else:
+    print("Conversion successful:", num)
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Using finally Block</h2>
+      <p>
+        The <code>finally</code> block always runs, whether an exception
+        occurs or not.
+      </p>
+
+      <div class="code-block">
+        <pre>
+try:
+    file = open("data.txt", "r")
+    content = file.read()
+except FileNotFoundError:
+    print("File not found")
+finally:
+    print("Closing operation completed")
+        </pre>
+      </div>
+
+      <!-- PRACTICE -->
+      <div class="warning-box">
+        📝 <strong>Practice:</strong><br>
+        Write a program that asks the user for two numbers and
+        handles division errors using <code>try</code> and <code>except</code>.
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="next-topic">
+        <a href="/topics/intermediate/generator-expressions.html">
+          Next → Generator Expressions
+        </a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
