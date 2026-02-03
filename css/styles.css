@@ -516,7 +516,9 @@ body {
   color: #475569;
   margin-bottom: 24px;
 }
+/* ===== SAFE LAYOUT FOR FIXED HEADER & FOOTER ===== */
 .content-safe {
-  min-height: calc(100vh - 144px); /* header + footer */
+  min-height: calc(100vh - 160px); /* header + footer + buffer */
+  padding-bottom: 40px;
 }
 
