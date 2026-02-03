@@ -516,4 +516,7 @@ body {
   color: #475569;
   margin-bottom: 24px;
 }
+.content-safe {
+  min-height: calc(100vh - 144px); /* header + footer */
+}
 
