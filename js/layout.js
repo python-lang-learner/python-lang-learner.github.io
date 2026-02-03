@@ -1,31 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
-  loadLayout();
+
+  async function loadComponent(id, file, callback) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error(`${file} not found`);
+      el.innerHTML = await res.text();
+      if (callback) callback();
+    } catch (err) {
+      console.error("Failed to load:", file, err);
+    }
+  }
+
+  /* LOAD HEADER & FOOTER (ABSOLUTE PATHS) */
+  loadComponent("site-header", "/components/header.html", initMobileMenu);
+  loadComponent("site-footer", "/components/footer.html");
+
 });
-
-function loadLayout() {
-  /* ---------- LOAD HEADER ---------- */
-  fetch("../components/header.html")
-    .then(res => {
-      if (!res.ok) throw new Error("Header not found");
-      return res.text();
-    })
-    .then(html => {
-      document.getElementById("site-header").innerHTML = html;
-      initMobileMenu(); // 🔥 important
-    })
-    .catch(err => console.error(err));
-
-  /* ---------- LOAD FOOTER ---------- */
-  fetch("../components/footer.html")
-    .then(res => {
-      if (!res.ok) throw new Error("Footer not found");
-      return res.text();
-    })
-    .then(html => {
-      document.getElementById("site-footer").innerHTML = html;
-    })
-    .catch(err => console.error(err));
-}
 
 /* ---------- MOBILE MENU ---------- */
 function initMobileMenu() {
