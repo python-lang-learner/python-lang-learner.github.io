@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lambda Functions | Intermediate Python</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- JS -->
+  <script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container page-topics content-safe">
+
+    <article class="topic-card">
+
+      <span class="topic-level">Intermediate</span>
+
+      <h1>Lambda Functions in Python</h1>
+
+      <p class="intro">
+        Lambda functions are small anonymous functions used for short,
+        one-line operations. They are commonly used with functions like
+        <code>map()</code>, <code>filter()</code>, and <code>sorted()</code>.
+      </p>
+
+      <!-- SECTION -->
+      <h2>What is a Lambda Function?</h2>
+      <p>
+        A lambda function is a function without a name, written in a single line.
+        It can take any number of arguments but only one expression.
+      </p>
+
+      <div class="code-block">
+        <pre>
+# normal function
+def square(x):
+    return x * x
+
+# lambda function
+square = lambda x: x * x
+
+print(square(5))
+        </pre>
+      </div>
+
+      <div class="info-box">
+        ✔ Short and concise  
+        ✔ Used for simple logic  
+        ✔ Improves readability when used correctly
+      </div>
+
+      <!-- SECTION -->
+      <h2>Lambda with Multiple Arguments</h2>
+      <p>
+        Lambda functions can take more than one argument.
+      </p>
+
+      <div class="code-block">
+        <pre>
+add = lambda a, b: a + b
+print(add(3, 7))
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Lambda with map()</h2>
+      <p>
+        <code>map()</code> applies a function to every item in an iterable.
+      </p>
+
+      <div class="code-block">
+        <pre>
+numbers = [1, 2, 3, 4, 5]
+
+squares = list(map(lambda x: x * x, numbers))
+
+print(squares)
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Lambda with filter()</h2>
+      <p>
+        <code>filter()</code> selects elements that satisfy a condition.
+      </p>
+
+      <div class="code-block">
+        <pre>
+numbers = [1, 2, 3, 4, 5, 6]
+
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+
+print(even_numbers)
+        </pre>
+      </div>
+
+      <!-- PRACTICE -->
+      <div class="warning-box">
+        📝 <strong>Practice:</strong><br>
+        Use a lambda function to filter numbers greater than 10
+        from the list <code>[5, 12, 18, 7, 20]</code>.
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="next-topic">
+        <a href="/topics/intermediate/error-handling.html">
+          Next → Error Handling
+        </a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
