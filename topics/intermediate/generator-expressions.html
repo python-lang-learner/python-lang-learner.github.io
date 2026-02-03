@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Generator Expressions | Intermediate Python</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- JS -->
+  <script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container page-topics content-safe">
+
+    <article class="topic-card">
+
+      <span class="topic-level">Intermediate</span>
+
+      <h1>Generator Expressions in Python</h1>
+
+      <p class="intro">
+        Generator expressions provide a concise way to create generators.
+        They are similar to list comprehensions but use parentheses
+        and generate values one at a time, saving memory.
+      </p>
+
+      <!-- SECTION -->
+      <h2>Why Use Generator Expressions?</h2>
+      <ul class="list">
+        <li>✔ Memory efficient</li>
+        <li>✔ Faster for large datasets</li>
+        <li>✔ Clean and readable syntax</li>
+      </ul>
+
+      <!-- SECTION -->
+      <h2>List Comprehension vs Generator Expression</h2>
+      <p>List comprehension creates the entire list in memory:</p>
+
+      <div class="code-block">
+        <pre>
+numbers = [x * 2 for x in range(5)]
+print(numbers)
+        </pre>
+      </div>
+
+      <p>Generator expression creates values lazily:</p>
+
+      <div class="code-block">
+        <pre>
+numbers = (x * 2 for x in range(5))
+print(numbers)
+        </pre>
+      </div>
+
+      <div class="info-box">
+        💡 Printing a generator shows its object reference.
+        Values are produced only when iterated.
+      </div>
+
+      <!-- SECTION -->
+      <h2>Iterating Over a Generator</h2>
+      <p>
+        Use a <code>for</code> loop to retrieve values from a generator.
+      </p>
+
+      <div class="code-block">
+        <pre>
+gen = (x * 2 for x in range(5))
+
+for value in gen:
+    print(value)
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Using Generator with sum()</h2>
+      <p>
+        Generator expressions work perfectly with built-in functions
+        like <code>sum()</code>, <code>max()</code>, and <code>min()</code>.
+      </p>
+
+      <div class="code-block">
+        <pre>
+total = sum(x for x in range(10))
+print(total)
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Generator with Condition</h2>
+      <p>
+        You can add conditions inside generator expressions.
+      </p>
+
+      <div class="code-block">
+        <pre>
+even_numbers = (x for x in range(20) if x % 2 == 0)
+
+for n in even_numbers:
+    print(n)
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>One-Time Use Warning</h2>
+      <div class="warning-box">
+        ⚠ Generators can be iterated only once.
+        After exhaustion, they produce no values.
+      </div>
+
+      <div class="code-block">
+        <pre>
+gen = (x for x in range(3))
+
+print(list(gen))
+print(list(gen))  # Empty output
+        </pre>
+      </div>
+
+      <!-- PRACTICE -->
+      <div class="practice-box">
+        📝 <strong>Practice:</strong><br>
+        Create a generator expression that produces squares of numbers
+        from 1 to 10 and prints only values greater than 20.
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="next-topic">
+        <a href="/topics/intermediate/decorators.html">
+          Next → Decorators
+        </a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
