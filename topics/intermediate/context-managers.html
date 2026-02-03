@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Context Managers | Intermediate Python</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- JS -->
+  <script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container page-topics content-safe">
+
+    <article class="topic-card">
+
+      <span class="topic-level">Intermediate</span>
+
+      <h1>Context Managers in Python</h1>
+
+      <p class="intro">
+        Context managers allow you to properly manage resources
+        such as files, locks, and database connections.
+        They ensure setup and cleanup happen automatically.
+      </p>
+
+      <!-- SECTION -->
+      <h2>Why Context Managers?</h2>
+      <p>
+        Resources must be released after use.
+        Forgetting to close them can cause memory leaks or bugs.
+      </p>
+
+      <div class="info-box">
+        💡 Context managers guarantee cleanup even if an error occurs.
+      </div>
+
+      <!-- SECTION -->
+      <h2>Without a Context Manager</h2>
+      <div class="code-block">
+        <pre>
+file = open("data.txt", "r")
+content = file.read()
+file.close()
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Using <code>with</code> Statement</h2>
+      <p>
+        The <code>with</code> keyword automatically handles resource cleanup.
+      </p>
+
+      <div class="code-block">
+        <pre>
+with open("data.txt", "r") as file:
+    content = file.read()
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>How Context Managers Work</h2>
+      <p>
+        A context manager implements two special methods:
+      </p>
+
+      <ul class="list">
+        <li><code>__enter__()</code> → setup</li>
+        <li><code>__exit__()</code> → cleanup</li>
+      </ul>
+
+      <!-- SECTION -->
+      <h2>Creating a Custom Context Manager (Class)</h2>
+      <div class="code-block">
+        <pre>
+class FileManager:
+    def __enter__(self):
+        print("Opening file")
+        self.file = open("data.txt", "w")
+        return self.file
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Closing file")
+        self.file.close()
+        return False
+        </pre>
+      </div>
+
+      <div class="code-block">
+        <pre>
+with FileManager() as f:
+    f.write("Hello Context Manager")
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Context Managers Using <code>contextlib</code></h2>
+      <p>
+        Python provides <code>contextlib</code> to simplify context manager creation.
+      </p>
+
+      <div class="code-block">
+        <pre>
+from contextlib import contextmanager
+
+@contextmanager
+def open_file(name):
+    file = open(name, "w")
+    try:
+        yield file
+    finally:
+        file.close()
+        </pre>
+      </div>
+
+      <div class="code-block">
+        <pre>
+with open_file("data.txt") as f:
+    f.write("Using contextlib")
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Handling Exceptions in Context Managers</h2>
+      <p>
+        The <code>__exit__</code> method receives exception details.
+      </p>
+
+      <div class="code-block">
+        <pre>
+def __exit__(self, exc_type, exc_value, traceback):
+    if exc_type:
+        print("An error occurred")
+    return False
+        </pre>
+      </div>
+
+      <!-- PRACTICE -->
+      <div class="warning-box">
+        📝 <strong>Practice:</strong><br>
+        Create a context manager that measures execution time.
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="next-topic">
+        <a href="/topics/intermediate/itertools.html">
+          Next → itertools Module
+        </a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
