@@ -1,6 +1,6 @@
-/*styles.css*/
-/*******************************************************************************/
-/* ================= LEARNING PATH ================= */
+/* ===================================================================== */
+/* ======================= LEARNING PATH ================================ */
+/* ===================================================================== */
 
 .path {
   max-width: 1100px;
@@ -20,7 +20,9 @@
   font-size: 0.95rem;
 }
 
-/* ================= QUICK LINKS ================= */
+/* ===================================================================== */
+/* ======================= QUICK LINKS ================================= */
+/* ===================================================================== */
 
 .quick-links {
   display: flex;
@@ -30,26 +32,29 @@
   margin-top: 24px;
 }
 
-/* ================= BUTTONS ================= */
+/* ===================================================================== */
+/* ======================= BUTTONS ===================================== */
+/* ===================================================================== */
 
 .btn-primary {
   background: #2563eb;
-  color: #fff;
+  color: #ffffff;
   padding: 12px 22px;
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
+  transition: background 0.3s ease;
 }
 
 .btn-primary:hover {
-  background: #1e4fd8;
+  background: #1e40af;
   text-decoration: none;
 }
 
 .btn-outline {
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid #ffffff;
+  color: #ffffff;
   padding: 12px 22px;
   border-radius: 10px;
   font-weight: 600;
@@ -60,35 +65,18 @@
   background: rgba(255,255,255,0.15);
 }
 
-/*******************************************************************************/
-/* ===== HERO ===== */
-/*
-.hero {
-  width: 100%;
-  background: linear-gradient(180deg, #0b3c6f, #0a2e55);
-  padding: 80px 20px;
-}*/
+/* ===================================================================== */
+/* ======================= HERO ======================================== */
+/* ===================================================================== */
 
-/*.hero {
-  background: linear-gradient(180deg, #0b3c6f, #0a2e55);
-  transition: background 0.6s ease;
-}*/
 .hero {
   background: linear-gradient(180deg, #0b3c6f, #0a2e55);
 }
 
 body.dark .hero {
-  background: linear-gradient(180deg, #020617, #020617);
+  background: #020617;
 }
 
-/*
-.hero-inner {
-  max-width: 1100px;
-  margin: auto;
-  text-align: center;
-  color: #fff;
-}
-*/
 .hero-inner {
   max-width: 1100px;
   margin: auto;
@@ -96,6 +84,7 @@ body.dark .hero {
   text-align: center;
   color: #ffffff;
 }
+
 .hero h1 {
   font-size: 3rem;
   line-height: 1.2;
@@ -115,7 +104,10 @@ body.dark .hero {
   flex-wrap: wrap;
 }
 
-/* ===== SECTIONS ===== */
+/* ===================================================================== */
+/* ======================= SECTIONS ==================================== */
+/* ===================================================================== */
+
 .section {
   padding: 70px 20px;
 }
@@ -126,7 +118,10 @@ body.dark .hero {
   color: #0f172a;
 }
 
-/* ===== FEATURES ===== */
+/* ===================================================================== */
+/* ======================= FEATURES ==================================== */
+/* ===================================================================== */
+
 .features {
   max-width: 1100px;
   margin: auto;
@@ -134,242 +129,25 @@ body.dark .hero {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
-/*
+
 .feature-card {
-  background: #fff;
+  background: #ffffff;
   padding: 22px;
   border-radius: 14px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-}
-/*************************************************************/
-/************************************************************/
-.feature-card {
-  transition:
-    background-color 0.35s ease,
-    color 0.35s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 35px rgba(0,0,0,0.15);
 }
-/****************************************************************/
-/****************************************************************/
-/* ===== TOPIC PAGE ===== */
-.topic-container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-}
 
-.topic-container h1 {
-  font-size: 2.4rem;
-  margin-bottom: 12px;
-}
+/* ===================================================================== */
+/* ======================= TOPIC PAGE LAYOUT ============================ */
+/* ===================================================================== */
 
-.topic-container h2 {
-  margin-top: 32px;
-  margin-bottom: 12px;
-  color: #0b3c6f;
-}
-
-.topic-container p {
-  font-size: 1.05rem;
-  margin-bottom: 14px;
-}
-
-.info-box {
-  background: #f1f5f9;
-  padding: 16px;
-  border-left: 5px solid #2563eb;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.warning-box {
-  background: #fff7ed;
-  padding: 16px;
-  border-left: 5px solid #f97316;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
-.code-block {
-  background: #0f172a;
-  color: #e5e7eb;
-  padding: 18px;
-  border-radius: 10px;
-  overflow-x: auto;
-  margin: 16px 0;
-}
-
-.next-topic {
-  margin-top: 40px;
-  text-align: center;
-}
-/***********************************************************/
-/***********************************************************/
-/* ===== TOPIC CARD ===== */
-.topic-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 36px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-}
-
-/* Headings */
-.topic-card h1 {
-  font-size: 2.5rem;
-  margin-bottom: 14px;
-  color: #020617;
-}
-
-.topic-card h2 {
-  margin-top: 36px;
-  margin-bottom: 14px;
-  color: #1d4ed8;
-}
-
-/* Paragraphs */
-.topic-card p {
-  font-size: 1.08rem;
-  line-height: 1.7;
-  margin-bottom: 16px;
-}
-
-/* Info Box */
-.info-box {
-  background: #eef2ff;
-  border-left: 6px solid #6366f1;
-  padding: 16px 20px;
-  border-radius: 10px;
-  margin: 24px 0;
-}
-
-/* Warning Box */
-.warning-box {
-  background: #fff7ed;
-  border-left: 6px solid #fb923c;
-  padding: 16px 20px;
-  border-radius: 10px;
-  margin: 24px 0;
-}
-
-/* Code */
-.code-block {
-  background: linear-gradient(135deg, #020617, #0f172a);
-  color: #e5e7eb;
-  padding: 20px;
-  border-radius: 14px;
-  margin: 20px 0;
-  overflow-x: auto;
-}
-
-/* Lists */
-.topic-card ul,
-.topic-card ol {
-  margin-left: 22px;
-  margin-bottom: 20px;
-}
-
-/* Next Button */
-.next-topic a {
-  display: inline-block;
-  background: #2563eb;
-  color: #fff;
-  padding: 14px 22px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.next-topic a:hover {
-  background: #1e40af;
-}
-/***********************************************/
-/***********************************************/
-/* ===== TOPIC PAGE FIX ===== */
-
-
-/* Headings */
-
-.topic-card h2 {
-  font-size: 1.6rem;
-  margin: 36px 0 12px;
-  color: #1d4ed8;
-}
-
-/* Paragraphs */
-.topic-card p {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: #334155;
-}
-
-/* Info Box */
-.info-box {
-  background: #eef2ff;
-  border-left: 6px solid #6366f1;
-  padding: 16px 20px;
-  border-radius: 12px;
-  margin: 24px 0;
-  font-size: 0.95rem;
-}
-
-/* Warning Box */
-.warning-box {
-  background: #fff7ed;
-  border-left: 6px solid #fb923c;
-  padding: 16px 20px;
-  border-radius: 12px;
-  margin: 24px 0;
-}
-
-/* Code Block */
-.code-block pre {
-  background: linear-gradient(135deg, #020617, #0f172a);
-  color: #e5e7eb;
-  padding: 22px;
-  border-radius: 14px;
-  overflow-x: auto;
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* List */
-.topic-card ol {
-  margin-left: 22px;
-  margin-top: 12px;
-}
-
-/* Next Button */
-.next-topic {
-  margin-top: 36px;
-}
-
-.next-topic a {
-  display: inline-block;
-  background: #2563eb;
-  color: #fff;
-  padding: 14px 24px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.next-topic a:hover {
-  background: #1e40af;
-}
-/******************************/
-/* ===== TOPIC PAGE LAYOUT ===== */
 .topic-layout {
   max-width: 960px;
   margin: 120px auto 100px;
@@ -387,25 +165,124 @@ body.dark .hero {
 .topic-card h1 {
   font-size: 2.6rem;
   margin-bottom: 18px;
+  color: #020617;
 }
 
-/**********************************************/
-textarea {
-  width: 100%;
-  font-family: monospace;
-  padding: 10px;
+.topic-card h2 {
+  font-size: 1.6rem;
+  margin: 36px 0 12px;
+  color: #1d4ed8;
 }
 
-button {
-  margin: 10px 0;
+/* Paragraphs */
+.topic-card p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 16px;
 }
 
-pre {
-  background: #111;
-  color: #0f0;
-  padding: 10px;
+/* Intro paragraph */
+.topic-card .intro {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 24px;
 }
-/*****************************************************/
+
+/* Lists */
+.topic-card ul,
+.topic-card ol {
+  margin-left: 22px;
+  margin-bottom: 20px;
+}
+
+/* ===================================================================== */
+/* ======================= INFO & WARNING BOXES ========================= */
+/* ===================================================================== */
+
+.info-box {
+  background: #eef2ff;
+  border-left: 6px solid #6366f1;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin: 24px 0;
+  font-size: 0.95rem;
+}
+
+.warning-box {
+  background: #fff7ed;
+  border-left: 6px solid #fb923c;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin: 24px 0;
+}
+
+/* ===================================================================== */
+/* ======================= CODE BLOCKS ================================= */
+/* ===================================================================== */
+
+.code-block pre {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e5e7eb;
+  padding: 22px;
+  border-radius: 14px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ===================================================================== */
+/* ======================= NEXT TOPIC BUTTON ============================ */
+/* ===================================================================== */
+
+.next-topic {
+  margin-top: 36px;
+  text-align: center;
+}
+
+.next-topic a {
+  display: inline-block;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.next-topic a:hover {
+  background: #1e40af;
+}
+
+/* ===================================================================== */
+/* ======================= INTERMEDIATE BADGE =========================== */
+/* ===================================================================== */
+
+.topic-level {
+  display: inline-block;
+  background: #6366f1;
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+/* ===================================================================== */
+/* ======================= PROJECTS ==================================== */
+/* ===================================================================== */
+
+.project {
+  border-left: 4px solid #1a73e8;
+  padding-left: 16px;
+}
+
+.project h3 {
+  color: #1a73e8;
+}
+
 .project-title {
   background: none;
   border: none;
@@ -421,19 +298,14 @@ pre {
   margin: 10px 0 20px;
 }
 
-.project-content textarea {
+textarea {
   width: 100%;
   font-family: monospace;
   padding: 10px;
 }
-/****************************************/
-/*******projects file css****************/
-.project {
-  border-left: 4px solid #1a73e8;
-}
 
-.project h3 {
-  color: #1a73e8;
+pre.code {
+  font-size: 0.95rem;
 }
 
 details summary {
@@ -441,11 +313,10 @@ details summary {
   margin: 6px 0;
 }
 
-pre.code {
-  font-size: 0.95rem;
-}
-/**************************/
-/*******projects.html******/
+/* ===================================================================== */
+/* ======================= FILTER BUTTONS =============================== */
+/* ===================================================================== */
+
 .filter-buttons {
   display: flex;
   gap: 12px;
@@ -463,62 +334,20 @@ pre.code {
 
 .filter-buttons button.active {
   background: #2563eb;
-  color: #fff;
+  color: #ffffff;
   border-color: #2563eb;
 }
-/************************************/
-/**********space for header footer***/
-/* Space below header and above footer */
-.page-topics {
-  margin-top: 32px;     /* space after header */
-  margin-bottom: 48px;  /* space before footer */
-}
-/*
-main {
-  padding-top: 80px;
-}
-.page-content {
-  padding-top: 80px;
-}*/
 
-/**********************************************/
-/*body {
-  margin: 0;
+/* ===================================================================== */
+/* ======================= PAGE SPACING ================================= */
+/* ===================================================================== */
+
+.page-topics {
+  margin-top: 32px;
+  margin-bottom: 96px; /* must exceed footer height */
 }
-*/
-body {
-  padding-top: 64px;
-  
-}
+
 .menu-toggle {
   color: #ffffff;
   font-size: 1.8rem;
 }
-.page-content {
-  min-height: calc(100vh - 64px); /* header height */
-  padding: 40px 20px;
-}
-/* ===== INTERMEDIATE BADGE ===== */
-.topic-level {
-  display: inline-block;
-  background: #6366f1;
-  color: #fff;
-  font-size: 0.8rem;
-  padding: 6px 12px;
-  border-radius: 999px;
-  margin-bottom: 14px;
-  font-weight: 600;
-}
-
-/* Intro paragraph */
-.topic-card .intro {
-  font-size: 1.1rem;
-  color: #475569;
-  margin-bottom: 24px;
-}
-/* ===== SAFE LAYOUT FOR FIXED HEADER & FOOTER ===== */
-.content-safe {
-  min-height: calc(100vh - 160px); /* header + footer + buffer */
-  padding-bottom: 40px;
-}
-
