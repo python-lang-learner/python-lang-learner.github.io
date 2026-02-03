@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Decorators | Intermediate Python</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- JS -->
+  <script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="site-header"></header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container page-topics content-safe">
+
+    <article class="topic-card">
+
+      <span class="topic-level">Intermediate</span>
+
+      <h1>Decorators in Python</h1>
+
+      <p class="intro">
+        Decorators allow you to modify the behavior of a function
+        without changing its source code. They are widely used
+        in frameworks, logging, authentication, and performance monitoring.
+      </p>
+
+      <!-- SECTION -->
+      <h2>What is a Decorator?</h2>
+      <p>
+        A decorator is a function that takes another function
+        as input and returns a new function with added behavior.
+      </p>
+
+      <div class="info-box">
+        💡 Decorators use the <code>@</code> symbol and are based on
+        higher-order functions.
+      </div>
+
+      <!-- SECTION -->
+      <h2>Basic Function Without Decorator</h2>
+      <div class="code-block">
+        <pre>
+def greet():
+    print("Hello!")
+
+greet()
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Creating a Simple Decorator</h2>
+      <div class="code-block">
+        <pre>
+def my_decorator(func):
+    def wrapper():
+        print("Before function call")
+        func()
+        print("After function call")
+    return wrapper
+        </pre>
+      </div>
+
+      <p>Applying the decorator:</p>
+
+      <div class="code-block">
+        <pre>
+@my_decorator
+def greet():
+    print("Hello!")
+
+greet()
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>How Decorators Work</h2>
+      <ul class="list">
+        <li>✔ Function is passed as argument</li>
+        <li>✔ Wrapper function adds extra behavior</li>
+        <li>✔ Original function is executed inside wrapper</li>
+      </ul>
+
+      <!-- SECTION -->
+      <h2>Decorator with Arguments</h2>
+      <p>
+        To handle functions with parameters,
+        the wrapper must accept arguments.
+      </p>
+
+      <div class="code-block">
+        <pre>
+def logger(func):
+    def wrapper(*args, **kwargs):
+        print("Function called:", func.__name__)
+        return func(*args, **kwargs)
+    return wrapper
+        </pre>
+      </div>
+
+      <div class="code-block">
+        <pre>
+@logger
+def add(a, b):
+    return a + b
+
+print(add(3, 5))
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Preserving Function Metadata</h2>
+      <p>
+        Decorators can hide function name and docstring.
+        Use <code>functools.wraps</code> to preserve them.
+      </p>
+
+      <div class="code-block">
+        <pre>
+from functools import wraps
+
+def my_decorator(func):
+    @wraps(func)
+    def wrapper():
+        print("Running...")
+        func()
+    return wrapper
+        </pre>
+      </div>
+
+      <!-- SECTION -->
+      <h2>Real-World Uses of Decorators</h2>
+      <ul class="list">
+        <li>✔ Logging</li>
+        <li>✔ Authentication & Authorization</li>
+        <li>✔ Timing & performance checks</li>
+        <li>✔ Access control</li>
+      </ul>
+
+      <!-- PRACTICE -->
+      <div class="practice-box">
+        📝 <strong>Practice:</strong><br>
+        Create a decorator that prints the execution time of a function.
+      </div>
+
+      <!-- NAVIGATION -->
+      <div class="next-topic">
+        <a href="/topics/intermediate/context-managers.html">
+          Next → Context Managers
+        </a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
+
+</body>
+</html>
