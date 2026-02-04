@@ -1,14 +1,17 @@
-<!--topics/index.html-->
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Topics — Python Learning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Python Topics Roadmap | Learn Python Step by Step</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Browse Python topics by category. A structured roadmap from basics to advanced concepts with examples and projects." />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/topics.css">
   <link rel="stylesheet" href="/css/footer.css">
 
@@ -18,49 +21,57 @@
 </head>
 
 <body>
-  
+
+  <!-- HEADER -->
   <header id="site-header"></header>
-  <!-- put this right after your <header>…</header> -->
 
+  <!-- HERO -->
+  <main class="container page-topics content-safe">
 
-<!-- include script (use absolute path) -->
-<script src="/scripts/search.js" defer></script>
-
-  <main class="container page-topics">
     <section class="topics-hero">
       <div class="hero-row">
         <div class="hero-text">
-          <h2>Topics — browse by category</h2>
-          <p class="lede">A structured roadmap of Python topics with short descriptions and examples. Start with the Basics and follow the progression to build real projects.</p>
+          <h1>Python Topics Roadmap</h1>
+          <p class="lede">
+            Learn Python step by step using a structured roadmap.
+            Start with core fundamentals, move through logic and data,
+            and progress toward real-world applications.
+          </p>
         </div>
+
         <div class="hero-cta">
-          <a class="btn" href="/intro.html">Get started</a>
-          <a class="btn btn-outline" href="/projects.html">Projects</a>
+          <a class="btn" href="/intro.html">Start Learning</a>
+          <a class="btn btn-outline" href="/projects.html">View Projects</a>
         </div>
       </div>
     </section>
 
+    <!-- TOPICS -->
     <section class="topics-list">
-      <!-- Category block: repeat for each category -->
+
+      <!-- BASICS -->
       <article class="topic-group">
-        <h3>Basics</h3>
-        <p class="muted">Language fundamentals you should learn first.</p>
+        <h2>🟢 Python Basics</h2>
+        <p class="muted">Core language fundamentals every beginner must know.</p>
+
         <ul class="topic-links">
-          <li><a href="syntax.html">Syntax</a> — language basics and first script</li>
-          <li><a href="output.html">Output</a> — printing and formatting</li>
-          <li><a href="comments.html">Comments</a> — writing notes in code</li>
-          <li><a href="user-input.html">User input</a> — reading from keyboard</li>
-          <li><a href="string_formatting.html">String formatting</a> — f-strings &amp; format()</li>
+          <li><a href="syntax.html">Syntax</a> — your first Python program</li>
+          <li><a href="output.html">Output</a> — printing & formatting</li>
+          <li><a href="comments.html">Comments</a> — documenting code</li>
+          <li><a href="user-input.html">User Input</a> — reading input</li>
+          <li><a href="string_formatting.html">String Formatting</a> — f-strings & format()</li>
         </ul>
       </article>
 
+      <!-- DATA TYPES -->
       <article class="topic-group">
-        <h3>Data types &amp; collections</h3>
-        <p class="muted">How Python stores and organizes data.</p>
+        <h2>🟡 Data Types & Collections</h2>
+        <p class="muted">How Python stores, manipulates, and organizes data.</p>
+
         <ul class="topic-links">
           <li><a href="variables.html">Variables</a></li>
-          <li><a href="datatypes.html">Data types</a></li>
-          <li><a href="numbers.html">Numbers &amp; casting</a></li>
+          <li><a href="datatypes.html">Built-in Data Types</a></li>
+          <li><a href="numbers.html">Numbers & Casting</a></li>
           <li><a href="strings.html">Strings</a></li>
           <li><a href="lists.html">Lists</a></li>
           <li><a href="tuples.html">Tuples</a></li>
@@ -69,50 +80,61 @@
         </ul>
       </article>
 
+      <!-- CONTROL FLOW -->
       <article class="topic-group">
-        <h3>Control flow</h3>
-        <p class="muted">Branching and loops to control program behaviour.</p>
+        <h2>🔵 Control Flow & Loops</h2>
+        <p class="muted">Make decisions and repeat logic in your programs.</p>
+
         <ul class="topic-links">
           <li><a href="if_else.html">if / else</a></li>
-          <li><a href="match.html">match (pattern matching)</a></li>
-          <li><a href="while_loops.html">while loops</a></li>
-          <li><a href="for_loops.html">for loops</a></li>
-          <li><a href="nested_loops.html">nested loops</a></li>
-          <li><a href="break_continue.html">break continue</a></li>
+          <li><a href="match.html">match (Pattern Matching)</a></li>
+          <li><a href="while_loops.html">While Loops</a></li>
+          <li><a href="for_loops.html">For Loops</a></li>
+          <li><a href="nested_loops.html">Nested Loops</a></li>
+          <li><a href="break_continue.html">break & continue</a></li>
           <li><a href="range.html">range()</a></li>
-          <li><a href="iterators.html">Iterators &amp; generators</a></li>
+          <li><a href="iterators.html">Iterators & Generators</a></li>
         </ul>
       </article>
 
+      <!-- FUNCTIONS -->
       <article class="topic-group">
-        <h3>Functions &amp; modules</h3>
-        <p class="muted">Organising code and re-using libraries.</p>
+        <h2>🟣 Functions & Modules</h2>
+        <p class="muted">Write reusable, modular, and maintainable code.</p>
+
         <ul class="topic-links">
           <li><a href="functions.html">Functions</a></li>
           <li><a href="modules.html">Modules</a></li>
-          <li><a href="pip.html">PIP</a></li>
-          <li><a href="virtual-env.html">Virtual environments</a></li>
+          <li><a href="pip.html">PIP & Packages</a></li>
+          <li><a href="virtual-env.html">Virtual Environments</a></li>
         </ul>
       </article>
 
+      <!-- FILES -->
       <article class="topic-group">
-        <h3>Files, data &amp; libraries</h3>
-        <p class="muted">Working with files, JSON, regex and popular libs.</p>
+        <h2>🟤 Files, Data & Libraries</h2>
+        <p class="muted">Work with files, data formats, and popular libraries.</p>
+
         <ul class="topic-links">
-          <li><a href="file-handling.html">File handling</a></li>
+          <li><a href="file-handling.html">File Handling</a></li>
           <li><a href="json.html">JSON</a></li>
-          <li><a href="regex.html">Regular expressions</a></li>
+          <li><a href="regex.html">Regular Expressions</a></li>
           <li><a href="matplotlib.html">Matplotlib</a></li>
         </ul>
       </article>
+
+      <!-- NEXT STEP -->
+      <div class="info-box">
+        🚀 <strong>Next Step:</strong><br>
+        After completing these topics, continue with the
+        <a href="/topics/intermediate/index.html">Intermediate Python Roadmap</a>.
+      </div>
+
     </section>
   </main>
 
-  
-    
-      <!-- Footer injected by layout.js -->
-        <footer id="site-footer"></footer>
+  <!-- FOOTER -->
+  <footer id="site-footer"></footer>
 
-      <script src="/js/layout.js" defer></script>
 </body>
 </html>

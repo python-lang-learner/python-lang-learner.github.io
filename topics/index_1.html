@@ -1,0 +1,118 @@
+<!--topics/index.html-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Topics — Python Learning</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/topics.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <!-- JS -->
+  <script src="/js/layout.js" defer></script>
+  <script src="/js/global-search.js" defer></script>
+</head>
+
+<body>
+  
+  <header id="site-header"></header>
+  <!-- put this right after your <header>…</header> -->
+
+
+<!-- include script (use absolute path) -->
+<script src="/scripts/search.js" defer></script>
+
+  <main class="container page-topics">
+    <section class="topics-hero">
+      <div class="hero-row">
+        <div class="hero-text">
+          <h2>Topics — browse by category</h2>
+          <p class="lede">A structured roadmap of Python topics with short descriptions and examples. Start with the Basics and follow the progression to build real projects.</p>
+        </div>
+        <div class="hero-cta">
+          <a class="btn" href="/intro.html">Get started</a>
+          <a class="btn btn-outline" href="/projects.html">Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="topics-list">
+      <!-- Category block: repeat for each category -->
+      <article class="topic-group">
+        <h3>Basics</h3>
+        <p class="muted">Language fundamentals you should learn first.</p>
+        <ul class="topic-links">
+          <li><a href="syntax.html">Syntax</a> — language basics and first script</li>
+          <li><a href="output.html">Output</a> — printing and formatting</li>
+          <li><a href="comments.html">Comments</a> — writing notes in code</li>
+          <li><a href="user-input.html">User input</a> — reading from keyboard</li>
+          <li><a href="string_formatting.html">String formatting</a> — f-strings &amp; format()</li>
+        </ul>
+      </article>
+
+      <article class="topic-group">
+        <h3>Data types &amp; collections</h3>
+        <p class="muted">How Python stores and organizes data.</p>
+        <ul class="topic-links">
+          <li><a href="variables.html">Variables</a></li>
+          <li><a href="datatypes.html">Data types</a></li>
+          <li><a href="numbers.html">Numbers &amp; casting</a></li>
+          <li><a href="strings.html">Strings</a></li>
+          <li><a href="lists.html">Lists</a></li>
+          <li><a href="tuples.html">Tuples</a></li>
+          <li><a href="sets.html">Sets</a></li>
+          <li><a href="dictionaries.html">Dictionaries</a></li>
+        </ul>
+      </article>
+
+      <article class="topic-group">
+        <h3>Control flow</h3>
+        <p class="muted">Branching and loops to control program behaviour.</p>
+        <ul class="topic-links">
+          <li><a href="if_else.html">if / else</a></li>
+          <li><a href="match.html">match (pattern matching)</a></li>
+          <li><a href="while_loops.html">while loops</a></li>
+          <li><a href="for_loops.html">for loops</a></li>
+          <li><a href="nested_loops.html">nested loops</a></li>
+          <li><a href="break_continue.html">break continue</a></li>
+          <li><a href="range.html">range()</a></li>
+          <li><a href="iterators.html">Iterators &amp; generators</a></li>
+        </ul>
+      </article>
+
+      <article class="topic-group">
+        <h3>Functions &amp; modules</h3>
+        <p class="muted">Organising code and re-using libraries.</p>
+        <ul class="topic-links">
+          <li><a href="functions.html">Functions</a></li>
+          <li><a href="modules.html">Modules</a></li>
+          <li><a href="pip.html">PIP</a></li>
+          <li><a href="virtual-env.html">Virtual environments</a></li>
+        </ul>
+      </article>
+
+      <article class="topic-group">
+        <h3>Files, data &amp; libraries</h3>
+        <p class="muted">Working with files, JSON, regex and popular libs.</p>
+        <ul class="topic-links">
+          <li><a href="file-handling.html">File handling</a></li>
+          <li><a href="json.html">JSON</a></li>
+          <li><a href="regex.html">Regular expressions</a></li>
+          <li><a href="matplotlib.html">Matplotlib</a></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  
+    
+      <!-- Footer injected by layout.js -->
+        <footer id="site-footer"></footer>
+
+      <script src="/js/layout.js" defer></script>
+</body>
+</html>
