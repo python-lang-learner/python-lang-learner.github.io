@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concurrency Patterns in Python | Advanced Python</title>
+
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/footer.css">
+<script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+<article class="topic-card">
+
+<span class="topic-level">Advanced</span>
+<h1>Concurrency Patterns</h1>
+
+<p class="intro">
+Concurrency patterns help manage parallel tasks safely and efficiently.
+</p>
+
+<h2>Common Patterns</h2>
+<ul>
+<li>Thread Pool</li>
+<li>Producer–Consumer</li>
+<li>Worker Queue</li>
+<li>Async Pipelines</li>
+</ul>
+
+<h2>Thread Pool Example</h2>
+<div class="code-block"><pre>
+from concurrent.futures import ThreadPoolExecutor
+
+def task(n):
+    return n * n
+
+with ThreadPoolExecutor() as exe:
+    results = exe.map(task, range(5))
+    print(list(results))
+</pre></div>
+
+<div class="next-topic">
+<a href="performance-tuning.html">Next → Performance Tuning</a>
+</div>
+
+</article>
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>

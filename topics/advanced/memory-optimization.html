@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory Optimization in Python | Advanced Python</title>
+
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/footer.css">
+<script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+<article class="topic-card">
+
+<span class="topic-level">Advanced</span>
+<h1>Memory Optimization in Python</h1>
+
+<p class="intro">
+Efficient memory usage is critical for high-performance Python applications.
+</p>
+
+<h2>Key Concepts</h2>
+<ul>
+<li>Reference Counting</li>
+<li>Garbage Collection</li>
+<li>Memory Leaks</li>
+<li>Object Reuse</li>
+</ul>
+
+<h2>Using <code>__slots__</code></h2>
+<div class="code-block"><pre>
+class User:
+    __slots__ = ("name", "age")
+
+u = User()
+u.name = "Alex"
+u.age = 30
+</pre></div>
+
+<h2>Generators vs Lists</h2>
+<div class="code-block"><pre>
+def numbers():
+    for i in range(1000000):
+        yield i
+</pre></div>
+
+<div class="next-topic">
+<a href="concurrency-patterns.html">Next → Concurrency Patterns</a>
+</div>
+
+</article>
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>

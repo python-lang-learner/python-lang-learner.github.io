@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Descriptors | Advanced Python</title>
+
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/footer.css">
+<script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+<article class="topic-card">
+
+<span class="topic-level">Advanced</span>
+<h1>Descriptors</h1>
+
+<p class="intro">
+Descriptors customize attribute access using
+<code>__get__</code>, <code>__set__</code>, and <code>__delete__</code>.
+</p>
+
+<h2>Example</h2>
+<div class="code-block"><pre>
+class Age:
+    def __get__(self, obj, objtype=None):
+        return obj._age
+
+    def __set__(self, obj, value):
+        if value < 0:
+            raise ValueError("Invalid age")
+        obj._age = value
+
+class Person:
+    age = Age()
+
+p = Person()
+p.age = 30
+print(p.age)
+</pre></div>
+
+<div class="info-box">
+✔ Used in ORMs<br>
+✔ Used in validation frameworks
+</div>
+
+<div class="next-topic">
+<a href="memory-optimization.html">Next → Memory Optimization</a>
+</div>
+
+</article>
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metaclasses in Python | Advanced Python</title>
+
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/footer.css">
+
+<script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+<article class="topic-card">
+
+<span class="topic-level">Advanced</span>
+<h1>Metaclasses in Python</h1>
+
+<p class="intro">
+Metaclasses allow you to control class creation itself.
+They are often described as <strong>"classes of classes"</strong>.
+</p>
+
+<h2>Why Metaclasses?</h2>
+<ul>
+<li>Framework design (Django, SQLAlchemy)</li>
+<li>Automatic class validation</li>
+<li>API enforcement</li>
+</ul>
+
+<h2>Basic Example</h2>
+<div class="code-block"><pre>
+class MyMeta(type):
+    def __new__(cls, name, bases, attrs):
+        attrs["created_by"] = "metaclass"
+        return super().__new__(cls, name, bases, attrs)
+
+class Demo(metaclass=MyMeta):
+    pass
+
+print(Demo.created_by)
+</pre></div>
+
+<div class="warning-box">
+📝 Use metaclasses sparingly — they add complexity.
+</div>
+
+<div class="next-topic">
+<a href="descriptors.html">Next → Descriptors</a>
+</div>
+
+</article>
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>

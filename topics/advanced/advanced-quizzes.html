@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Advanced Python Quizzes | Test Your Python Skills</title>
+<meta name="description" content="Advanced Python quizzes covering performance, concurrency, internals, testing, and real-world scenarios.">
+
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/footer.css">
+
+<script src="/js/layout.js" defer></script>
+<script src="/js/toggle-answers.js" defer></script>
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+<article class="topic-card">
+
+<span class="topic-level">Advanced</span>
+<h1>Advanced Python Quizzes</h1>
+
+<p class="intro">
+Challenge your understanding of advanced Python concepts with real-world,
+interview-level quiz questions.
+</p>
+
+<hr>
+
+<h2>Quiz 1: Python Internals</h2>
+<p><strong>Q:</strong> What is the primary role of the Global Interpreter Lock (GIL)?</p>
+
+<button class="btn-toggle">Show Answer</button>
+<div class="answer hidden">
+<p>
+The GIL ensures that only one thread executes Python bytecode at a time,
+simplifying memory management but limiting CPU-bound multithreading.
+</p>
+</div>
+
+<hr>
+
+<h2>Quiz 2: Memory Optimization</h2>
+<p><strong>Q:</strong> Which feature helps reduce per-instance memory usage?</p>
+
+<button class="btn-toggle">Show Answer</button>
+<div class="answer hidden">
+<p>
+Using <code>__slots__</code> prevents the creation of instance dictionaries,
+reducing memory overhead.
+</p>
+</div>
+
+<hr>
+
+<h2>Quiz 3: Concurrency</h2>
+<p><strong>Q:</strong> When should multiprocessing be preferred over threading?</p>
+
+<button class="btn-toggle">Show Answer</button>
+<div class="answer hidden">
+<p>
+For CPU-bound tasks, as multiprocessing bypasses the GIL and uses multiple cores.
+</p>
+</div>
+
+<hr>
+
+<h2>Quiz 4: Async Programming</h2>
+<p><strong>Q:</strong> What type of tasks benefit most from <code>async/await</code>?</p>
+
+<button class="btn-toggle">Show Answer</button>
+<div class="answer hidden">
+<p>
+I/O-bound tasks such as network calls and file operations.
+</p>
+</div>
+
+<hr>
+
+<div class="info-box">
+✅ Tip: These quizzes are aligned with real interview questions and production scenarios.
+</div>
+
+<div class="next-topic">
+<a href="mini-projects.html">Next → Advanced Mini Projects</a>
+</div>
+
+</article>
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>
