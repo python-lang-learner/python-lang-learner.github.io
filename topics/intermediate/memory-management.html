@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Memory Management | Intermediate Python</title>
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <script src="/js/layout.js" defer></script>
+</head>
+<body>
+
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+<article class="topic-card">
+
+<span class="topic-level">Intermediate</span>
+<h1>Memory Management in Python</h1>
+
+<p class="intro">
+Python automatically manages memory using reference counting and garbage collection.
+Understanding this helps write efficient and bug-free programs.
+</p>
+
+<h2>How Python Manages Memory</h2>
+<ul>
+  <li>Private heap space</li>
+  <li>Reference counting</li>
+  <li>Garbage Collector</li>
+</ul>
+
+<h2>Reference Counting</h2>
+<div class="code-block"><pre>
+a = []
+b = a
+print(id(a) == id(b))
+</pre></div>
+
+<h2>Garbage Collection</h2>
+<p>Python removes unused objects automatically.</p>
+
+<div class="code-block"><pre>
+import gc
+print(gc.collect())
+</pre></div>
+
+<h2>Common Memory Issues</h2>
+<div class="info-box">
+✔ Circular references<br>
+✔ Large objects in loops<br>
+✔ Global variables
+</div>
+
+<div class="warning-box">
+📝 Practice: Track object references using <code>sys.getrefcount()</code>
+</div>
+
+<div class="next-topic">
+<a href="/topics/intermediate/threading-vs-multiprocessing.html">
+Next → Threading vs Multiprocessing
+</a>
+</div>
+
+</article>
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>

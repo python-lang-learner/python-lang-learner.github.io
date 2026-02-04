@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Advanced Exceptions | Intermediate Python</title>
+
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/footer.css">
+
+<script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+<article class="topic-card">
+
+<span class="topic-level">Intermediate</span>
+<h1>Advanced Exception Handling</h1>
+
+<p class="intro">
+Advanced exception handling allows you to build robust and fault-tolerant applications.
+</p>
+
+<h2>Custom Exceptions</h2>
+<div class="code-block"><pre>
+class AgeError(Exception):
+    pass
+
+raise AgeError("Invalid age")
+</pre></div>
+
+<h2>Exception Chaining</h2>
+<div class="code-block"><pre>
+try:
+    int("abc")
+except ValueError as e:
+    raise RuntimeError("Conversion failed") from e
+</pre></div>
+
+<h2>finally Block</h2>
+<div class="code-block"><pre>
+try:
+    print("Try")
+finally:
+    print("Always executed")
+</pre></div>
+
+<div class="info-box">
+✔ Used in APIs<br>
+✔ Used in frameworks<br>
+✔ Improves debugging
+</div>
+
+<div class="next-topic">
+<a href="/topics/intermediate/index.html">
+Back → Intermediate Roadmap
+</a>
+</div>
+
+</article>
+</main>
+
+<footer id="site-footer"></footer>
+</body>
+</html>

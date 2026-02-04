@@ -1,94 +1,52 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Python Comprehensions | Intermediate Python</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Intermediate Python Roadmap</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/base.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/footer.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/footer.css">
 
-  <!-- JS -->
-  <script src="/js/layout.js" defer></script>
+<script src="/js/layout.js" defer></script>
 </head>
 
 <body>
+<header id="site-header"></header>
 
-  <!-- HEADER -->
-  <header id="site-header"></header>
+<main class="container page-topics content-safe">
+<article class="topic-card">
 
-  <!-- MAIN CONTENT -->
-  <main class="container page-topics">
+<span class="topic-level">Intermediate</span>
+<h1>Intermediate Python Roadmap</h1>
 
-    <article class="topic-card">
+<p class="intro">
+Master Python beyond basics with real-world concepts and performance techniques.
+</p>
 
-      <span class="topic-level">Intermediate</span>
+<ul>
+<li><a href="lambda.html">Lambda Functions</a></li>
+<li><a href="generator-expressions.html">Generator Expressions</a></li>
+<li><a href="decorators.html">Decorators</a></li>
+<li><a href="context-managers.html">Context Managers</a></li>
+<li><a href="itertools.html">itertools</a></li>
+<li><a href="functools.html">functools</a></li>
+<li><a href="async-await.html">Async & Await</a></li>
+<li><a href="memory-management.html">Memory Management</a></li>
+<li><a href="threading-vs-multiprocessing.html">Threading vs Multiprocessing</a></li>
+<li><a href="design-patterns.html">Design Patterns</a></li>
+<li><a href="advanced-exceptions.html">Advanced Exceptions</a></li>
+</ul>
 
-      <h1>List, Dict & Set Comprehensions</h1>
+<div class="info-box">
+🎯 After this, you are ready for Advanced Python & real projects.
+</div>
 
-      <p class="intro">
-        Comprehensions provide a compact and readable way to create collections
-        in Python. They are widely used in real-world Python code.
-      </p>
+</article>
+</main>
 
-      <!-- SECTION -->
-      <h2>What is a List Comprehension?</h2>
-      <p>
-        A list comprehension allows you to create a new list from an iterable
-        using a single line of code.
-      </p>
-
-      <div class="code-block">
-        <pre>
-numbers = [1, 2, 3, 4, 5]
-
-squares = [n * n for n in numbers]
-
-print(squares)
-        </pre>
-      </div>
-
-      <div class="info-box">
-        ✔ Cleaner than loops  
-        ✔ Faster execution  
-        ✔ Common in interviews & real projects
-      </div>
-
-      <!-- SECTION -->
-      <h2>Conditional Comprehension</h2>
-      <p>
-        You can also apply conditions inside comprehensions.
-      </p>
-
-      <div class="code-block">
-        <pre>
-even_numbers = [n for n in range(1, 11) if n % 2 == 0]
-print(even_numbers)
-        </pre>
-      </div>
-
-      <!-- PRACTICE -->
-      <div class="warning-box">
-        📝 <strong>Practice:</strong><br>
-        Create a list of squares for odd numbers from 1 to 10.
-      </div>
-
-      <!-- NAVIGATION -->
-      <div class="next-topic">
-        <a href="/topics/intermediate/lambda.html">
-          Next → Lambda Functions
-        </a>
-      </div>
-
-    </article>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer id="site-footer"></footer>
-
+<footer id="site-footer"></footer>
 </body>
 </html>

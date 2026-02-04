@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Async & Await | Intermediate Python</title>
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+
+  <article class="topic-card">
+
+    <span class="topic-level">Intermediate</span>
+    <h1>Async & Await</h1>
+
+    <p class="intro">
+      Asynchronous programming allows Python to handle
+      multiple tasks efficiently without blocking execution.
+    </p>
+
+    <h2>Synchronous Code</h2>
+    <div class="code-block"><pre>
+import time
+
+def task():
+    time.sleep(2)
+    print("Task done")
+
+task()
+    </pre></div>
+
+    <h2>Asynchronous Code</h2>
+    <div class="code-block"><pre>
+import asyncio
+
+async def task():
+    await asyncio.sleep(2)
+    print("Task done")
+
+asyncio.run(task())
+    </pre></div>
+
+    <h2>Running Multiple Tasks</h2>
+    <div class="code-block"><pre>
+async def main():
+    await asyncio.gather(task(), task())
+
+asyncio.run(main())
+    </pre></div>
+
+    <h2>When to Use Async?</h2>
+    <ul>
+      <li>Web scraping</li>
+      <li>API calls</li>
+      <li>Web servers</li>
+    </ul>
+
+    <div class="warning-box">
+      📝 Practice: Run 3 async tasks with different delays.
+    </div>
+
+    <div class="next-topic">
+      <a href="/topics/intermediate/memory-management.html">
+        Next → Memory Management
+      </a>
+    </div>
+
+  </article>
+</main>
+
+<footer id="site-footer"></footer>
+
+</body>
+</html>

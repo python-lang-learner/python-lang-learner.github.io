@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>itertools Module | Intermediate Python</title>
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <script src="/js/layout.js" defer></script>
+</head>
+
+<body>
+
+<header id="site-header"></header>
+
+<main class="container page-topics content-safe">
+
+  <article class="topic-card">
+
+    <span class="topic-level">Intermediate</span>
+    <h1>itertools Module</h1>
+
+    <p class="intro">
+      The <code>itertools</code> module provides fast, memory-efficient
+      tools for working with iterators and combinations.
+    </p>
+
+    <h2>Why Use itertools?</h2>
+    <div class="info-box">
+      ✔ Faster than manual loops<br>
+      ✔ Memory efficient<br>
+      ✔ Used in data processing & interviews
+    </div>
+
+    <h2>count()</h2>
+    <div class="code-block"><pre>
+from itertools import count
+
+for i in count(10):
+    if i > 15:
+        break
+    print(i)
+    </pre></div>
+
+    <h2>cycle()</h2>
+    <div class="code-block"><pre>
+from itertools import cycle
+
+colors = ["red", "green", "blue"]
+for c in cycle(colors):
+    print(c)
+    break
+    </pre></div>
+
+    <h2>combinations()</h2>
+    <div class="code-block"><pre>
+from itertools import combinations
+
+nums = [1, 2, 3]
+print(list(combinations(nums, 2)))
+    </pre></div>
+
+    <h2>permutations()</h2>
+    <div class="code-block"><pre>
+from itertools import permutations
+
+print(list(permutations([1, 2, 3], 2)))
+    </pre></div>
+
+    <div class="warning-box">
+      📝 Practice: Generate all 3-letter passwords using itertools.
+    </div>
+
+    <div class="next-topic">
+      <a href="/topics/intermediate/functools.html">
+        Next → functools Module
+      </a>
+    </div>
+
+  </article>
+</main>
+
+<footer id="site-footer"></footer>
+
+</body>
+</html>
